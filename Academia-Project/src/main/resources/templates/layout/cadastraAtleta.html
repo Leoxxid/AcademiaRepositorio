@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" href="img/favicon.png">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template"/>
+    <meta name="author" content="GeeksLabs"/>
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal"/>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" th:href="@{/layoutimg/favicon.png}"/>
 
     <title>Cadastro | GymAdmin</title>
 
     <!-- Bootstrap CSS -->    
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet"/>
     <!-- bootstrap theme -->
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet"/>
     <!--external css-->
     <!-- font icon -->
-    <link href="css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />    
+    <link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+    <link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />    
     <!-- full calendar css-->
-    <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-	<link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link th:href="@{/layout/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css}" rel="stylesheet" />
+	<link th:href="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.css}" rel="stylesheet" />
     <!-- easy pie chart-->
-    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}" rel="stylesheet" type="text/css" media="screen"/>
     <!-- owl carousel -->
-    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
-	<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}" type="text/css}"/>
+	<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet"/>
     <!-- Custom styles -->
-	<link rel="stylesheet" href="css/fullcalendar.css">
-	<link href="css/widgets.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
-	<link href="css/xcharts.min.css" rel=" stylesheet">	
-	<link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
-    <![endif]-->
+	<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}"/>
+	<link th:href="@{/layout/css/widgets.css}" rel="stylesheet"/>
+    <link th:href="@{/layout/css/style.css}" rel="stylesheet"/>
+    <link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
+	<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet"/>	
+	<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet"/>
+
+      <script th:src="@{/layout/js/html5shiv.js}"></script>
+      <script th:src="@{/layout/js/respond.min.js}"></script>
+      <script th:src="@{/layout/js/lte-ie7.js}"></script>
+
   </head>
   
 
@@ -54,7 +53,7 @@
             </div>
 
             <!--logo start-->
-            <a href="index.html" class="logo">Gym <span class="lite">Admin</span></a>
+            <a th:href="@{/index.html}" class="logo">Gym <span class="lite">Admin</span></a>
             <!--logo end-->
 
             
@@ -64,7 +63,7 @@
                     <div class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="img/avatar1_small.jpg">
+                                <img alt="" src="img/avatar1_small.jpg"/>
                             </span>
                             <span class="username">Jenifer Smith</span>
                             <b class="caret"></b>
@@ -83,8 +82,8 @@
                         </ul>
                     </div>
                     <!-- user login dropdown end -->
-                </ul>
-                <!-- notificatoin dropdown end-->
+                
+                
             </div>
       </header>      
       <!--header end-->
@@ -159,9 +158,9 @@
                                   <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
                                       <h4><b>Dados do Atleta</b></h4>
 									  <div class="form-group ">
-                                          <label for="cname" class="control-label col-lg-2"><b>Nome Completo <span class="required">*</b></span></label>
+                                          <label for="cname" class="control-label col-lg-2"><b>Nome Completo <span class="required">* </span></b></label>
                                           <div class="col-lg-10">
-                                              <input size="100%" id="cname" name="fullname" minlength="5" type="text" required />
+                                              <input size="100%" id="cname" name="fullname" minlength="5" type="text" required="required" />
                                           </div>
                                       </div>
 									  
@@ -210,11 +209,11 @@
                                           </div>
                                       </div>
 									  
-									  <h4><b>Contato<b/></h4>									  
+									  <h4><b>Contato</b></h4>									  
                                       <div class="form-group ">
-                                          <label for="ctelefone" class="control-label col-lg-2"><b>Telefone<span class="required">*</b></span></label>
+                                          <label for="ctelefone" class="control-label col-lg-2"><b>Telefone<span class="required">*</span></b></label>
                                           <div class="col-lg-10">
-                                              <input size="100%" id="telefone" name="telefone" required></input>
+                                              <input size="100%" id="telefone" name="telefone" required="required" />
                                           </div>
                                       </div>
 									  
@@ -227,9 +226,9 @@
 									  
 									  
                                       <div class="form-group ">
-                                          <label for="cemail" class="control-label col-lg-2"><b>E-Mail <span class="required">*</b></span></label>
+                                          <label for="cemail" class="control-label col-lg-2"><b>E-Mail <span class="required">*</span></b></label>
                                           <div class="col-lg-10">
-                                              <input size="100%" id="cemail" type="email" name="email" required />
+                                              <input size="100%" id="cemail" type="email" name="email" required="required" />
                                           </div>
                                       </div>
 									  
@@ -249,7 +248,7 @@
 
 						  
 				
-			</div><!--/.row-->
+			
 					
           </section>
       </section>
@@ -273,7 +272,7 @@
     <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="js/owl.carousel.js" ></script>
     <!-- jQuery full calendar -->
-    <<script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+    <script src="js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
 	<script src="assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
     <!--script for this page only-->
     <script src="js/calendar-custom.js"></script>

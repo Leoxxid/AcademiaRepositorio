@@ -44,20 +44,24 @@
 
 	<div class="container">
 
-		<form class="login-form" action="index.html">
+		<form class="login-form" th:action="@{/login}" method="POST">
+						
 			<div class="login-wrap">
 				<p class="login-img">
 					<i class="icon_lock_alt"></i>
-				</p>
+				</p>				
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon_profile"></i></span>
 					<input type="text" class="form-control"
-						placeholder="Insira sua Matrícula" autofocus="true" />
+						placeholder="Insira sua Matrícula" autofocus="autofocus" name="username"/>
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon_key_alt"></i></span>
 					<input type="password" class="form-control"
-						placeholder="Digite sua Senha" />
+						placeholder="Digite sua Senha" name="password"/>
+				</div>
+				<div class="form-validate form-group label.error" th:if="#{#bools.isTrue(param.error)}">
+				Usuário ou senha inválido 
 				</div>
 				<label class="checkbox"> <input type="checkbox"
 					value="remember-me" /> Lembre-se de Mim <span class="pull-right">

@@ -7,20 +7,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/atleta")
 public class alunosController {
 	
-	//Busca todos atletas matriculados
+	@RequestMapping("/novo")
+	public String cadastrar() {
+		return "layout/cadastraAtleta";
+	}
+
+	// Busca todos atletas matriculados
 	@RequestMapping("/todos-atletas")
-	public void listarAtletas(){
-		
+	public void listarAtletas() {
+
 	}
-	
-	//Busca de atleta
+
+	// Busca de atleta
 	@RequestMapping("/atleta-por-matricula")
-	public void pesquisarAtleta(){
-		
+	public void pesquisarAtleta() {
+
 	}
-	
+
 	@RequestMapping("/perfil-do-atleta")
-	public void perfilAtleta(){
-		
+	public void perfilAtleta() {
+
 	}
 }

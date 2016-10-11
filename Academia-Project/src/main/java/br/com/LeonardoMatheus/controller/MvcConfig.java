@@ -8,10 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class MvcConfig extends WebMvcConfigurerAdapter{
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry){
-		registry.addViewController("/acesso").setViewName("acesso");
-		registry.addViewController("/nova-conta").setViewName("cadastro");
-		registry.addViewController("/inicio").setViewName("inicioprofessor");
-		
+		registry.addRedirectViewController("/", "/atleta/novo");
 	}
 
 }
