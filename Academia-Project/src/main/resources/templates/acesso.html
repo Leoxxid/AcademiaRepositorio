@@ -10,7 +10,6 @@
 <meta name="author" content="GeeksLabs" />
 <meta name="keyword"
 	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
-<link rel="shortcut icon" href="img/favicon.png" />
 
 <title>Acesso ao Sistema</title>
 
@@ -45,29 +44,33 @@
 	<div class="container">
 
 		<form class="login-form" th:action="@{/login}" method="POST">
-						
+
 			<div class="login-wrap">
 				<p class="login-img">
 					<i class="icon_lock_alt"></i>
-				</p>				
+				</p>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon_profile"></i></span>
 					<input type="text" class="form-control"
-						placeholder="Insira sua Matrícula" autofocus="autofocus" name="username"/>
+						placeholder="Insira sua Matrícula" autofocus="autofocus"
+						name="username" />
 				</div>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon_key_alt"></i></span>
 					<input type="password" class="form-control"
-						placeholder="Digite sua Senha" name="password"/>
+						placeholder="Digite sua Senha" name="password" />
 				</div>
-				<div class="form-validate form-group label.error" th:if="#{#bools.isTrue(param.error)}">
-				Usuário ou senha inválido 
-				</div>
+                <div th:if="${param.error}" class="alert alert-danger">    
+                    Usuário ou senha inválidos. 
+                </div>
+				<div th:if="${param.logout}" class="alert alert-success">Você
+					se desconectou com sucesso!</div>
 				<label class="checkbox"> <input type="checkbox"
 					value="remember-me" /> Lembre-se de Mim <span class="pull-right">
 						<a href="#"> Esqueceu a Senha?</a>
 				</span>
 				</label>
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				<button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
 				<button class="btn btn-info btn-lg btn-block" type="submit">Cadastre-se</button>
 			</div>
