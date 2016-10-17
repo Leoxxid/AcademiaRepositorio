@@ -32,8 +32,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http
 				.authorizeRequests()
-						.antMatchers("/atleta/novo").hasRole("CADASTRAR_ATLETA")
+						.antMatchers("/atleta","/atleta/novo").permitAll()
+						.antMatchers().hasRole("CADASTRAR_ATLETA")
 						.anyRequest().authenticated()
+						
 						.and()
 				.formLogin()
 						.loginPage("/login").permitAll()

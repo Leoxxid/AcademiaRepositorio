@@ -12,7 +12,7 @@ public class SegurancaController {
 	@RequestMapping("/login")
 	public String login (@AuthenticationPrincipal User user){
 		if (user != null) {
-			return "redirect:/layout/cadastraAtleta";
+			return "redirect:/layout/consultarAtleta";
 		}
 		
 		return "acesso";
