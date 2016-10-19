@@ -77,11 +77,11 @@
 				<div class="dropdown">
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
 						class="profile-ava"> <img alt=""
-							href="img/avatar1_small.jpg" />
+							th:href="@{img/avatar1_small.jpg}" />
 					</span> <span class="username">Jenifer Smith</span> <b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu extended logout">
-						<div class="log-arrow-up"></div>
+						
 						<li class="eborder-top"><a href="#"><i
 								class="icon_profile"></i> Meus Dados</a></li>
 						<li><a href="documentation.html"><i class="icon_key_alt"></i>
@@ -149,22 +149,51 @@
 				</div>
 
 
-				<div class="row" align="center">
-
-					<div class="form-group ">
-						<label for="cname" class="control-label col-lg-2"><b>Digite
-								a matrícula do atleta <span class="required">* </span>
-						</b></label>
-						<div class="col-lg-10">
-							<input size="80%" id="cname" name="fullname" minlength="5"
-								type="text" required="required" />
-
-							<button class="btn btn-primary" type="search">Pesquisar</button>
-
-						</div>
-					</div>
+				<div id="divConteudo">
+					<table class="table table-responsive table-striped table-bordered table-hover"id="tabela">
+						<thead>
+							<tr>
+								<th>Código</th>
+								<th>Descrição</th>
+								<th>Grupo</th>
+							</tr>
+							<tr>
+								<th><input type="text" id="txtColuna1"/></th>
+								<th><input type="text" id="txtColuna2"/></th>
+								<th><input type="text" id="txtColuna3"/></th>
+							</tr>            
+						</thead>
+						<tbody>
+							<tr>
+								<td>001.01-A</td>
+								<td>Feijão preto</td>
+								<td>Cerais</td>
+							</tr>
+							<tr>
+								<td>001.02-B</td>
+								<td>Feijão branco</td>
+								<td>Cerais</td>
+							</tr>            
+							<tr>
+								<td>002.10-C</td>
+								<td>Arroz parboilizado</td>
+								<td>Cerais</td>
+							</tr>
+							<tr>
+								<td>003.12-D</td>
+								<td>Iogurte de morango</td>
+								<td>Laticínios</td>
+							</tr>
+							<tr>
+								<td>041.27-E</td>
+								<td>Sabão em pó</td>
+								<td>Limpeza</td>
+							</tr>            
+						</tbody>
+					</table>
 				</div>
-				<!--/.row-->
+	
+	
 				<table class="table table-bordered">
 					<tr>
 						<th>Nome</th>
@@ -273,6 +302,28 @@
 				}
 			});
 		});
+	</script>
+	
+	 <script>
+	$(function(){
+		$("#tabela input").keyup(function(){       
+			var index = $(this).parent().index();
+			var nth = "#tabela td:nth-child("+(index+1).toString()+")";
+			var valor = $(this).val().toUpperCase();
+			$("#tabela tbody tr").show();
+			$(nth).each(function(){
+				if($(this).text().toUpperCase().indexOf(valor) < 0){
+					$(this).parent().hide();
+				}
+			});
+		});
+	 
+		$("#tabela input").blur(function(){
+			$(this).val("");
+		});
+	});
+
+
 	</script>
 
 
