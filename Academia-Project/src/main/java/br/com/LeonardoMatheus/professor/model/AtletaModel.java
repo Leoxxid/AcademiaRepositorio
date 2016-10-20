@@ -1,5 +1,7 @@
 package br.com.LeonardoMatheus.professor.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,56 +12,56 @@ import javax.persistence.Table;
 
 
 
+
 @Entity
-@Table(name="acesso_web")
+@Table(name="cadastro_aluno")
 public class AtletaModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name= "ID_ACESSO")
-	private int idAcesso;
+	@Column(name="ID_ALUNO")
+	private int idALuno; 
 	
-	@Column(name="NOME_ACESSO")
-	private String nome;
+	@Column(name="MATRICULA_ALUNO")
+	private String matriculaAluno; 
 	
-	@Column(name="SENHA_ACESSO")
-	private String senha;
+	@Column (name="NOME_ALUNO")
+	private String nomeAluno;
 	
-	@Column (name="ATIVACAO_ACESSO")
-	private String ativacao;
+	@Column(name="NASC_ALUNO")
+	private Date nascAluno;
 
-	public int getIdAcesso() {
-		return idAcesso;
+	public int getIdALuno() {
+		return idALuno;
 	}
 
-	public void setIdAcesso(int idAcesso) {
-		this.idAcesso = idAcesso;
+	public void setIdALuno(int idALuno) {
+		this.idALuno = idALuno;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getMatriculaAluno() {
+		return matriculaAluno;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setMatriculaAluno(String matriculaAluno) {
+		this.matriculaAluno = matriculaAluno;
 	}
 
-	public String getSenha() {
-		return senha;
+	public String getNomeAluno() {
+		return nomeAluno;
 	}
 
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setNomeAluno(String nomeAluno) {
+		this.nomeAluno = nomeAluno;
 	}
 
-	public String getAtivacao() {
-		return ativacao;
+	public Date getNascAluno() {
+		return nascAluno;
 	}
 
-	public void setAtivacao(String ativacao) {
-		this.ativacao = ativacao;
+	public void setNascAluno(Date nascAluno) {
+		this.nascAluno = nascAluno;
 	}
-	
 	
 
 }
