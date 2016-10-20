@@ -15,7 +15,7 @@
 <title>Consulta | GymAdmin</title>
 
 <!-- Bootstrap CSS -->
-<link href="css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 <!-- bootstrap theme -->
 <link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
 <!--external css-->
@@ -67,7 +67,7 @@
 			</div>
 
 			<!--logo start-->
-			<a href="index.html" class="logo">Gym <span class="lite">Admin</span></a>
+			<a th:href="@{/index.html}" class="logo">Gym <span class="lite">Admin</span></a>
 			<!--logo end-->
 
 
@@ -84,9 +84,9 @@
 						
 						<li class="eborder-top"><a href="#"><i
 								class="icon_profile"></i> Meus Dados</a></li>
-						<li><a href="documentation.html"><i class="icon_key_alt"></i>
+						<li><a th:href="@{/documentation.html}"><i class="icon_key_alt"></i>
 								Ajuda</a></li>
-						<li><a href="login.html"><i class="icon_log_out"></i>
+						<li><a th:href="@{href=login.html}"><i class="icon_log_out"></i>
 								Sair</a></li>
 					</ul>
 				</div>
@@ -102,11 +102,11 @@
 			<div id="sidebar" class="nav-collapse ">
 				<!-- sidebar menu start-->
 				<ul class="sidebar-menu">
-					<li><a class="" href="index.html"> <i
+					<li><a class="" th:href="@{/index.html}"> <i
 							class="icon_house_alt"></i> <span>Início</span>
 					</a></li>
 
-					<li><a class="" href="estatisticas.html"> <i
+					<li><a class="" th:href="@{estatisticas.html}"> <i
 							class="icon_piechart"></i> <span>Estatísticas</span>
 
 					</a></li>
@@ -116,8 +116,8 @@
 							class="menu-arrow arrow_carrot-right"></span>
 					</a>
 						<ul class="sub">
-							<li class="active"><a class="" href="listaAletas.html">Atletas</a></li>
-							<li><a class="" href="listaProfessores.html">Professores</a></li>
+							<li class="active"><a class="" th:href="@{/listaAletas.html}">Atletas</a></li>
+							<li><a class="" th:href="@{listaProfessores.html}">Professores</a></li>
 						</ul></li>
 
 					<li class="sub-menu"><a href="javascript:;" class=""> <i
@@ -153,9 +153,9 @@
 					<table class="table table-responsive table-striped table-bordered table-hover"id="tabela">
 						<thead>
 							<tr>
-								<th>Código</th>
-								<th>Descrição</th>
-								<th>Grupo</th>
+								<th>Matrícula</th>
+								<th>Nome</th>
+								<th>Nascimento</th>
 							</tr>
 							<tr>
 								<th><input type="text" id="txtColuna1"/></th>
@@ -194,16 +194,7 @@
 				</div>
 	
 	
-				<table class="table table-bordered">
-					<tr>
-						<th>Nome</th>
-						<th>Senha</th>
-					</tr>
-					<tr th:each="atleta : ${atletas}">
-						<td th:text="${atleta.nome}"></td>
-						<td th:text="${atleta.senha}"></td>
-					</tr>
-				</table>
+				
 			</section>
 		</section>
 		<!--main content end-->
