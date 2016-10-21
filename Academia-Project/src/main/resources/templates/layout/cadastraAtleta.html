@@ -76,11 +76,11 @@
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
 						class="profile-ava"> <img alt=""
 							th:src="@{/layout/img/avatar1_small.jpg}" />
-					</span> <span class="username" th:text="${#authentication.name}" /> <b
+					</span> <span class="username" th:text="${#authentication.name}"></span> <b
 						class="caret"></b>
 					</a>
 					<ul class="dropdown-menu pull-right extended logout">
-						<div class="log-arrow-up"></div>
+						
 						<li class="eborder-top"><a href="#"><i
 								class="icon_profile"></i> Meus Dados</a></li>
 						<li><a href="documentation.html"><i class="icon_key_alt"></i>
@@ -157,38 +157,38 @@
 										<h4>
 											<b>Dados do Atleta</b>
 										</h4>
+										
+									
 										<div class="form-group ">
-											<label for="cname" class="control-label col-lg-2"><b>Nome
-													Completo <span class="required">* </span>
-											</b></label>
+											<label for="nomeCompleto" class="control-label col-lg-2"><b>Nome
+													Completo *</b></label>
 											<div class="col-lg-10">
-												<input size="100%" id="cname" name="fullname" minlength="5"
-													type="text" required="required" />
+												<input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto"
+																											required="required" />
 											</div>
 										</div>
 
 										<div class="form-group ">
-											<label for="cnasc" class="control-label col-lg-2"><b>Data
-													de Nascimento</b></label>
+											<label for="nascimento" class="control-label col-lg-2"><b>Data Nascimento *</b></label>
 											<div class="col-lg-10">
-												<input size="100%" id="nascimento" name="nasciemtno"
-													type="text" required="required" />
+												<input type="text" class="form-control" id="nascimento" name="nascimento"
+																											required="required" />
 											</div>
 										</div>
 
 										<div class="form-group ">
-											<label for="crg" class="control-label col-lg-2"><b>RG</b></label>
+											<label for="rg" class="control-label col-lg-2"><b>RG *</b></label>
 											<div class="col-lg-10">
-												<input size="100%" id="rg" name="rg" type="text"
-													required="required" />
+												<input type="text" class="form-control" id="rg" name="rg"
+																									required="required" />
 											</div>
 										</div>
 
 										<div class="form-group ">
-											<label for="ccpf" class="control-label col-lg-2"><b>CPF</b></label>
+											<label for="cpf" class="control-label col-lg-2"><b>CPF *</b></label>
 											<div class="col-lg-10">
-												<input size="100%" id="cpf" name="cpf" type="text"
-													required="required" />
+												<input type="text" class="form-control" id="cpf" name="cpf"
+																									required="required" />
 											</div>
 										</div>
 
@@ -197,27 +197,26 @@
 										</h4>
 
 										<div class="form-group ">
-											<label for="cstreet" class="control-label col-lg-2"><b>Endereço</b></label>
+											<label for="endereco" class="control-label col-lg-2"><b>Endereço *</b></label>
 											<div class="col-lg-10">
-												<input size="100%" id="street" name="street" type="text"
-													required="required" />
+												<input type="text" class="form-control" id="endereco" name="endereco"
+																									required="required" />
 											</div>
 										</div>
 
 										<div class="form-group ">
-											<label for="cstreetnumber" class="control-label col-lg-2"><b>Número</b></label>
+											<label for="numero" class="control-label col-lg-2"><b>Número *</b></label>
 											<div class="col-lg-10">
-												<input id="streetnumber" name="streetnumber" type="text"
-													required="required" />
+												<input type="text" class="form-control" id="numero" name="numero"
+																									required="required" />
 											</div>
 										</div>
 
 
 										<div class="form-group ">
-											<label for="ccomplemento" class="control-label col-lg-2"><b>Complemento</b></label>
+											<label for="complemento" class="control-label col-lg-2"><b>Complemento</b></label>
 											<div class="col-lg-10">
-												<input size="100%" id="complemento" name="complemento"
-													type="text" required="required" />
+												<input type="text" class="form-control" id="complemento" name="complemento" />
 											</div>
 										</div>
 
@@ -225,30 +224,25 @@
 											<b>Contato</b>
 										</h4>
 										<div class="form-group ">
-											<label for="ctelefone" class="control-label col-lg-2"><b>Telefone<span
-													class="required">*</span></b></label>
+											<label for="telefone" class="control-label col-lg-2"><b>Telefone *</b></label>
 											<div class="col-lg-10">
-												<input size="100%" id="telefone" name="telefone"
-													required="required" />
+												<input type="text" class="form-control" id="telefone" name="telefone"
+																									required="required" />
 											</div>
 										</div>
 
 										<div class="form-group ">
-											<label for="ccelular" class="control-label col-lg-2"><b>Celular</b></label>
+											<label for="celular" class="control-label col-lg-2"><b>Celular</b></label>
 											<div class="col-lg-10">
-												<input size="100%" id="celular" name="celular"
-													required="required"></input>
+												<input type="text" class="form-control" id="celular" name="celular"/>
 											</div>
 										</div>
 
 
 										<div class="form-group ">
-											<label for="cemail" class="control-label col-lg-2"><b>E-Mail
-													<span class="required">*</span>
-											</b></label>
+											<label for="email" class="control-label col-lg-2"><b>E-mail *</b></label>
 											<div class="col-lg-10">
-												<input size="100%" id="cemail" type="email" name="email"
-													required="required" />
+												<input type="email" class="form-control" id="email" name="email" required="required"/>
 											</div>
 										</div>
 
