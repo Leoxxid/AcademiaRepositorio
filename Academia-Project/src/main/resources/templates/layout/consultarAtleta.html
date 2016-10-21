@@ -1,59 +1,76 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
-
 <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Creative - Bootstrap 3 Responsive Admin Template" />
+<meta name="author" content="GeeksLabs" />
+<meta name="keyword"
+	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" th:href="@{/layoutimg/favicon.png}" />
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<title>Cadastro | GymAdmin</title>
 
-    <title>GYM Admin</title>
+<!-- Bootstrap CSS -->
+<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
+<!-- bootstrap theme -->
+<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
+<!--external css-->
+<!-- font icon -->
+<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
+<!-- full calendar css-->
+<link
+	th:href="@{/layout/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css}"
+	rel="stylesheet" />
+<link
+	th:href="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.css}"
+	rel="stylesheet" />
+<!-- easy pie chart-->
+<link
+	th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
+	rel="stylesheet" type="text/css" media="screen" />
+<!-- owl carousel -->
+<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
+	type="text/css}" />
+<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
 
-    <!-- Bootstrap Core CSS -->
-    <link th:href="@{/bower_components/bootstrap/dist/css/bootstrap.css}" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+    <link th:href="@{/layout/bower_components/bootstrap/dist/css/bootstrap.css}" rel="stylesheet"/>
 
     <!-- MetisMenu CSS -->
-    <link th:href="@{/bower_components/metisMenu/dist/metisMenu.min.css}" rel="stylesheet">
+    <link th:href="@{/layout/bower_components/metisMenu/dist/metisMenu.min.css}" rel="stylesheet"/>
 
-    <!-- DataTables CSS -->
-    <link th:href="@{/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}" rel="stylesheet">
+<!-- DataTables CSS -->
+    <link th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}" rel="stylesheet"/>
 
     <!-- DataTables Responsive CSS -->
-    <link th:href="@{/bower_components/datatables-responsive/css/dataTables.responsive.css}" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link th:href="@{/dist/css/sb-admin-2.css}" rel="stylesheet">
+    <link th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}" rel="stylesheet"/>
+    
+     <!-- Custom CSS -->
+    <link th:href="@{/layout/dist/css/sb-admin-2.css}" rel="stylesheet" />
 
     <!-- Custom Fonts -->
-    <link th:href="@{/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	
-	 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/layout/bower_components/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+    
+<!-- Custom styles -->
+<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
+<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
+ <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
     <!--external css-->
     <!-- font icon -->
-    <link th:href="@{css/elegant-icons-style.css}" rel="stylesheet" />
-    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+    <link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+    <link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
     <!-- owl carousel -->
-    <link rel="stylesheet" th:href="@{/css/owl.carousel.css}" type="text/css">
-	<link th:href="@{/css/jquery-jvectormap-1.2.2.css}" rel="stylesheet">
-	<link th:href="@{/css/widgets.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css}" rel="stylesheet">
-    <link th:href="@{/css/style-responsive.css}" rel="stylesheet" />
-	<link th:href="@{/css/jquery-ui-1.10.4.min.css}" rel="stylesheet">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
-    <![endif]-->
+
+<script th:src="@{/layout/js/html5shiv.js}"></script>
+<script th:src="@{/layout/js/respond.min.js}"></script>
+<script th:src="@{/layout/js/lte-ie7.js}"></script>
 
 </head>
 
@@ -172,35 +189,37 @@
 							<td th:text="${atleta.nomeAluno}" th:type="text" 
 									id="txtColuna2"></td>
                             <td th:text="${atleta.nascAluno}" th:type="text" id="txtColuna3"></td>
-							<td><a class="btn btn-primary btn-sm" th:href="@{}" title="Bootstrap 3 themes generator">Ver Dados</a></td>
+							<td><a class="btn btn-primary btn-sm" title="Bootstrap 3 themes generator">Ver Dados</a></td>
                         </tr>
                         
                     </tbody>
                 </table>
 			</div>
-			</div>
+         
+		
+        </div>
 		</section>
-		</section>	
+		</section>
         <!-- /#page-wrapper -->
 
    
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script th:src="@{/bower_components/jquery/dist/jquery.min.js}"></script>
+    <script th:src="@{/layout/bower_components/jquery/dist/jquery.min.js}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
+    <script th:src="@{/layout/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script th:src="@{/bower_components/metisMenu/dist/metisMenu.min.js}"></script>
+    <script th:src="@{/layout/bower_components/metisMenu/dist/metisMenu.min.js}"></script>
 
     <!-- DataTables JavaScript -->
-    <script th:src="@{/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
-    <script th:src="@{/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
+    <script th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
+    <script th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script th:src="@{/dist/js/sb-admin-2.js}"></script>
+    <script th:src="@{/layout/dist/js/sb-admin-2.js}"></script>
 	
 	
 
