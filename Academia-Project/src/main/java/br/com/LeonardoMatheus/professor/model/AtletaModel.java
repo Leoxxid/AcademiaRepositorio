@@ -30,7 +30,7 @@ public class AtletaModel {
 	@Column(name = "RG_ALUNO")
 	private int rg;
 
-	@Column(name = "", length = 11)
+	@Column(name = "CPF_ALUNO", length = 11)
 	private int cpf;
 
 	@Column(name = "ESTADO", length = 2)
