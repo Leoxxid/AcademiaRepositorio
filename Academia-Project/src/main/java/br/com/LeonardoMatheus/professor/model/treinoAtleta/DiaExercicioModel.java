@@ -15,8 +15,7 @@ public class DiaExercicioModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_DIA_X_EXERCICIo")
 	private Long idDiaExercicio;
-	private ExercicioModel exercicio;
-	private DiaTreinoModel diaTreino;
+
 
 	// ===== GETTERS AND SETTERS
 
@@ -28,20 +27,5 @@ public class DiaExercicioModel {
 		this.idDiaExercicio = idDiaExercicio;
 	}
 
-	public ExercicioModel getExercicio() {
-		return exercicio;
-	}
-
-	public void setExercicio(ExercicioModel exercicio) {
-		this.exercicio = exercicio;
-	}
-
-	public DiaTreinoModel getDiaTreino() {
-		return diaTreino;
-	}
-
-	public void setDiaTreino(DiaTreinoModel diaTreino) {
-		this.diaTreino = diaTreino;
-	}
 
 }

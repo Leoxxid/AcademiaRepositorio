@@ -21,7 +21,7 @@ public class DiaTreinoModel {
 	@Column (name="DIA_SEMANA")
 	private String diaSemana;
 	
-	private AtletaModel atletaM;
+	
 	
 	
 }

@@ -44,7 +44,7 @@ public class alunosController {
 	@RequestMapping(value = "/novo", method = RequestMethod.POST)
 	public String criar(@Valid AtletaModel atletaModel) {
 		service.save(atletaModel);
-		return "redirect:layout/consultarAtleta";
+		return "redirect:/atleta/todos";
 	}
 
 	// Visualizar perfil do atleta
