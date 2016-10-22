@@ -30,10 +30,10 @@ public class AtletaModel {
 	private Date nascAluno;
 
 	@Column(name = "RG_ALUNO")
-	private int rg;
+	private Integer rg;
 
 	@Column(name = "CPF_ALUNO", length = 11)
-	private int cpf;
+	private Integer cpf;
 
 	@Column(name = "ESTADO", length = 2)
 	private String estado;
@@ -48,7 +48,7 @@ public class AtletaModel {
 	private String rua;
 
 	@Column(name = "NUMERO_CASA", length = 7)
-	private int numeroCasa;
+	private Integer numeroCasa;
 
 	@Column(name = "COMPLEMENTO", length = 20)
 	private String complemento;
@@ -68,19 +68,19 @@ public class AtletaModel {
 		return idALuno;
 	}
 
-	public int getRg() {
+	public Integer getRg() {
 		return rg;
 	}
 
-	public void setRg(int rg) {
+	public void setRg(Integer rg) {
 		this.rg = rg;
 	}
 
-	public int getCpf() {
+	public Integer getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(Integer cpf) {
 		this.cpf = cpf;
 	}
 
@@ -116,11 +116,11 @@ public class AtletaModel {
 		this.rua = rua;
 	}
 
-	public int getNumeroCasa() {
+	public Integer getNumeroCasa() {
 		return numeroCasa;
 	}
 
-	public void setNumeroCasa(int numeroCasa) {
+	public void setNumeroCasa(Integer numeroCasa) {
 		this.numeroCasa = numeroCasa;
 	}
 
