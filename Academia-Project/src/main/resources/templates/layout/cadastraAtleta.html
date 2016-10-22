@@ -154,7 +154,7 @@
 								<div class="form">
 									<form class="form-validate form-horizontal"
 										th:action="@{/atleta/novo}" th:object="${atletaModel}"
-										method="POST" action="#">
+										method="POST" >
 										<h4>
 											<b>Dados do Atleta</b>
 										</h4>
@@ -164,7 +164,7 @@
 													do Aluno *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{matriculaAluno}" required="required" />
+													th:field="*{matriculaAluno}"  />
 											</div>
 										</div>
 
@@ -173,7 +173,7 @@
 													Completo *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{nomeAluno}" required="required" />
+													th:field="*{nomeAluno}"  />
 											</div>
 										</div>
 
@@ -182,7 +182,7 @@
 													Nascimento *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{nascAluno}" required="required" />
+													th:field="*{nascAluno}"  />
 											</div>
 										</div>
 
@@ -191,7 +191,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control" th:field="*{rg}"
-													required="required" />
+													 />
 											</div>
 										</div>
 
@@ -200,7 +200,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control" th:field="*{cpf}"
-													required="required" />
+													 />
 											</div>
 										</div>
 
@@ -213,7 +213,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control" th:field="*{estado}"
-													required="required" />
+													 />
 											</div>
 										</div>
 
@@ -222,7 +222,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control" th:field="*{cidade}"
-													required="required" />
+													/>
 											</div>
 										</div>
 
@@ -231,7 +231,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control" th:field="*{bairro}"
-													required="required" />
+													 />
 											</div>
 										</div>
 
@@ -240,7 +240,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control" th:field="*{rua}"
-													required="required" />
+													/>
 											</div>
 										</div>
 
@@ -249,7 +249,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{numeroCasa}" required="required" />
+													th:field="*{numeroCasa}"/>
 											</div>
 										</div>
 
@@ -258,7 +258,7 @@
 											<label for="complemento" class="control-label col-lg-2"><b>Complemento</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{complemento}" name="complemento" />
+													th:field="*{complemento}"  />
 											</div>
 										</div>
 
@@ -270,7 +270,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{telefoneCasa}" required="required" />
+													th:field="*{telefoneCasa}"  />
 											</div>
 										</div>
 
@@ -284,11 +284,11 @@
 
 
 										<div class="form-group ">
-											<label for="email" class="control-label col-lg-2"><b>E-mail
+											<label for="email" class="control-label col-lg-2"><b>Data da Matricula
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="email" class="form-control"
-													th:field="*{dataMatricula}" required="required" />
+												<input type="text" class="form-control"
+													th:field="*{dataMatricula}" />
 											</div>
 										</div>
 

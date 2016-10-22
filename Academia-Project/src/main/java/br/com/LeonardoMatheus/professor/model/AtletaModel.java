@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cadastro_aluno")
@@ -16,8 +17,9 @@ public class AtletaModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_ALUNO")
-	private int idALuno;
-
+	private Long idALuno;
+	
+	@NotNull
 	@Column(name = "MATRICULA_ALUNO", length = 40)
 	private String matriculaAluno;
 
@@ -62,7 +64,7 @@ public class AtletaModel {
 
 	// ===== GETTERS AND SETTERS
 
-	public int getIdALuno() {
+	public Long getIdALuno() {
 		return idALuno;
 	}
 
@@ -154,7 +156,7 @@ public class AtletaModel {
 		this.dataMatricula = dataMatricula;
 	}
 
-	public void setIdALuno(int idALuno) {
+	public void setIdALuno(Long idALuno) {
 		this.idALuno = idALuno;
 	}
 

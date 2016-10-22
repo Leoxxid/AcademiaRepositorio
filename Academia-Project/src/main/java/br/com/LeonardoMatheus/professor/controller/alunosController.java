@@ -1,13 +1,17 @@
 package br.com.LeonardoMatheus.professor.controller;
 
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.LeonardoMatheus.professor.model.AtletaModel;
@@ -32,12 +36,12 @@ public class alunosController {
 	}
 
 	// Cadastrar novo Atleta
-	@GetMapping("/novo")
+	@RequestMapping("/novo")
 	public String cadastrar(AtletaModel atletaModel) {
 		return "layout/cadastraAtleta";
 	}
 
-	@PostMapping("/novo")
+	@RequestMapping(value = "/novo", method = RequestMethod.POST)
 	public String criar(@Valid AtletaModel atletaModel) {
 		service.save(atletaModel);
 		return "redirect:layout/consultarAtleta";

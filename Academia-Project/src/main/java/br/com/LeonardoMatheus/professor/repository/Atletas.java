@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import br.com.LeonardoMatheus.professor.model.AtletaModel;
 
 
-public interface Atletas extends JpaRepository<AtletaModel, Integer> {
+public interface Atletas extends JpaRepository<AtletaModel, Long> {
 
 }
