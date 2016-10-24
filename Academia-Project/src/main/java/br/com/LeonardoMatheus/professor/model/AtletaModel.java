@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cadastro_aluno")
@@ -16,8 +17,9 @@ public class AtletaModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_ALUNO")
-	private int idALuno;
-
+	private Long idALuno;
+	
+	@NotNull
 	@Column(name = "MATRICULA_ALUNO", length = 40)
 	private String matriculaAluno;
 
@@ -28,10 +30,10 @@ public class AtletaModel {
 	private Date nascAluno;
 
 	@Column(name = "RG_ALUNO")
-	private int rg;
+	private Integer rg;
 
-	@Column(name = "", length = 11)
-	private int cpf;
+	@Column(name = "CPF_ALUNO", length = 11)
+	private Integer cpf;
 
 	@Column(name = "ESTADO", length = 2)
 	private String estado;
@@ -46,7 +48,7 @@ public class AtletaModel {
 	private String rua;
 
 	@Column(name = "NUMERO_CASA", length = 7)
-	private int numeroCasa;
+	private Integer numeroCasa;
 
 	@Column(name = "COMPLEMENTO", length = 20)
 	private String complemento;
@@ -62,23 +64,23 @@ public class AtletaModel {
 
 	// ===== GETTERS AND SETTERS
 
-	public int getIdALuno() {
+	public Long getIdALuno() {
 		return idALuno;
 	}
 
-	public int getRg() {
+	public Integer getRg() {
 		return rg;
 	}
 
-	public void setRg(int rg) {
+	public void setRg(Integer rg) {
 		this.rg = rg;
 	}
 
-	public int getCpf() {
+	public Integer getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(Integer cpf) {
 		this.cpf = cpf;
 	}
 
@@ -114,11 +116,11 @@ public class AtletaModel {
 		this.rua = rua;
 	}
 
-	public int getNumeroCasa() {
+	public Integer getNumeroCasa() {
 		return numeroCasa;
 	}
 
-	public void setNumeroCasa(int numeroCasa) {
+	public void setNumeroCasa(Integer numeroCasa) {
 		this.numeroCasa = numeroCasa;
 	}
 
@@ -154,7 +156,7 @@ public class AtletaModel {
 		this.dataMatricula = dataMatricula;
 	}
 
-	public void setIdALuno(int idALuno) {
+	public void setIdALuno(Long idALuno) {
 		this.idALuno = idALuno;
 	}
 

@@ -80,7 +80,7 @@
 						class="caret"></b>
 					</a>
 					<ul class="dropdown-menu pull-right extended logout">
-						
+
 						<li class="eborder-top"><a href="#"><i
 								class="icon_profile"></i> Meus Dados</a></li>
 						<li><a href="documentation.html"><i class="icon_key_alt"></i>
@@ -152,43 +152,55 @@
 						<section class="panel">
 							<div class="panel-body">
 								<div class="form">
-									<form class="form-validate form-horizontal" id="feedback_form"
-										method="get" action="">
+									<form class="form-validate form-horizontal"
+										th:action="@{/atleta/novo}" th:object="${atletaModel}"
+										method="POST" >
 										<h4>
 											<b>Dados do Atleta</b>
 										</h4>
-										
-									
+
+										<div class="form-group ">
+											<label for="nomeCompleto" class="control-label col-lg-2"><b>Matricula
+													do Aluno *</b></label>
+											<div class="col-lg-10">
+												<input type="text" class="form-control"
+													th:field="*{matriculaAluno}"  />
+											</div>
+										</div>
+
 										<div class="form-group ">
 											<label for="nomeCompleto" class="control-label col-lg-2"><b>Nome
 													Completo *</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="nomeCompleto" name="nomeCompleto"
-																											required="required" />
+												<input type="text" class="form-control"
+													th:field="*{nomeAluno}"  />
 											</div>
 										</div>
 
 										<div class="form-group ">
-											<label for="nascimento" class="control-label col-lg-2"><b>Data Nascimento *</b></label>
+											<label for="nascimento" class="control-label col-lg-2"><b>Data
+													Nascimento *</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="nascimento" name="nascimento"
-																											required="required" />
+												<input type="text" class="form-control"
+													th:field="*{nascAluno}"  />
 											</div>
 										</div>
 
 										<div class="form-group ">
-											<label for="rg" class="control-label col-lg-2"><b>RG *</b></label>
+											<label for="rg" class="control-label col-lg-2"><b>RG
+													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="rg" name="rg"
-																									required="required" />
+												<input type="text" class="form-control" th:field="*{rg}"
+													 />
 											</div>
 										</div>
 
 										<div class="form-group ">
-											<label for="cpf" class="control-label col-lg-2"><b>CPF *</b></label>
+											<label for="cpf" class="control-label col-lg-2"><b>CPF
+													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="cpf" name="cpf"
-																									required="required" />
+												<input type="text" class="form-control" th:field="*{cpf}"
+													 />
 											</div>
 										</div>
 
@@ -197,18 +209,47 @@
 										</h4>
 
 										<div class="form-group ">
-											<label for="endereco" class="control-label col-lg-2"><b>Endereço *</b></label>
+											<label for="endereco" class="control-label col-lg-2"><b>Estado
+													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="endereco" name="endereco"
-																									required="required" />
+												<input type="text" class="form-control" th:field="*{estado}"
+													 />
 											</div>
 										</div>
 
 										<div class="form-group ">
-											<label for="numero" class="control-label col-lg-2"><b>Número *</b></label>
+											<label for="numero" class="control-label col-lg-2"><b>Cidade
+													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="numero" name="numero"
-																									required="required" />
+												<input type="text" class="form-control" th:field="*{cidade}"
+													/>
+											</div>
+										</div>
+
+										<div class="form-group ">
+											<label for="numero" class="control-label col-lg-2"><b>Bairro
+													*</b></label>
+											<div class="col-lg-10">
+												<input type="text" class="form-control" th:field="*{bairro}"
+													 />
+											</div>
+										</div>
+
+										<div class="form-group ">
+											<label for="numero" class="control-label col-lg-2"><b>Rua
+													*</b></label>
+											<div class="col-lg-10">
+												<input type="text" class="form-control" th:field="*{rua}"
+													/>
+											</div>
+										</div>
+
+										<div class="form-group ">
+											<label for="numero" class="control-label col-lg-2"><b>Número
+													*</b></label>
+											<div class="col-lg-10">
+												<input type="text" class="form-control"
+													th:field="*{numeroCasa}"/>
 											</div>
 										</div>
 
@@ -216,7 +257,8 @@
 										<div class="form-group ">
 											<label for="complemento" class="control-label col-lg-2"><b>Complemento</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="complemento" name="complemento" />
+												<input type="text" class="form-control"
+													th:field="*{complemento}"  />
 											</div>
 										</div>
 
@@ -224,25 +266,29 @@
 											<b>Contato</b>
 										</h4>
 										<div class="form-group ">
-											<label for="telefone" class="control-label col-lg-2"><b>Telefone *</b></label>
+											<label for="telefone" class="control-label col-lg-2"><b>Telefone
+													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="telefone" name="telefone"
-																									required="required" />
+												<input type="text" class="form-control"
+													th:field="*{telefoneCasa}"  />
 											</div>
 										</div>
 
 										<div class="form-group ">
 											<label for="celular" class="control-label col-lg-2"><b>Celular</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="celular" name="celular"/>
+												<input type="text" class="form-control"
+													th:field="*{telefoneCelular}" />
 											</div>
 										</div>
 
 
 										<div class="form-group ">
-											<label for="email" class="control-label col-lg-2"><b>E-mail *</b></label>
+											<label for="email" class="control-label col-lg-2"><b>Data da Matricula
+													*</b></label>
 											<div class="col-lg-10">
-												<input type="email" class="form-control" id="email" name="email" required="required"/>
+												<input type="text" class="form-control"
+													th:field="*{dataMatricula}" />
 											</div>
 										</div>
 

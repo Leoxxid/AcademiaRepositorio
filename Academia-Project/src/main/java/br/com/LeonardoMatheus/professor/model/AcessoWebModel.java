@@ -24,7 +24,9 @@ public class AcessoWebModel {
 
 	@Column(name = "ATIVACAO_ACESSO")
 	private String ativacao;
-
+	
+	// ===== GETTERS AND SETTERS
+	
 	public int getIdAcesso() {
 		return idAcesso;
 	}
