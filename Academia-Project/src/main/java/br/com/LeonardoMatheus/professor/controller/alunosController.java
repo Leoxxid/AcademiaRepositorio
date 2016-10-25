@@ -2,6 +2,8 @@ package br.com.LeonardoMatheus.professor.controller;
 
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.LeonardoMatheus.professor.model.AtletaModel;
+import br.com.LeonardoMatheus.professor.model.treinoAtleta.DiaExercicioModel;
 import br.com.LeonardoMatheus.professor.repository.Atletas;
+import br.com.LeonardoMatheus.professor.repository.DiaExercicio;
 import br.com.LeonardoMatheus.professor.service.AtletaService;
 
 @Controller
@@ -24,6 +28,9 @@ public class alunosController {
 
 	@Autowired
 	public Atletas atleta;
+	
+	@Autowired
+	public DiaExercicio d;
 
 	@Autowired
 	public AtletaService service;
@@ -38,6 +45,13 @@ public class alunosController {
 	// Cadastrar novo Atleta
 	@RequestMapping("/novo")
 	public String cadastrar(AtletaModel atletaModel) {
+		List <DiaExercicioModel> di = d.findAll();
+		
+		for(DiaExercicioModel dia : di){
+			System.out.println(dia.getDia().getDiaSemana());
+			
+		}
+		
 		return "layout/cadastraAtleta";
 	}
 
