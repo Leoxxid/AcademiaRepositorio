@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="PERIMETROS")
-public class Perimetros {
+public class PerimetrosModel {
 	
 	@Id
 	@Column(name="ID_PERIMETROS")
