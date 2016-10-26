@@ -11,7 +11,7 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<link rel="shortcut icon" th:href="@{/layoutimg/favicon.png}" />
 
-	<title>Cadastro | GymAdmin</title>
+	
 	
 	<!-- Bootstrap CSS -->
 	<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
@@ -47,6 +47,8 @@
 	<script th:src="@{/layout/js/html5shiv.js}"></script>
 	<script th:src="@{/layout/js/respond.min.js}"></script>
 	<script th:src="@{/layout/js/lte-ie7.js}"></script>
+	
+	<title>Cadastro | GymAdmin</title>
 
 </head>
 
@@ -96,44 +98,11 @@
 		</header>
 		<!--header end-->
 
-		<!--sidebar start-->
-		<aside>
-			<div id="sidebar" class="nav-collapse ">
-				<!-- sidebar menu start-->
-				<ul class="sidebar-menu">
-					<li><a href="{@/index}"> <i
-							class="icon_house_alt"></i> <span>Início</span>
-					</a></li>
-
-					<li><a class="" href="estatisticas.html"> <i
-							class="icon_piechart"></i> <span>Estatísticas</span>
-
-					</a></li>
-
-					<li class="sub-menu"><a href="javascript:;" class=""> <i
-							class="icon_desktop"></i> <span>Cadastros</span> <span
-							class="menu-arrow arrow_carrot-right"></span>
-					</a>
-						<ul class="sub">
-							<li class="active"><a class="" href="listaAletas.html">Atletas</a></li>
-							<li class=""><a class="" href="listaProfessores.html">Professores</a></li>
-						</ul></li>
-
-					<li class="sub-menu"><a href="javascript:;" class=""> <i
-							class="icon_documents_alt"></i> <span>Mais</span> <span
-							class="menu-arrow arrow_carrot-right"></span>
-					</a>
-						<ul class="sub">
-							<li><a class="" href="profile.html">Meus Dados</a></li>
-							<li><a class="" href="login.html"><span>Sair</span></a></li>
-						</ul></li>
-
-				</ul>
-				<!-- sidebar menu end-->
-			</div>
-		</aside>
-		<!--sidebar en
-	  d-->
+		<!--fragment sidebar start-->
+		
+		<div th:replace="fragments/sidebarMenu::sidebarMenu"></div>
+		
+		<!--fragment sidebar end-->
 
 		<!--main content start-->
 		<section id="main-content">
