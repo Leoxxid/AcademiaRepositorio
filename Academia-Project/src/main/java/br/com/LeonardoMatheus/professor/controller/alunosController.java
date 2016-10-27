@@ -28,9 +28,6 @@ public class alunosController {
 
 	@Autowired
 	public Atletas atleta;
-	
-	@Autowired
-	public DiaExercicio d;
 
 	@Autowired
 	public AtletaService service;
@@ -45,13 +42,6 @@ public class alunosController {
 	// Cadastrar novo Atleta
 	@RequestMapping("/novo")
 	public String cadastrar(AtletaModel atletaModel) {
-		List <DiaExercicioModel> di = d.findAll();
-		
-		for(DiaExercicioModel dia : di){
-			System.out.println(dia.getDia().getDiaSemana());
-			
-		}
-		
 		return "layout/cadastraAtleta";
 	}
 
