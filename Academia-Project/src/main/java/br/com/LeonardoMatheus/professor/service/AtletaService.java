@@ -11,7 +11,7 @@ public class AtletaService {
 	@Autowired
 	public Atletas atleta; 
 	
-	public void save(AtletaModel atletaM){
-		this.atleta.save(atletaM);
+	public void save(AtletaModel atletaModel){
+		this.atleta.save(atletaModel);
 	}
 }

@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name = "EXERCICIO")
@@ -18,12 +21,17 @@ public class ExercicioModel {
 	@Column(name = "ID_EXERCICIO")
 	private Long idExercicio;
 
+	@NotBlank(message = "O nome do exercício deve ser preenchido!")
+	@Size(min = 5, max = 25, message = "O nome deve conter de 5 a 25 caracteres!")
 	@Column(name = "NOME_EXERCICIO")
 	private String nomeExercicio;
 
+	@NotBlank(message = "A categoria do exercício deve ser preenchida!")
+	@Size(max = 30, message = "A categoria do exercício deve conter no máximo 30 caracteres!")
 	@Column(name = "CATEGORIA")
 	private String categoria;
 
+	@Size(max = 500, message = "A descrição do exercício não pode exceder 500 caracteres!")
 	@Column(name = "DESCIRCAO")
 	private String descricao;
 

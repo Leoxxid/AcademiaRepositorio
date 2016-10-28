@@ -20,13 +20,13 @@ import br.com.LeonardoMatheus.professor.model.AtletaModel;
 public class DiaModel {
 
 	@Id
-	@Column(name = "ID_DIA")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID_DIA")
 	private Long idDia;
 
 	@Column(name = "DIA_SEMANA")
 	private String diaSemana;
-	
+
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "dia")
 	private List<DiaExercicioModel> dia;
 
@@ -53,6 +53,5 @@ public class DiaModel {
 	public void setDia(List<DiaExercicioModel> dia) {
 		this.dia = dia;
 	}
-
 
 }
