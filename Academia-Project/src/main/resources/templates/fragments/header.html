@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+
+
+<div th:fragment="header">
+	<div class="toggle-nav">
+				<div class="icon-reorder tooltips"
+					data-original-title="Toggle Navigation" data-placement="bottom">
+					<i class="icon_menu"></i>
+				</div>
+			</div>
+
+			<!--logo start-->
+			<a th:href="@{/index.html}" class="logo">Gym <span class="lite">Admin</span></a>
+			<!--logo end-->
+
+
+
+			<div class="top-nav notification-row">
+				<!-- user login dropdown start-->
+				<div class="dropdown">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
+						class="profile-ava"> <img alt=""
+							th:src="@{/layout/img/avatar1_small.jpg}" />
+					</span> <span class="username" th:text="${#authentication.name}"></span> <b
+						class="caret"></b>
+					</a>
+					<ul class="dropdown-menu pull-right extended logout">
+
+						<li class="eborder-top"><a href="#"><i
+								class="icon_profile"></i> Meus Dados</a></li>
+						<li><a href="documentation.html"><i class="icon_key_alt"></i>
+								Ajuda</a></li>
+						<li><a th:href="@{/logout}"><i class="icon_log_out"></i>
+								Sair</a></li>
+					</ul>
+				</div>
+				<!-- user login dropdown end -->
+
+
+			</div>
+  	</div>
+  </html>
