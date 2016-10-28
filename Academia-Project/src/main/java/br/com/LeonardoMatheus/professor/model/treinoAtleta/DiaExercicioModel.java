@@ -17,12 +17,24 @@ public class DiaExercicioModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_DIA_X_EXERCICIo")
 	private Long idDiaExercicio;
-	@ManyToOne 
-	@JoinColumn(name="DIA_TREINO")
+	
+	@ManyToOne
+	@JoinColumn(name = "DIA_TREINO")
 	private DiaModel dia;
 
+	@ManyToOne
+	@JoinColumn(name = "EXERCICIo")
+	private ExercicioModel exercicio;
 
 	// ===== GETTERS AND SETTERS
+
+	public ExercicioModel getExercicio() {
+		return exercicio;
+	}
+
+	public void setExercicio(ExercicioModel exercicio) {
+		this.exercicio = exercicio;
+	}
 
 	public DiaModel getDia() {
 		return dia;
@@ -39,6 +51,5 @@ public class DiaExercicioModel {
 	public void setIdDiaExercicio(Long idDiaExercicio) {
 		this.idDiaExercicio = idDiaExercicio;
 	}
-
 
 }
