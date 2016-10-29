@@ -1,4 +1,4 @@
-package br.com.LeonardoMatheus;
+package br.com.LeonardoMatheus.config;
 
 
 import org.springframework.context.annotation.Configuration;
@@ -32,8 +32,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http
 				.authorizeRequests()
-						.antMatchers("/atleta/novo","/atleta/todos","/exercicio/novo").permitAll()
-						.antMatchers().hasRole("CADASTRAR_ATLETA")
+						.antMatchers("/atleta/novo","/atleta/todos","/exercicio/novo","/inicio").permitAll()
+						.antMatchers().hasRole("ADMIN")
 							.anyRequest().authenticated()
 						
 						.and()

@@ -1,4 +1,4 @@
-package br.com.LeonardoMatheus.controller;
+package br.com.LeonardoMatheus.config;
 
 import org.apache.catalina.User;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

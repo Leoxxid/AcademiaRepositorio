@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description"
-		content="Creative - Bootstrap 3 Responsive Admin Template" />
-	<meta name="author" content="GeeksLabs" />
-	<meta name="keyword"
-		content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<link rel="shortcut icon" th:href="@{/layoutimg/favicon.png}" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Creative - Bootstrap 3 Responsive Admin Template" />
+<meta name="author" content="GeeksLabs" />
+<meta name="keyword"
+	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" th:href="@{/layoutimg/favicon.png}" />
 
-	
-	
-	<!-- Bootstrap CSS -->
-	<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
-	<!-- bootstrap theme -->
-	<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
-	<!--external css-->
-	<!-- font icon -->
-	<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
-	<!-- full calendar css-->
-	<link
-		th:href="@{/layout/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css}"
-		rel="stylesheet" />
-	<link
-		th:href="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.css}"
-		rel="stylesheet" />
-	<!-- easy pie chart-->
-	<link
-		th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
-		rel="stylesheet" type="text/css" media="screen" />
-	<!-- owl carousel -->
-	<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
-		type="text/css}" />
-	<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
-	<!-- Custom styles -->
-	<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
-	<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
-	<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
-	
-	<script th:src="@{/layout/js/html5shiv.js}"></script>
-	<script th:src="@{/layout/js/respond.min.js}"></script>
-	<script th:src="@{/layout/js/lte-ie7.js}"></script>
-	
-	<title>Cadastro | GymAdmin</title>
+
+
+<!-- Bootstrap CSS -->
+<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
+<!-- bootstrap theme -->
+<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
+<!--external css-->
+<!-- font icon -->
+<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
+<!-- full calendar css-->
+<link
+	th:href="@{/layout/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css}"
+	rel="stylesheet" />
+<link
+	th:href="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.css}"
+	rel="stylesheet" />
+<!-- easy pie chart-->
+<link
+	th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
+	rel="stylesheet" type="text/css" media="screen" />
+<!-- owl carousel -->
+<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
+	type="text/css}" />
+<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+<!-- Custom styles -->
+<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
+<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
+<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
+
+<script th:src="@{/layout/js/html5shiv.js}"></script>
+<script th:src="@{/layout/js/respond.min.js}"></script>
+<script th:src="@{/layout/js/lte-ie7.js}"></script>
+
+<title>Cadastro | GymAdmin</title>
 
 </head>
 
@@ -99,9 +99,9 @@
 		<!--header end-->
 
 		<!--fragment sidebar start-->
-		
+
 		<div th:replace="fragments/sidebarMenu::sidebarMenu"></div>
-		
+
 		<!--fragment sidebar end-->
 
 		<!--main content start-->
@@ -123,7 +123,7 @@
 								<div class="form">
 									<form class="form-validate form-horizontal"
 										th:action="@{/atleta/novo}" th:object="${atletaModel}"
-										method="POST" >
+										method="POST">
 										<h4>
 											<b>Dados do Atleta</b>
 										</h4>
@@ -133,7 +133,7 @@
 													do Aluno *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{matriculaAluno}"  />
+													th:field="*{matriculaAluno}" />
 											</div>
 										</div>
 
@@ -142,7 +142,7 @@
 													Completo *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{nomeAluno}"  />
+													th:field="*{nomeAluno}" />
 											</div>
 										</div>
 
@@ -151,7 +151,7 @@
 													Nascimento *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{nascAluno}"  />
+													th:field="*{nascAluno}" />
 											</div>
 										</div>
 
@@ -159,8 +159,7 @@
 											<label for="rg" class="control-label col-lg-2"><b>RG
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{rg}"
-													 />
+												<input type="text" class="form-control" th:field="*{rg}" />
 											</div>
 										</div>
 
@@ -168,8 +167,7 @@
 											<label for="cpf" class="control-label col-lg-2"><b>CPF
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{cpf}"
-													 />
+												<input type="text" class="form-control" th:field="*{cpf}" />
 											</div>
 										</div>
 
@@ -181,8 +179,7 @@
 											<label for="endereco" class="control-label col-lg-2"><b>Estado
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{estado}"
-													 />
+												<input type="text" class="form-control" th:field="*{estado}" />
 											</div>
 										</div>
 
@@ -190,8 +187,7 @@
 											<label for="numero" class="control-label col-lg-2"><b>Cidade
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{cidade}"
-													/>
+												<input type="text" class="form-control" th:field="*{cidade}" />
 											</div>
 										</div>
 
@@ -199,8 +195,7 @@
 											<label for="numero" class="control-label col-lg-2"><b>Bairro
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{bairro}"
-													 />
+												<input type="text" class="form-control" th:field="*{bairro}" />
 											</div>
 										</div>
 
@@ -208,8 +203,7 @@
 											<label for="numero" class="control-label col-lg-2"><b>Rua
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{rua}"
-													/>
+												<input type="text" class="form-control" th:field="*{rua}" />
 											</div>
 										</div>
 
@@ -218,7 +212,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{numeroCasa}"/>
+													th:field="*{numeroCasa}" />
 											</div>
 										</div>
 
@@ -227,7 +221,7 @@
 											<label for="complemento" class="control-label col-lg-2"><b>Complemento</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{complemento}"  />
+													th:field="*{complemento}" />
 											</div>
 										</div>
 
@@ -239,7 +233,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{telefoneCasa}"  />
+													th:field="*{telefoneCasa}" />
 											</div>
 										</div>
 
@@ -253,11 +247,13 @@
 
 
 										<div class="form-group ">
-											<label for="email" class="control-label col-lg-2"><b>Data da Matricula
-													*</b></label>
+											<label for="email" class="control-label col-lg-2"><b>Data
+													da Matricula *</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control"
-													th:field="*{dataMatricula}" />
+												<input class="form-control" type="text" id="dataMatricula"
+													name="dataMatricula"
+													th:value="${#calendars.format(#calendars.createNow(), 'yyyy-MM-dd')}"
+													disabled="disabled" />
 											</div>
 										</div>
 
