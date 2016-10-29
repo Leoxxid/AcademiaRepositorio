@@ -53,42 +53,11 @@
 	<section id="container" class="">
 
 
-		<header class="header dark-bg">
-			<div class="toggle-nav">
-				<div class="icon-reorder tooltips"
-					data-original-title="Toggle Navigation" data-placement="bottom">
-					<i class="icon_menu"></i>
-				</div>
-			</div>
-
-			<!--logo start-->
-			<a th:href="@{/index}" class="logo">Gym <span class="lite">Admin</span></a>
-			<!--logo end-->
-
-
-
-			<div class="top-nav notification-row">
-				<!-- user login dropdown start-->
-				<div class="dropdown">
-					<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
-						class="profile-ava"> <img alt=""
-							th:src="@{/layout/img/avatar1_small.jpg}" />
-					</span> <span class="username">Jenifer Smith</span> <b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu extended logout">
-						<li class="eborder-top"><a href="#"><i
-								class="icon_profile"></i> Meus Dados</a></li>
-						<li><a th:href="@{/documentation}"><i
-								class="icon_key_alt"></i> Ajuda</a></li>
-						<li><a th:href="@{/login}"><i class="icon_log_out"></i>
-								Sair</a></li>
-					</ul>
-				</div>
-				<!-- user login dropdown end -->
-				<!-- notificatoin dropdown end-->
-			</div>
-		</header>
-		<!--header end-->
+		<!--fragment header start-->
+		
+		<div th:replace="fragments/header::header"></div>
+		
+		<!--fragment header end-->
 
 		<!--fragment sidebar start-->
 
