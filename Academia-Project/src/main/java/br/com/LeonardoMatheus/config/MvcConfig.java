@@ -1,4 +1,4 @@
-package br.com.LeonardoMatheus.controller;
+package br.com.LeonardoMatheus.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -8,7 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class MvcConfig extends WebMvcConfigurerAdapter{
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry){
-		registry.addRedirectViewController("/", "/atleta/novo");
+		registry.addRedirectViewController("/", "/inicio");
+		registry.addViewController("/inicio").setViewName("/layout/index");
 	}
 
 }

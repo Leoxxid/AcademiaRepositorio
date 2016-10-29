@@ -1,285 +1,294 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="utf-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <link rel="shortcut icon" th:href="@{/img/favicon.png}">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Creative - Bootstrap 3 Responsive Admin Template" />
+<meta name="author" content="GeeksLabs" />
+<meta name="keyword"
+	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" th:href="@{/layout/img/favicon.png}" />
 
-    <title>Index | GymAdmin</title>
+<title>Index | GymAdmin</title>
 
-    <!-- Bootstrap CSS -->    
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
-    <!-- bootstrap theme -->
-    <link th:href="@{/css/bootstrap-theme.css}" rel="stylesheet">
-    <!--external css-->
-    <!-- font icon -->
-    <link th:href="@{/css/elegant-icons-style.css}" rel="stylesheet" />
-    <link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />    
-    <!-- easy pie chart-->
-    <link th:href="@{/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}" rel="stylesheet" type="text/css" media="screen"/>
-    <!-- owl carousel -->
-    <link rel="stylesheet" th:href="@{/css/owl.carousel.css}" type="text/css">
-	<link th:href="@{/css/jquery-jvectormap-1.2.2.css}" rel="stylesheet">
-    <!-- Custom styles -->
-	<link rel="stylesheet" th:href="@{/css/fullcalendar.css}">
-	<link th:href="@{/css/widgets.css}" rel="stylesheet">
-    <link th:href="@{/css/style.css}" rel="stylesheet">
-    <link th:href="@{/css/style-responsive.css}" rel="stylesheet" />
-	<link th:href="@{/css/xcharts.min.css}" rel=" stylesheet">	
-	<link th:href="@{/css/jquery-ui-1.10.4.min.css}" rel="stylesheet">
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
-    <![endif]-->
-	
+<!-- Bootstrap CSS -->
+<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
+<!-- bootstrap theme -->
+<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
+<!--external css-->
+<!-- font icon -->
+<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
+<!-- easy pie chart-->
+<link
+	th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
+	rel="stylesheet" type="text/css" media="screen" />
+<!-- owl carousel -->
+<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
+	type="text/css" />
+<link th:href="@{/layout/css/jquery-jvectormap-1.2.2.css}"
+	rel="stylesheet" />
+
+<!-- Custom styles -->
+<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
+<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
+<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+
+<script th:src="@{/layout/js/html5shiv.js}"></script>
+<script th:src="@{/layout/js/respond.min.js}"></script>
+<script th:src="@{/layout/js/lte-ie7.js}"></script>
+
+
 </head>
-  
 
-  <body>
-  <!-- container section start -->
-  <section id="container" class="">
-     
-      
-      <header class="header dark-bg">
-            <div class="toggle-nav">
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-            </div>
 
-            <!--logo start-->
-            <a th:href="@{/index}" class="logo">Gym <span class="lite">Admin</span></a>
-            <!--logo end-->
+<body>
+	<!-- container section start -->
+	<section id="container" class="">
 
-            
 
-            <div class="top-nav notification-row">                
-                    <!-- user login dropdown start-->
-                    <div class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" th:src="@{/img/avatar1_small.jpg}">
-                            </span>
-                            <span class="username">Jenifer Smith</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                           	<li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> Meus Dados</a>
-                            </li>
-							<li>
-                                <a th:href="@{/documentation}"><i class="icon_key_alt"></i> Ajuda</a>
-                            </li>
-                            <li>
-                                <a th:href="@{/login}"><i class="icon_log_out"></i> Sair</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- user login dropdown end -->
-                <!-- notificatoin dropdown end-->
-            </div>
-      </header>      
-      <!--header end-->
-
-     	 <!--fragment sidebar start-->
-		
-		<div th:replace="fragments/sidebarMenu::sidebarMenu"></div>
-		
-		<!--fragment sidebar end-->
-      
-      <!--main content start-->
-      <section id="main-content">
-          <section class="wrapper">            
-              <!--overview start-->
-			  <div class="row">
-				<div class="col-lg-12">
-					<h3 class="page-header" align="left"><i class="fa fa-laptop"></i> Início</h3>
+		<header class="header dark-bg">
+			<div class="toggle-nav">
+				<div class="icon-reorder tooltips"
+					data-original-title="Toggle Navigation" data-placement="bottom">
+					<i class="icon_menu"></i>
 				</div>
 			</div>
-            
-			
-            <div class="row" align="center" >
-			
-				<a th:href="@{/cadastraAtleta}">
-					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-						<div class="info-box blue-bg">
-							<h1 align="center">Cadastrar Atleta</h1>
-						</div><!--/.info-box-->			
-					</div><!--/.col-->
-				</a>
-				
-				<a th:href="@{/consultarAtleta}">
-					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-						<div class="info-box red-bg">
-							<h1 align="center">Consultar Atleta</h1>						
-						</div><!--/.info-box-->			
-					</div><!--/.col-->	
-				</a>
-				
-				<a th:href="@{/avaliaAtleta}">
-					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-						<div class="info-box green-bg">
-							<h1 align="center">Avaliação<br/><br/></h1>					
-						</div><!--/.info-box-->			
-					</div><!--/.col-->
-				</a>
-				
-				
-			</div><!--/.row-->
-			
-			<h3><b>Agenda de Avaliações</b></h3>
-				<br/>
-				<br/>
-				<br/>
-				<div id="calendar" style="width:50%; display:block; margin:0 auto" ></div>
-				
-          </section>
-      </section>
-      <!--main content end-->
-  </section>
-  <!-- container section start -->
 
-    <!-- javascripts -->
-    <script th:src="@{/js/jquery.js}"></script>
-	<script th:src="@{/js/jquery-ui-1.10.4.min.js}"></script>
-    <script th:src="@{/js/jquery-1.8.3.min.js}"></script>
-    <script type="text/javascript" th:src="@{/js/jquery-ui-1.9.2.custom.min.js}"></script>
-    <!-- bootstrap -->
-    <script th:src="@{/js/bootstrap.min.js}"></script>
-    <!-- nice scroll -->
-    <script th:src="@{/js/jquery.scrollTo.min.js}"></script>
-    <script th:src="@{/js/jquery.nicescroll.js}" type="text/javascript"></script>
-    <!-- charts scripts -->
-    <script th:src="@{/assets/jquery-knob/js/jquery.knob.js"></script>
-    <script th:src="@{/js/jquery.sparkline.js}" type="text/javascript"></script>
-    <script th:src="@{/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js}"></script>
-    <script th:src="@{/js/owl.carousel.js}" ></script>
-    <!-- jQuery full calendar -->
-    <script th:src="@{/js/fullcalendar.min.js}"></script> <!-- Full Google Calendar - Calendar -->
-	<script th:src="@{/assets/fullcalendar/fullcalendar/fullcalendar.js}"></script>
-    <!--script for this page only-->
-	<script th:src="@{/js/jquery.rateit.min.js}"></script>
-    <!-- custom select -->
-    <script th:src="@{/js/jquery.customSelect.min.js}" ></script>
-	<script th:src="@{/assets/chart-master/Chart.js}"></script>
-   
-    <!--custome script for all page-->
-    <script th:src="@{/js/scripts.js}"></script>
-    <!-- custom script for this page-->
-    <script th:src="@{/js/sparkline-chart.js}"></script>
-    <script th:src="@{/js/easy-pie-chart.js}"></script>
-	<script th:src="@{/js/jquery-jvectormap-1.2.2.min.js}"></script>
-	<script th:src="@{/js/jquery-jvectormap-world-mill-en.js}"></script>
-	<script th:src="@{/js/xcharts.min.js}"></script>
-	<script th:src="@{/js/jquery.autosize.min.js}"></script>
-	<script th:src="@{/js/jquery.placeholder.min.js}"></script>
-	<script th:src="@{/js/gdp-data.js}"></script>	
-	<script th:src="@{/js/morris.min.js}"></script>
-	<script th:src="@{/js/sparklines.js}"></script>	
-	<script th:src="@{/js/charts.js}"></script>
-	<script th:src="@{/js/jquery.slimscroll.min.js}"></script>
-	<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
-  <script>
+			<!--logo start-->
+			<a th:href="@{/index}" class="logo">Gym <span class="lite">Admin</span></a>
+			<!--logo end-->
 
-      //knob
-      $(function() {
-        $(".knob").knob({
-          'draw' : function () { 
-            $(this.i).val(this.cv + '%')
-          }
-        })
-      });
 
-      //carousel
-      $(document).ready(function() {
-          $("#owl-slider").owlCarousel({
-              navigation : true,
-              slideSpeed : 300,
-              paginationSpeed : 400,
-              singleItem : true
 
-          });
-      });
+			<div class="top-nav notification-row">
+				<!-- user login dropdown start-->
+				<div class="dropdown">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
+						class="profile-ava"> <img alt=""
+							th:src="@{/layout/img/avatar1_small.jpg}" />
+					</span> <span class="username">Jenifer Smith</span> <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu extended logout">
+						<li class="eborder-top"><a href="#"><i
+								class="icon_profile"></i> Meus Dados</a></li>
+						<li><a th:href="@{/documentation}"><i
+								class="icon_key_alt"></i> Ajuda</a></li>
+						<li><a th:href="@{/login}"><i class="icon_log_out"></i>
+								Sair</a></li>
+					</ul>
+				</div>
+				<!-- user login dropdown end -->
+				<!-- notificatoin dropdown end-->
+			</div>
+		</header>
+		<!--header end-->
 
-      //custom select box
+		<!--fragment sidebar start-->
 
-      $(function(){
-          $('select.styled').customSelect();
-      });
-	  
-	  /* ---------- Map ---------- */
-	$(function(){
-	  $('#map').vectorMap({
-	    map: 'world_mill_en',
-	    series: {
-	      regions: [{
-	        values: gdpData,
-	        scale: ['#000', '#000'],
-	        normalizeFunction: 'polynomial'
-	      }]
-	    },
-		backgroundColor: '#eef3f7',
-	    onLabelShow: function(e, el, code){
-	      el.html(el.html()+' (GDP - '+gdpData[code]+')');
-	    }
-	  });
-	});
-	
-	//calendário
-		
-		$(document).ready(function() {
-	
-		var date = new Date();
-		var d = date.getDate();
-		var m = date.getMonth();
-		var y = date.getFullYear();
-		
-		
-		var calendar = $('#calendar').fullCalendar({
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay'
-			},
-			selectable: true,
-			selectHelper: true,
-			select: function(start, end, allDay) {
-				var title = prompt('Evento:');
-				if (title) {
-					calendar.fullCalendar('renderEvent',
-						{
-							title: title,
-							start: start,
-							end: end,
-							allDay: allDay
-						},
-						true // make the event "stick"
-					);
+		<div th:replace="fragments/sidebarMenu::sidebarMenu"></div>
+
+		<!--fragment sidebar end-->
+
+		<!--main content start-->
+		<section id="main-content">
+			<section class="wrapper">
+				<!--overview start-->
+				<div class="row">
+					<div class="col-lg-12">
+						<h3 class="page-header" align="left">
+							<i class="fa fa-laptop">Seja bem vindo </i> <i
+								th:text="${#authentication.name}"></i>
+								<br/><br/>
+						</h3>
+					</div>
+				</div>
+
+
+				<div class="row" align="center">
+
+					<a th:href="@{/cadastraAtleta}">
+						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+							<div class="info-box blue-bg">
+								<h1 align="center">Cadastrar Atleta</h1>
+							</div>
+							<!--/.info-box-->
+						</div> <!--/.col-->
+					</a> <a th:href="@{/consultarAtleta}">
+						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+							<div class="info-box red-bg">
+								<h1 align="center">Consultar Atleta</h1>
+							</div>
+							<!--/.info-box-->
+						</div> <!--/.col-->
+					</a> <a th:href="@{/avaliaAtleta}">
+						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+							<div class="info-box green-bg">
+								<h1 align="center">
+									Avaliação<br /> <br />
+								</h1>
+							</div>
+							<!--/.info-box-->
+						</div> <!--/.col-->
+					</a>
+
+
+				</div>
+				<!--/.row-->
+
+				<h3>
+					<b>Agenda de Avaliações</b>
+				</h3>
+				<br /> <br /> <br />
+				<div id="calendar"
+					style="width: 50%; display: block; margin: 0 auto"></div>
+
+			</section>
+		</section>
+		<!--main content end-->
+	</section>
+	<!-- container section start -->
+
+	<!-- javascripts -->
+	<script th:src="@{/layout/js/jquery.js}"></script>
+	<script th:src="@{/layout/js/jquery-ui-1.10.4.min.js}"></script>
+	<script th:src="@{/layout/js/jquery-1.8.3.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/layout/js/jquery-ui-1.9.2.custom.min.js}"></script>
+	<!-- bootstrap -->
+	<script th:src="@{/layout/js/bootstrap.min.js}"></script>
+	<!-- nice scroll -->
+	<script th:src="@{/layout/js/jquery.scrollTo.min.js}"></script>
+	<script th:src="@{/layout/js/jquery.nicescroll.js}"
+		type="text/javascript"></script>
+	<!-- charts scripts -->
+	<script th:src="@{/layout/assets/jquery-knob/js/jquery.knob.js}"></script>
+	<script th:src="@{/layout/js/jquery.sparkline.js}"
+		type="text/javascript"></script>
+	<script
+		th:src="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js}"></script>
+	<script th:src="@{/layout/js/owl.carousel.js}"></script>
+	<!-- jQuery full calendar -->
+	<script th:src="@{/layout/js/fullcalendar.min.js}"></script>
+	<!-- Full Google Calendar - Calendar -->
+	<script
+		th:src="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.js}"></script>
+	<!--script for this page only-->
+	<script th:src="@{/layout/js/jquery.rateit.min.js}"></script>
+	<!-- custom select -->
+	<script th:src="@{/layout/js/jquery.customSelect.min.js}"></script>
+	<script th:src="@{/layout/assets/chart-master/Chart.js}"></script>
+
+	<!--custome script for all page-->
+	<script th:src="@{/layout/js/scripts.js}"></script>
+	<!-- custom script for this page-->
+	<script th:src="@{/layout/js/sparkline-chart.js}"></script>
+	<script th:src="@{/layout/js/easy-pie-chart.js}"></script>
+	<script th:src="@{/layout/js/jquery-jvectormap-1.2.2.min.js}"></script>
+	<script th:src="@{/layout/js/jquery-jvectormap-world-mill-en.js}"></script>
+	<script th:src="@{/layout/js/xcharts.min.js}"></script>
+	<script th:src="@{/layout/js/jquery.autosize.min.js}"></script>
+	<script th:src="@{/layout/js/jquery.placeholder.min.js}"></script>
+	<script th:src="@{/layout/js/gdp-data.js}"></script>
+	<script th:src="@{/layout/js/morris.min.js}"></script>
+	<script th:src="@{/layout/js/sparklines.js}"></script>
+	<script th:src="@{/layout/js/charts.js}"></script>
+	<script th:src="@{/layout/js/jquery.slimscroll.min.js}"></script>
+	<script th:src="@{/layout/js/bootstrap-datepicker.min.js}"></script>
+	<script>
+		//knob
+		$(function() {
+			$(".knob").knob({
+				'draw' : function() {
+					$(this.i).val(this.cv + '%')
 				}
-				calendar.fullCalendar('unselect');
-			},
-			editable: true,
-			events: [
-				{
-					title: 'Long Event',
-					start: new Date(y, m, d-5),
-					end: new Date(y, m, d-2)
-				}
-			]
+			})
 		});
-		
-	});
+
+		//carousel
+		$(document).ready(function() {
+			$("#owl-slider").owlCarousel({
+				navigation : true,
+				slideSpeed : 300,
+				paginationSpeed : 400,
+				singleItem : true
+
+			});
+		});
+
+		//custom select box
+
+		$(function() {
+			$('select.styled').customSelect();
+		});
+
+		/* ---------- Map ---------- */
+		$(function() {
+			$('#map').vectorMap({
+				map : 'world_mill_en',
+				series : {
+					regions : [ {
+						values : gdpData,
+						scale : [ '#000', '#000' ],
+						normalizeFunction : 'polynomial'
+					} ]
+				},
+				backgroundColor : '#eef3f7',
+				onLabelShow : function(e, el, code) {
+					el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+				}
+			});
+		});
+
+		//calendário
+
+		$(document).ready(function() {
+
+			var date = new Date();
+			var d = date.getDate();
+			var m = date.getMonth();
+			var y = date.getFullYear();
+
+			var calendar = $('#calendar').fullCalendar({
+				header : {
+					left : 'prev,next today',
+					center : 'title',
+					right : 'month,agendaWeek,agendaDay'
+				},
+				selectable : true,
+				selectHelper : true,
+				select : function(start, end, allDay) {
+					var title = prompt('Evento:');
+					if (title) {
+						calendar.fullCalendar('renderEvent', {
+							title : title,
+							start : start,
+							end : end,
+							allDay : allDay
+						}, true // make the event "stick"
+						);
+					}
+					calendar.fullCalendar('unselect');
+				},
+				editable : true,
+				events : [ {
+					title : 'Long Event',
+					start : new Date(y, m, d - 5),
+					end : new Date(y, m, d - 2)
+				} ]
+			});
+
+		});
+	</script>
 
 
+</body>
 
-  </script>
-  
- 
-  </body>
-  
 
 </html>
