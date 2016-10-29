@@ -250,10 +250,11 @@
 											<label for="email" class="control-label col-lg-2"><b>Data
 													da Matricula *</b></label>
 											<div class="col-lg-10">
-												<input class="form-control" type="text" id="dataMatricula"
+												<input class="form-control" type="text"
+													th:attr="value = ${#calendars.format(#calendars.createNow(), 'yyyy-MM-dd')}"
+													id="dataMatricula"
 													name="dataMatricula"
-													th:value="${#calendars.format(#calendars.createNow(), 'yyyy-MM-dd')}"
-													disabled="disabled" />
+													 />
 											</div>
 										</div>
 
