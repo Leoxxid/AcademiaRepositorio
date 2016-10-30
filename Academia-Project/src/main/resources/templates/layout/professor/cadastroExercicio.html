@@ -116,8 +116,7 @@
 												<div class="form-group has-error text-left">
 													<label th:if="${#fields.hasErrors('nomeExercicio')}"
 														th:errors="*{nomeExercicio}"
-														class="control-label col-lg-2"
-														for="inputError" />
+														class="control-label col-lg-2" for="inputError" />
 												</div>
 											</div>
 										</div>
@@ -190,6 +189,10 @@
 										id="txtColuna3"></td>
 									<td><a class="btn btn-primary btn-sm"
 										title="Bootstrap 3 themes generator">Ver Dados</a></td>
+								</tr>
+								</tr>
+								<tr th:if="${exercicios.empty}">
+									<td colspan="3">Nenhum exercício está cadastrado</td>
 								</tr>
 
 							</tbody>

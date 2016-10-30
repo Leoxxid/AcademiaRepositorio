@@ -37,36 +37,46 @@
 	type="text/css}" />
 <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
 
-  <!-- Bootstrap Core CSS -->
-    <link th:href="@{/layout/bower_components/bootstrap/dist/css/bootstrap.css}" rel="stylesheet"/>
+<!-- Bootstrap Core CSS -->
+<link
+	th:href="@{/layout/bower_components/bootstrap/dist/css/bootstrap.css}"
+	rel="stylesheet" />
 
-    <!-- MetisMenu CSS -->
-    <link th:href="@{/layout/bower_components/metisMenu/dist/metisMenu.min.css}" rel="stylesheet"/>
+<!-- MetisMenu CSS -->
+<link
+	th:href="@{/layout/bower_components/metisMenu/dist/metisMenu.min.css}"
+	rel="stylesheet" />
 
 <!-- DataTables CSS -->
-    <link th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}" rel="stylesheet"/>
+<link
+	th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}"
+	rel="stylesheet" />
 
-    <!-- DataTables Responsive CSS -->
-    <link th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}" rel="stylesheet"/>
-    
-     <!-- Custom CSS -->
-    <link th:href="@{/layout/dist/css/sb-admin-2.css}" rel="stylesheet" />
+<!-- DataTables Responsive CSS -->
+<link
+	th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}"
+	rel="stylesheet" />
 
-    <!-- Custom Fonts -->
-    <link th:href="@{/layout/bower_components/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
-    
+<!-- Custom CSS -->
+<link th:href="@{/layout/dist/css/sb-admin-2.css}" rel="stylesheet" />
+
+<!-- Custom Fonts -->
+<link
+	th:href="@{/layout/bower_components/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet" type="text/css" />
+
 <!-- Custom styles -->
 <link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
 <link th:href="@{/layout/css/style.css}" rel="stylesheet" />
 <link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
 <link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
 <link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
- <link th:href="@{layout/css/bootstrap.min.css}" rel="stylesheet" />
-    <!--external css-->
-    <!-- font icon -->
-    <link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
-    <link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
-    <!-- owl carousel -->
+<link th:href="@{layout/css/bootstrap.min.css}" rel="stylesheet" />
+<!--external css-->
+<!-- font icon -->
+<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
+<!-- owl carousel -->
 
 <script th:src="@{/layout/js/html5shiv.js}"></script>
 <script th:src="@{/layout/js/respond.min.js}"></script>
@@ -76,106 +86,110 @@
 
 <body>
 
-    <!-- container section start -->
+	<!-- container section start -->
 	<section id="container" class="">
 
 
 		<!--fragment header start-->
-		
+
 		<div th:replace="fragments/header::header"></div>
-		
-		<!--fragment header end-->     
-		</section>
-		<!--header end-->
 
-		<!--fragment sidebar start-->
-		
-		<div th:replace="fragments/sidebarMenu::sidebarMenu"></div>
-		
-		<!--fragment sidebar end-->
-		
-		
+		<!--fragment header end-->
+	</section>
+	<!--header end-->
 
-		<!--main content start-->
-		<section id="main-content">
-			<section class="wrapper">
-				<!--overview start-->
-				<div class="row">
-					<div class="col-lg-12">
-						<h3 class="page-header">
-							<i class="fa fa-search"></i> Consultar Atletas
-						</h3>
-					</div>
+	<!--fragment sidebar start-->
+
+	<div th:replace="fragments/sidebarMenu::sidebarMenu"></div>
+
+	<!--fragment sidebar end-->
+
+
+
+	<!--main content start-->
+	<section id="main-content">
+		<section class="wrapper">
+			<!--overview start-->
+			<div class="row">
+				<div class="col-lg-12">
+					<h3 class="page-header">
+						<i class="fa fa-search"></i> Consultar Atletas
+					</h3>
+				</div>
+			</div>
+
+			<div align="center">
+				<div class="dataTable_wrapper">
+					<table class="table table-responsive" id="dataTables-example">
+						<thead>
+							<tr>
+								<th>Matrícula</th>
+								<th>Nome</th>
+								<th>Nascimento</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="odd gradeX" th:each="atleta : ${atletas}">
+								<td th:text="${atleta.matriculaAluno}" th:type="text"
+									id="txtColuna1"></td>
+								<td th:text="${atleta.nomeAluno}" th:type="text" id="txtColuna2"></td>
+								<td th:text="${atleta.nascAluno}" th:type="text" id="txtColuna3"></td>
+								<td><a class="btn btn-primary btn-sm"
+									title="Bootstrap 3 themes generator">Ver Dados</a></td>
+							</tr>
+							<tr th:if="${atletas.empty}">
+								<td colspan="3">Nenhum atleta está cadastrado</td>
+							</tr>
+
+						</tbody>
+					</table>
 				</div>
 
-        <div align="center">
-			<div class="dataTable_wrapper">
-                <table class="table table-responsive" id="dataTables-example">
-					<thead>
-						<tr>
-							<th>Matrícula</th>
-                            <th>Nome</th>
-                            <th>Nascimento</th>
-							<th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-						<tr class="odd gradeX" th:each="atleta : ${atletas}">
-							<td th:text="${atleta.matriculaAluno}" th:type="text"
-									id="txtColuna1"></td>
-							<td th:text="${atleta.nomeAluno}" th:type="text" 
-									id="txtColuna2"></td>
-                            <td th:text="${atleta.nascAluno}" th:type="text" 
-                            		id="txtColuna3"></td>
-							<td><a class="btn btn-primary btn-sm" title="Bootstrap 3 themes generator">Ver Dados</a></td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+
 			</div>
-         
-		
-        </div>
-        
-        <div>
 
-</div>
+			<div></div>
 
 		</section>
-		</section>
-        <!-- /#page-wrapper -->
+	</section>
+	<!-- /#page-wrapper -->
 
-   
-    <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script th:src="@{/layout/bower_components/jquery/dist/jquery.min.js}"></script>
+	<!-- /#wrapper -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script th:src="@{/layout/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
+	<!-- jQuery -->
+	<script th:src="@{/layout/bower_components/jquery/dist/jquery.min.js}"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script th:src="@{/layout/bower_components/metisMenu/dist/metisMenu.min.js}"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script
+		th:src="@{/layout/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
 
-    <!-- DataTables JavaScript -->
-    <script th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
-    <script th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
+	<!-- Metis Menu Plugin JavaScript -->
+	<script
+		th:src="@{/layout/bower_components/metisMenu/dist/metisMenu.min.js}"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script th:src="@{/layout/dist/js/sb-admin-2.js}"></script>
-	
-	
+	<!-- DataTables JavaScript -->
+	<script
+		th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
+	<script
+		th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
 
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    /*<![CDATA[*/
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
-        });
-    });
-    /*]]>*/
-    </script>
+	<!-- Custom Theme JavaScript -->
+	<script th:src="@{/layout/dist/js/sb-admin-2.js}"></script>
+
+
+
+	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+	<script>
+		/*<![CDATA[*/
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive : true
+			});
+		});
+		/*]]>*/
+	</script>
 
 </body>
 
