@@ -108,15 +108,15 @@
 										<div class="form-group">
 											<label class="control-label col-lg-2"><b>Nome do
 													Exercício *</b></label>
+											
 											<div class="col-lg-5">
-
 												<input type="text" class="form-control"
 													th:field="*{nomeExercicio}" />
 
-												<div class="form-group has-error text-left">
-													<label th:if="${#fields.hasErrors('nomeExercicio')}"
-														th:errors="*{nomeExercicio}"
-														class="control-label col-lg-2" for="inputError" />
+												<div class="form-group has-error ">
+													<h5 style="color:red" th:if="${#fields.hasErrors('nomeExercicio')}"
+													th:errors="*{nomeExercicio}">Erro no exercicio</h5>
+													
 												</div>
 											</div>
 										</div>
@@ -126,9 +126,9 @@
 													*</b></label>
 											<div class="col-lg-5">
 												<input type="text" class="form-control"
-													th:field="*{categoria}" />
-												<td color="red" th:if="${#fields.hasErrors('categoria')}"
-													th:errors="*{categoria}">Erro na catergoria</td>
+													th:field="*{categoria}"/>
+												<h5 style="color:red" th:if="${#fields.hasErrors('categoria')}"
+													th:errors="*{categoria}">Erro na catergoria</h5>
 											</div>
 										</div>
 
@@ -139,8 +139,8 @@
 													rows="5"
 													placeholder="Digite a descrição do exercício. Explique-o!"></textarea>
 											</div>
-											<td th:if="${#fields.hasErrors('descricao')}"
-												th:errors="*{descricao}">Erro no nome</td>
+											<h3 th:if="${#fields.hasErrors('descricao')}"
+												th:errors="*{descricao}">Erro no nome</h3>
 										</div>
 
 										<div class="form-group" align="right">
@@ -187,10 +187,12 @@
 										id="txtColuna2"></td>
 									<td th:text="${exercicio.descricao}" th:type="text"
 										id="txtColuna3"></td>
-									<td><a class="btn btn-primary btn-sm"
-										title="Bootstrap 3 themes generator">Ver Dados</a></td>
+									<td><a class="btn btn-info btn-sm fa fa-pencil" href=""></a>
+										<a class="btn btn-info btn-sm fa fa-times" href=""></a></td>
+									
+									
 								</tr>
-								</tr>
+								
 								<tr th:if="${exercicios.empty}">
 									<td colspan="3">Nenhum exercício está cadastrado</td>
 								</tr>
@@ -201,6 +203,9 @@
 				</div>
 			</section>
 		</section>
+		
+		<br/><br/><br/>
+		<br/><br/><br/>
 
 
 
