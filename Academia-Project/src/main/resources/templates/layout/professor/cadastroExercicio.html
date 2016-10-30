@@ -48,6 +48,14 @@
 	<script th:src="@{/layout/js/respond.min.js}"></script>
 	<script th:src="@{/layout/js/lte-ie7.js}"></script>
 	
+	<!-- DataTables CSS -->
+    <link th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}" rel="stylesheet"/>
+
+    <!-- DataTables Responsive CSS -->
+    <link th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}" rel="stylesheet"/>
+	
+	
+	
 	<title>Cadastro | GymAdmin</title>
 
 </head>
@@ -58,45 +66,11 @@
 	<section id="container">
 
 
-		<header class="header dark-bg">
-			<div class="toggle-nav">
-				<div class="icon-reorder tooltips"
-					data-original-title="Toggle Navigation" data-placement="bottom">
-					<i class="icon_menu"></i>
-				</div>
-			</div>
-
-			<!--logo start-->
-			<a th:href="@{/index.html}" class="logo">Gym <span class="lite">Admin</span></a>
-			<!--logo end-->
-
-
-
-			<div class="top-nav notification-row">
-				<!-- user login dropdown start-->
-				<div class="dropdown">
-					<a data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
-						class="profile-ava"> <img alt=""
-							th:src="@{/layout/img/avatar1_small.jpg}" />
-					</span> <span class="username" th:text="${#authentication.name}"></span> <b
-						class="caret"></b>
-					</a>
-					<ul class="dropdown-menu pull-right extended logout">
-
-						<li class="eborder-top"><a href="#"><i
-								class="icon_profile"></i> Meus Dados</a></li>
-						<li><a href="documentation.html"><i class="icon_key_alt"></i>
-								Ajuda</a></li>
-						<li><a th:href="@{/logout}"><i class="icon_log_out"></i>
-								Sair</a></li>
-					</ul>
-				</div>
-				<!-- user login dropdown end -->
-
-
-			</div>
-		</header>
-		<!--header end-->
+		<!--fragment header start-->
+		
+		<div th:replace="fragments/header::header"></div>
+		
+		<!--fragment header end-->
 
 		<!--fragment sidebar start-->
 		
@@ -105,56 +79,103 @@
 		<!--fragment sidebar end-->
 
 		<!--main content start-->
+		<!--main content start-->
+		<section id="main-content">
+			<section class="wrapper">
+				<!--overview start-->
+				<div class="row">
+					<div class="col-lg-12">
+						<h3 class="page-header">
+							<i class="fa fa-pencil"></i> Cadastro de Exercícios
+						</h3>
+					</div>
+				</div>		
 		
 		
+			<div class="row">
+				<div class="col-lg-12">
+					<section class="panel">
+						<div class="panel-body">
+							<div class="form">
+								<form class="form-validate form-horizontal"
+									th:action="@{/exercicio/novo}" th:object="${exercicioM}"
+									method="POST" >
+									
+									<div class="form-group">
+										<label class="control-label col-lg-2"><b>Nome do Exercício</b></label>
+										<div class="col-lg-5">
+											<input type="text" class="form-control"/>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-lg-2"><b>Categoria</b></label>
+										<div class="col-lg-5">
+											<input type="text" class="form-control"/>
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="control-label col-lg-2"><b>Descrição</b></label>
+										<div class="col-lg-8"><textarea class="form-control" rows="5" 
+												placeholder="Digite a descrição do exercício. Explique-o!"></textarea></div>
+									</div>
+									
+									<div class="form-group" align="right">
+										<div class="col-lg-offset-2 col-lg-10">
+											<button class="btn btn-primary" type="submit">Cadastrar</button>
+											<button class="btn btn-default" type="button">Cancelar</button>
+										</div>
+									</div>
 		
-			<div class="collapse navbar-collapse navbar-ex1-collapse">
-				<ul class="nav navbar-nav">
-					<li class="dropdown">
-					    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">Categoria<b class="caret"></b></a>
-					    <ul class="dropdown-menu">
-					        <li><a href="#">Action</a></li>
-					        <li><a href="#">Another action</a></li>
-					        <li><a href="#">Something else here</a></li>
-					        <li><a href="#">Separated link</a></li>
-					    	<li><a href="#">One more separated link</a></li>
-						</ul>
-					</li>
-				</ul>
+									
+								</form>
+							</div>
+						</div>
+					</section>
+				</div>
 			</div>
+		
+		
+		<br/><br/>
+		<br/><br/>
 			
-			
-			<div><textarea rows="5" cols="50"></textarea></div>
-			
+		<div class="col-lg-12">
+			<h3 class="page-header">
+				<i class="fa fa-search"></i> Exercícios Cadastrados
+			</h3>
 		</div>
-		<div class="table-responsive">
-        	<table class="table">
-            	<thead>
-                	<tr>
-                    	<th>Exercício</th>
-                        <th>Categoria</th>
-                        <th>Descrição</th>
-                    </tr>
-                </thead>
-           		<tbody>
-           			<tr>
-                    	<td>1</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                    </tr>
-                   	<tr>
-                    	<td>2</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                    </tr>
-                    <tr>
-                    	<td>3</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                    </tr>
-          		</tbody>
-			</table>
+			
+			
+							
+		<div align="center">
+			<div class="dataTable_wrapper">
+                <table class="table table-responsive" id="dataTables-example">
+					<thead>
+						<tr>
+							<th>Nome do Exercício</th>
+                            <th>Categoria</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<tr class="odd gradeX" th:each="exercicio : ${exercicioM}">
+							<td th:text="${atleta.matriculaAluno}" th:type="text"
+									id="txtColuna1"></td>
+							<td th:text="${atleta.nomeAluno}" th:type="text" 
+									id="txtColuna2"></td>
+                            <td th:text="${atleta.nascAluno}" th:type="text" 
+                            		id="txtColuna3"></td>
+							<td><a class="btn btn-primary btn-sm" title="Bootstrap 3 themes generator">Ver Dados</a></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+			</div>
 		</div>
+		</section>
+		</section>
+		
 		
 		
 		<!--main content end-->
@@ -207,6 +228,10 @@
 	<script th:src="@{/layout/js/sparklines.js}"></script>
 	<script th:src="@{/layout/js/charts.js}"></script>
 	<script th:src="@{/layout/js/jquery.slimscroll.min.js}"></script>
+	<!-- DataTables JavaScript -->
+    <script th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
+    <script th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
+    
 	<script>
 		//knob
 		$(function() {
@@ -252,6 +277,17 @@
 			});
 		});
 	</script>
+
+
+	<script>
+	    /*<![CDATA[*/
+	    $(document).ready(function() {
+	        $('#dataTables-example').DataTable({
+	                responsive: true
+	        });
+	    });
+	    /*]]>*/
+    </script>
 
 
 </body>
