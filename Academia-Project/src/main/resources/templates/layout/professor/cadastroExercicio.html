@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description"
-		content="Creative - Bootstrap 3 Responsive Admin Template" />
-	<meta name="author" content="GeeksLabs" />
-	<meta name="keyword"
-		content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<link rel="shortcut icon" th:href="@{/layoutimg/favicon.png}" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Creative - Bootstrap 3 Responsive Admin Template" />
+<meta name="author" content="GeeksLabs" />
+<meta name="keyword"
+	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" th:href="@{/layoutimg/favicon.png}" />
 
-	
-	
-	<!-- Bootstrap CSS -->
-	<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
-	<!-- bootstrap theme -->
-	<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
-	<!--external css-->
-	<!-- font icon -->
-	<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
-	<!-- full calendar css-->
-	<link
-		th:href="@{/layout/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css}"
-		rel="stylesheet" />
-	<link
-		th:href="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.css}"
-		rel="stylesheet" />
-	<!-- easy pie chart-->
-	<link
-		th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
-		rel="stylesheet" type="text/css" media="screen" />
-	<!-- owl carousel -->
-	<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
-		type="text/css}" />
-	<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
-	<!-- Custom styles -->
-	<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
-	<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
-	<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
-	
-	<script th:src="@{/layout/js/html5shiv.js}"></script>
-	<script th:src="@{/layout/js/respond.min.js}"></script>
-	<script th:src="@{/layout/js/lte-ie7.js}"></script>
-	
-	<!-- DataTables CSS -->
-    <link th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}" rel="stylesheet"/>
 
-    <!-- DataTables Responsive CSS -->
-    <link th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}" rel="stylesheet"/>
-	
-	
-	
-	<title>Cadastro | GymAdmin</title>
+
+<!-- Bootstrap CSS -->
+<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
+<!-- bootstrap theme -->
+<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
+<!--external css-->
+<!-- font icon -->
+<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
+<!-- full calendar css-->
+<link
+	th:href="@{/layout/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css}"
+	rel="stylesheet" />
+<link
+	th:href="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.css}"
+	rel="stylesheet" />
+<!-- easy pie chart-->
+<link
+	th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
+	rel="stylesheet" type="text/css" media="screen" />
+<!-- owl carousel -->
+<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
+	type="text/css}" />
+<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+<!-- Custom styles -->
+<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
+<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
+<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
+
+<script th:src="@{/layout/js/html5shiv.js}"></script>
+<script th:src="@{/layout/js/respond.min.js}"></script>
+<script th:src="@{/layout/js/lte-ie7.js}"></script>
+
+<!-- DataTables CSS -->
+<link
+	th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}"
+	rel="stylesheet" />
+
+<!-- DataTables Responsive CSS -->
+<link
+	th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}"
+	rel="stylesheet" />
+
+
+
+<title>Cadastro | GymAdmin</title>
 
 </head>
 
@@ -67,15 +71,15 @@
 
 
 		<!--fragment header start-->
-		
+
 		<div th:replace="fragments/header::header"></div>
-		
+
 		<!--fragment header end-->
 
 		<!--fragment sidebar start-->
-		
+
 		<div th:replace="fragments/sidebarMenu::sidebarMenu"></div>
-		
+
 		<!--fragment sidebar end-->
 
 		<!--main content start-->
@@ -89,95 +93,114 @@
 							<i class="fa fa-pencil"></i> Cadastro de Exercícios
 						</h3>
 					</div>
-				</div>		
-		
-		
-			<div class="row">
-				<div class="col-lg-12">
-					<section class="panel">
-						<div class="panel-body">
-							<div class="form">
-								<form class="form-validate form-horizontal"
-									th:action="@{/exercicio/novo}" th:object="${exercicioM}"
-									method="POST" >
-									
-									<div class="form-group">
-										<label class="control-label col-lg-2"><b>Nome do Exercício</b></label>
-										<div class="col-lg-5">
-											<input type="text" class="form-control"/>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="control-label col-lg-2"><b>Categoria</b></label>
-										<div class="col-lg-5">
-											<input type="text" class="form-control"/>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="control-label col-lg-2"><b>Descrição</b></label>
-										<div class="col-lg-8"><textarea class="form-control" rows="5" 
-												placeholder="Digite a descrição do exercício. Explique-o!"></textarea></div>
-									</div>
-									
-									<div class="form-group" align="right">
-										<div class="col-lg-offset-2 col-lg-10">
-											<button class="btn btn-primary" type="submit">Cadastrar</button>
-											<button class="btn btn-default" type="button">Cancelar</button>
-										</div>
-									</div>
-		
-									
-								</form>
-							</div>
-						</div>
-					</section>
 				</div>
-			</div>
-		
-		
-		<br/><br/>
-		<br/><br/>
-			
-		<div class="col-lg-12">
-			<h3 class="page-header">
-				<i class="fa fa-search"></i> Exercícios Cadastrados
-			</h3>
-		</div>
-			
-			
-							
-		<div align="center">
-			<div class="dataTable_wrapper">
-                <table class="table table-responsive" id="dataTables-example">
-					<thead>
-						<tr>
-							<th>Nome do Exercício</th>
-                            <th>Categoria</th>
-                            <th>Descrição</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-						<tr class="odd gradeX" th:each="exercicio : ${exercicioM}">
-							<td th:text="${atleta.matriculaAluno}" th:type="text"
-									id="txtColuna1"></td>
-							<td th:text="${atleta.nomeAluno}" th:type="text" 
-									id="txtColuna2"></td>
-                            <td th:text="${atleta.nascAluno}" th:type="text" 
-                            		id="txtColuna3"></td>
-							<td><a class="btn btn-primary btn-sm" title="Bootstrap 3 themes generator">Ver Dados</a></td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-			</div>
-		</div>
+
+
+				<div class="row">
+					<div class="col-lg-12">
+						<section class="panel">
+							<div class="panel-body">
+								<div class="form">
+									<form class="form-validate form-horizontal"
+										th:action="@{/exercicio/novo}" th:object="${exercicioModel}"
+										method="POST">
+
+										<div class="form-group">
+											<label class="control-label col-lg-2"><b>Nome do
+													Exercício *</b></label>
+											<div class="col-lg-5">
+
+												<input type="text" class="form-control"
+													th:field="*{nomeExercicio}" />
+
+												<div class="form-group has-error text-left">
+													<label th:if="${#fields.hasErrors('nomeExercicio')}"
+														th:errors="*{nomeExercicio}"
+														class="control-label col-lg-2"
+														for="inputError" />
+												</div>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-lg-2"><b>Categoria
+													*</b></label>
+											<div class="col-lg-5">
+												<input type="text" class="form-control"
+													th:field="*{categoria}" />
+												<td color="red" th:if="${#fields.hasErrors('categoria')}"
+													th:errors="*{categoria}">Erro na catergoria</td>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-lg-2"><b>Descrição</b></label>
+											<div class="col-lg-8">
+												<textarea th:field="*{descricao}" class="form-control"
+													rows="5"
+													placeholder="Digite a descrição do exercício. Explique-o!"></textarea>
+											</div>
+											<td th:if="${#fields.hasErrors('descricao')}"
+												th:errors="*{descricao}">Erro no nome</td>
+										</div>
+
+										<div class="form-group" align="right">
+											<div class="col-lg-offset-2 col-lg-10">
+												<button class="btn btn-primary" type="submit">Cadastrar</button>
+												<button class="btn btn-default" type="button">Cancelar</button>
+											</div>
+										</div>
+
+
+									</form>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+
+
+				<br /> <br />
+
+				<div class="col-lg-12">
+					<h3 class="page-header">
+						<i class="fa fa-search"></i> Exercícios Cadastrados
+					</h3>
+				</div>
+
+
+
+				<div align="center">
+					<div class="dataTable_wrapper">
+						<table class="table table-responsive" id="dataTables-example">
+							<thead>
+								<tr>
+									<th>Nome do Exercício</th>
+									<th>Categoria</th>
+									<th>Descrição</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="odd gradeX" th:each="exercicio : ${exercicios}">
+									<td th:text="${exercicio.nomeExercicio}" th:type="text"
+										id="txtColuna1"></td>
+									<td th:text="${exercicio.categoria}" th:type="text"
+										id="txtColuna2"></td>
+									<td th:text="${exercicio.descricao}" th:type="text"
+										id="txtColuna3"></td>
+									<td><a class="btn btn-primary btn-sm"
+										title="Bootstrap 3 themes generator">Ver Dados</a></td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
 		</section>
-		</section>
-		
-		
-		
+
+
+
 		<!--main content end-->
 	</section>
 	<!-- container section start -->
@@ -229,9 +252,11 @@
 	<script th:src="@{/layout/js/charts.js}"></script>
 	<script th:src="@{/layout/js/jquery.slimscroll.min.js}"></script>
 	<!-- DataTables JavaScript -->
-    <script th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
-    <script th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
-    
+	<script
+		th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
+	<script
+		th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
+
 	<script>
 		//knob
 		$(function() {
@@ -280,14 +305,14 @@
 
 
 	<script>
-	    /*<![CDATA[*/
-	    $(document).ready(function() {
-	        $('#dataTables-example').DataTable({
-	                responsive: true
-	        });
-	    });
-	    /*]]>*/
-    </script>
+		/*<![CDATA[*/
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive : true
+			});
+		});
+		/*]]>*/
+	</script>
 
 
 </body>

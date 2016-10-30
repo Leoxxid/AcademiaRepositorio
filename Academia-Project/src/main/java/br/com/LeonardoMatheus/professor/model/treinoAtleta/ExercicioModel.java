@@ -21,13 +21,13 @@ public class ExercicioModel {
 	@Column(name = "ID_EXERCICIO")
 	private Long idExercicio;
 
-	@NotBlank(message = "O nome do exercício deve ser preenchido!")
-	@Size(min = 5, max = 25, message = "O nome deve conter de 5 a 25 caracteres!")
+	@NotBlank(message="O nome não pode estar vazio")
+	@Size(min = 5, max = 25, message = "Deve conter de 5 a 25 caracteres!")
 	@Column(name = "NOME_EXERCICIO")
 	private String nomeExercicio;
 
-	@NotBlank(message = "A categoria do exercício deve ser preenchida!")
-	@Size(max = 30, message = "A categoria do exercício deve conter no máximo 30 caracteres!")
+	@NotBlank(message="A categoria não pode estar vazia")
+	@Size(min=3, max = 30, message = "Deve conter de 5 e 30 caracteres!")
 	@Column(name = "CATEGORIA")
 	private String categoria;
 
