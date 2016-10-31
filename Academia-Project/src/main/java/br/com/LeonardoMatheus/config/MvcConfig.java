@@ -9,7 +9,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry){
 		registry.addRedirectViewController("/", "/inicio");
-		registry.addViewController("/inicio").setViewName("/layout/index");
+		registry.addViewController("/inicio").setViewName("/layout/professor/index");
 	}
 
 }

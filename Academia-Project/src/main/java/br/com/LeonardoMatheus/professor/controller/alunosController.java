@@ -34,7 +34,7 @@ public class alunosController {
 
 	@RequestMapping(value = "/todos")
 	public ModelAndView nomeAcesso() {
-		ModelAndView mv = new ModelAndView("layout/consultarAtleta");
+		ModelAndView mv = new ModelAndView("layout/professor/consultarAtleta");
 		mv.addObject("atletas", atleta.findAll());
 		return mv;
 	}
@@ -42,7 +42,7 @@ public class alunosController {
 	// Cadastrar novo Atleta
 	@RequestMapping("/novo")
 	public String cadastrar(AtletaModel atletaModel) {
-		return "layout/cadastraAtleta";
+		return "layout/professor/cadastraAtleta";
 	}
 
 	@RequestMapping(value = "/novo", method = RequestMethod.POST)
