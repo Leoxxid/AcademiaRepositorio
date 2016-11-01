@@ -60,10 +60,10 @@ public class alunosController {
 		return "perfilAtleta";
 	}
 
-	@RequestMapping(value = "/deletar-atleta")
-	public String deletarAtleta(Long idAtleta) {
+	@RequestMapping(value = "/atleta/deletar-atleta/{idAtleta}", method = RequestMethod.GET)
+	public String deletarAtleta(@PathVariable Long idAtleta) {
 		service.delete(idAtleta);
-		return "";
+		return "redirect:/atleta/todos";
 	}
 
 	@RequestMapping (value = "/atualizar-atleta")
