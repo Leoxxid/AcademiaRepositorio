@@ -113,20 +113,21 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h3 class="page-header">
-						<i class="fa fa-search"></i> Consultar Atletas
+						<i class="fa fa-search"></i> Consultar Atletas &nbsp;&nbsp; 
+						<a href="/atleta/novo"><button class="btn btn-primary"><span>NOVO &nbsp;+</span></button></a>
 					</h3>
 				</div>
 			</div>
 
 			<div align="center">
 				<div class="dataTable_wrapper">
-					<table class="table table-responsive" id="dataTables-example">
+					<table class="table table-responsive table-bordered" id="dataTables-example">
 						<thead>
-							<tr>
-								<th>Matrícula</th>
-								<th>Nome</th>
-								<th>Nascimento</th>
-								<th></th>
+							<tr bgcolor="#337ab7" style="border-color:#000000">
+								<th style="color:white">Matrícula</th>
+								<th style="color:white">Nome</th>
+								<th style="color:white">Nascimento</th>
+								<th class="hidden"></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -144,10 +145,6 @@
 
 						</tbody>
 					</table>
-					
-					<div align="left">
-						<a href="/atleta/novo"><button class="btn btn-primary"><span>Novo</span></button></a>
-					</div>
 					
 				</div>
 
