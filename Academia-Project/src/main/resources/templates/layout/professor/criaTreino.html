@@ -72,50 +72,72 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h3 class="page-header" align="left">
-							<i class="fa fa-laptop">Seja bem vindo(a) </i> <i
-								th:text="${#authentication.name}"></i>
+							<i class="fa fa-table">Treino </i> 
 								<br/><br/>
 						</h3>
 					</div>
 				</div>
+				
+				
+				<!-- inicio linha de inclusão de treino -->
+				<div class="row">
+					<label class="control-label col-md-1" ><b>Dia</b></label>    
+                    <div class="col-lg-2">
+						<select class="form-control col-lg-2">
+							<option value="selecione">Selecione...</option>
+						  	<option value="Segunda">Segunda-Feira</option>
+							<option value="Segunda">Terça-Feira</option>
+							<option value="Segunda">Quarta-Feira</option>
+							<option value="Segunda">Quinta-Feira</option>
+							<option value="Segunda">Sexta-Feira</option>
+							<option value="Segunda">Sábado</option>
+						</select>
+                    </div>
+					<label class="control-label col-md-1"><b>Exercício</b></label>
+                    <div class="col-lg-2">
+                    	<select class="form-control col-lg-2">
+							<option value="selecione">Selecione...</option>
+						  	<option th:each="exercicio : ${exercicioM}" th:text="${exercicio.nome_Exercicio}"></option>
+						</select>
+                  	</div>
+                  	<div class="btn btn-primary btn-sm">Incluir</div>
+                  </div>
+	
+				<br/><br/>
+				<br/><br/>
+				
 
-				<div class="row" align="center">
-
-					<a th:href="@{/atleta/novo}">
-						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-							<div class="info-box blue-bg">
-								<h1 align="center">Cadastrar Atleta</h1>
-							</div>
-							<!--/.info-box-->
-						</div> <!--/.col-->
-					</a> <a th:href="@{/atleta/todos}">
-						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-							<div class="info-box red-bg">
-								<h1 align="center">Consultar Atleta</h1>
-							</div>
-							<!--/.info-box-->
-						</div> <!--/.col-->
-					</a> <a th:href="@{/avaliaAtleta}">
-						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-							<div class="info-box green-bg">
-								<h1 align="center">
-									Avaliação<br /> <br />
-								</h1>
-							</div>
-							<!--/.info-box-->
-						</div> <!--/.col-->
-					</a>
-
-
+				<!-- tabela de treino com bootstrap-->
+				<div align="center">
+					<div class="dataTable_wrapper">
+		                <table class="table table-responsive" id="dataTables-example">
+							<thead>
+								<tr>
+									<th>Segunda-Feira</th>
+		                            <th>Terça-Feira</th>
+		                            <th>Quarta-Feira</th>
+									<th>Quinta-Feira</th>
+									<th>Sexta-Feira</th>
+									<th>Sábado</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+								<tr class="odd gradeX" th:each="exercicio : ${exercicioM}">
+									<td th:text="${atleta.matriculaAluno}" th:type="text"
+											id="txtColuna1"></td>
+									<td th:text="${atleta.nomeAluno}" th:type="text" 
+											id="txtColuna2"></td>
+		                            <td th:text="${atleta.nascAluno}" th:type="text" 
+		                            		id="txtColuna3"></td>
+									<td><a class="btn btn-primary btn-sm" title="Bootstrap 3 themes generator">Ver Dados</a></td>
+		                        </tr>
+		                        
+		                    </tbody>
+		                </table>
+					</div>
 				</div>
-				<!--/.row-->
-
-				<h3>
-					<b>Agenda de Avaliações</b>
-				</h3>
-				<br /> <br /> <br />
-				<div id="calendar"
-					style="width: 50%; display: block; margin: 0 auto"></div>
+				<!-- fim da tabela de treino -->
+				
 
 			</section>
 		</section>

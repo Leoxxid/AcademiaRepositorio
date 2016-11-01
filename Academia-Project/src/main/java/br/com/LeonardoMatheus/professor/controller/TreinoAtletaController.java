@@ -12,9 +12,9 @@ public class TreinoAtletaController {
 		return "";
 	}
 	
-	@RequestMapping("/treino-do-atleta")
+	@RequestMapping("/atletas/treino-do-atleta")
 	public String treinoAtleta(){
-		return "";
+		return "/layout/professor/criaTreino";
 	}
 
 }

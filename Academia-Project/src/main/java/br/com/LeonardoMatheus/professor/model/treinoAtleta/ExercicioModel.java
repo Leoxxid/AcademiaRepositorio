@@ -32,7 +32,7 @@ public class ExercicioModel {
 	private String categoria;
 
 	@Size(max = 500, message = "A descrição do exercício não pode exceder 500 caracteres!")
-	@Column(name = "DESCIRCAO")
+	@Column(name = "DESCRICAO")
 	private String descricao;
 
 	@OneToMany(mappedBy = "exercicio")
