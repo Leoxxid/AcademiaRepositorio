@@ -136,8 +136,14 @@
 									id="txtColuna1"></td>
 								<td th:text="${atleta.nomeAluno}" th:type="text" id="txtColuna2"></td>
 								<td th:text="${atleta.nascAluno}" th:type="text" id="txtColuna3"></td>
-								<td><a class="btn btn-primary btn-sm"
-									title="Bootstrap 3 themes generator">Ver Dados</a></td>
+								<td style="width: 300px;">
+									<div class="btn-group">
+                                      <button type="button" class="btn btn-primary">Ver Dados</button>
+                                      <button type="button" class="btn btn-primary">Avaliar</button>
+                                      <button type="button" class="btn btn-primary">Treino</button>
+                                    </div>
+                                    <button type="button" class="btn btn-primary fa fa-times"></button>
+								</td>
 							</tr>
 							<tr th:if="${atletas.empty}">
 								<td colspan="3">Nenhum atleta está cadastrado</td>

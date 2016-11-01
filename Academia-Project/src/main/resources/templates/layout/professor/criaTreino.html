@@ -80,9 +80,9 @@
 				
 				
 				<!-- inicio linha de inclusão de treino -->
-				<div class="form-group">
-					<div class="form-group col-lg-2">
-						<label class="control-label"><b>Dia</b></label>
+				<div class="row">
+					<label class="control-label col-md-1" ><b>Dia</b></label>    
+                    <div class="col-lg-2">
 						<select class="form-control col-lg-2">
 							<option value="selecione">Selecione...</option>
 						  	<option value="Segunda">Segunda-Feira</option>
@@ -92,19 +92,20 @@
 							<option value="Segunda">Sexta-Feira</option>
 							<option value="Segunda">Sábado</option>
 						</select>
-					</div>
-		
-					
-					<div class="col-lg-2">
-					<label class="control-label"><b>Exercício</b></label>
-						<select class="form-control col-lg-2">
+                    </div>
+					<label class="control-label col-md-1"><b>Exercício</b></label>
+                    <div class="col-lg-2">
+                    	<select class="form-control col-lg-2">
 							<option value="selecione">Selecione...</option>
 						  	<option th:each="exercicio : ${exercicioM}" th:text="${exercicio.nome_Exercicio}"></option>
 						</select>
-					</div>
-					<div class="btn btn-primary btn-sm">Incluir</div>
-				</div>
-
+                  	</div>
+                  	<div class="btn btn-primary btn-sm">Incluir</div>
+                  </div>
+	
+				<br/><br/>
+				<br/><br/>
+				
 
 				<!-- tabela de treino com bootstrap-->
 				<div align="center">
