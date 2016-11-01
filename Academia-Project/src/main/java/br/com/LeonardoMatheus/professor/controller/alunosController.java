@@ -32,6 +32,7 @@ public class alunosController {
 	@Autowired
 	public AtletaService service;
 
+	// Exibe todos atletas
 	@RequestMapping(value = "/todos")
 	public ModelAndView nomeAcesso() {
 		ModelAndView mv = new ModelAndView("layout/professor/consultarAtleta");
@@ -39,12 +40,13 @@ public class alunosController {
 		return mv;
 	}
 
-	// Cadastrar novo Atleta
+	// Get da tela de cadastro de atleta
 	@RequestMapping("/novo")
 	public String cadastrar(AtletaModel atletaModel) {
 		return "layout/professor/cadastraAtleta";
 	}
 
+	// Realiza o cadastro de atleta
 	@RequestMapping(value = "/novo", method = RequestMethod.POST)
 	public String criar(@Valid AtletaModel atletaModel) {
 		service.save(atletaModel);
@@ -57,4 +59,17 @@ public class alunosController {
 
 		return "perfilAtleta";
 	}
+
+	@RequestMapping(value = "/deletar-atleta")
+	public String deletarAtleta(Long idAtleta) {
+		service.delete(idAtleta);
+		return "";
+	}
+
+	@RequestMapping (value = "/atualizar-atleta")
+	public String atualizar(AtletaModel atletaModel){
+		service.save(atletaModel);
+		return"";
+	}
+
 }

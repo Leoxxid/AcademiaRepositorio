@@ -9,9 +9,14 @@ import br.com.LeonardoMatheus.professor.repository.Atletas;
 @Service
 public class AtletaService {
 	@Autowired
-	public Atletas atleta; 
-	
-	public void save(AtletaModel atletaModel){
+	public Atletas atleta;
+
+	public void save(AtletaModel atletaModel) {
 		this.atleta.save(atletaModel);
 	}
+
+	public void delete(Long idAtleta){
+	this.atleta.delete(idAtleta);
+	}
+	
 }

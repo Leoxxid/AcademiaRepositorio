@@ -1,10 +1,10 @@
 package br.com.LeonardoMatheus.professor.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import br.com.LeonardoMatheus.professor.model.AtletaModel;
 
 
-public interface Atletas extends JpaRepository<AtletaModel, Long> {
+public interface Atletas extends CrudRepository<AtletaModel, Long> {
 
 }
