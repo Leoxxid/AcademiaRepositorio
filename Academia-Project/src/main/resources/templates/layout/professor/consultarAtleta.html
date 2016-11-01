@@ -138,7 +138,7 @@
 								<td th:text="${atleta.nascAluno}" th:type="text" id="txtColuna3"></td>
 								<td style="width: 300px;">
 									<div class="btn-group">
-                                      <button type="button" class="btn btn-primary">Ver Dados</button>
+                                      <button th:ref="${/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.matriculaAluno})}" type="button" class="btn btn-primary">Ver Dados</button>
                                       <button type="button" class="btn btn-primary">Avaliar</button>
                                       <button type="button" class="btn btn-primary">Treino</button>
                                     </div>
