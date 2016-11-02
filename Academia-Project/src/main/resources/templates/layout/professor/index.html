@@ -80,31 +80,35 @@
 				</div>
 
 				<div class="row" align="center">
-
-					<a th:href="@{/atleta/novo}">
-						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-							<div class="info-box blue-bg">
-								<h1 align="center">Cadastrar Atleta</h1>
-							</div>
+					<div class="col-lg-3">
+						<a th:href="@{/atleta/novo}">
+							<button class="info-box blue-bg form-control btn btn-primary">
+								<h1 align="center">Cadastrar<br/> Atleta</h1>
+							</button>
+						</a>
 							<!--/.info-box-->
 						</div> <!--/.col-->
-					</a> <a th:href="@{/atleta/todos}">
-						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-							<div class="info-box red-bg">
-								<h1 align="center">Consultar Atleta</h1>
-							</div>
+					 
+					<div class="col-lg-3">
+						<a th:href="@{/atleta/todos}">
+							<button class="info-box red-bg form-control btn btn-primary">
+								<h1 align="center">Consultar<br/>Atleta</h1>
+							</button>
+						</a>
 							<!--/.info-box-->
-						</div> <!--/.col-->
-					</a> <a th:href="@{/avaliacao/atletas/avaliaAtleta}">
-						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-							<div class="info-box green-bg">
+					</div> <!--/.col-->
+					
+					<div class="col-lg-3">
+						<a th:href="@{/avaliacao/atletas/avaliaAtleta}">
+							<button class="info-box green-bg  form-control btn btn-primary">
 								<h1 align="center">
-									Avaliação<br /> <br />
+									Avaliação
 								</h1>
-							</div>
+							</button>
+						</a>
 							<!--/.info-box-->
-						</div> <!--/.col-->
-					</a>
+					</div> <!--/.col-->
+					
 
 
 				</div>

@@ -43,6 +43,16 @@
 	<script th:src="@{/layout/js/html5shiv.js}"></script>
 	<script th:src="@{/layout/js/respond.min.js}"></script>
 	<script th:src="@{/layout/js/lte-ie7.js}"></script>
+	
+	<!-- DataTables CSS -->
+	<link
+		th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}"
+		rel="stylesheet" />
+	
+	<!-- DataTables Responsive CSS -->
+	<link
+		th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}"
+		rel="stylesheet" />
 
 
 </head>
@@ -191,6 +201,13 @@
 	<script th:src="@{/layout/js/charts.js}"></script>
 	<script th:src="@{/layout/js/jquery.slimscroll.min.js}"></script>
 	<script th:src="@{/layout/js/bootstrap-datepicker.min.js}"></script>
+	
+	<!-- DataTables JavaScript -->
+	<script
+		th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
+	<script
+		th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
+		
 	<script>
 		//knob
 		$(function() {
@@ -277,6 +294,22 @@
 		});
 	</script>
 
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+	<script>
+		/*<![CDATA[*/
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive : true
+			});
+		});
+		/*]]>*/
+	</script>
+	
+	<script>
+	$('.delete').click(function () {
+	    return confirm("Are you sure?");
+	});
+	</script>
 
 </body>
 

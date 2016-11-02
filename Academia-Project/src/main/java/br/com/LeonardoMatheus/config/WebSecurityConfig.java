@@ -32,7 +32,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http
 				.authorizeRequests()
-						.antMatchers("/atleta/novo","/atleta/todos","/exercicio/novo","/inicio", "/treino/atletas/treino-do-atleta", "/atleta/deletar-atleta/{idAtleta}", "/treino/atletas/cadastraDia", "avaliacao/atletas/avaliaAtleta").permitAll()
+						.antMatchers("/atleta/novo","/atleta/todos","/exercicio/novo","/inicio", 
+										"/treino/atletas/treino-do-atleta",	"/atleta/deletar-atleta/{idAtleta}", 
+										"/treino/atletas/cadastraDia", "/avaliacao/atletas/avaliaAtleta", 
+										"/atleta/atleta/estatisticas", "/atleta/atleta/treino").permitAll()
 						.antMatchers().hasRole("ADMIN")
 							.anyRequest().authenticated()
 						
