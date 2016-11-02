@@ -52,10 +52,13 @@ public class alunosController {
 	}
 
 	@RequestMapping(value = "deletar-atleta/{idAtleta}")
-	public String deletarAtleta(@PathVariable Long idAtleta) {
+	public ModelAndView deletarAtleta(@PathVariable Long idAtleta) {
 		System.out.println(idAtleta);
 		service.delete(idAtleta);
-		return "redirect:/atleta/todos";
+		ModelAndView mv = new ModelAndView("redirect:/atleta/todos");
+		String sucess="delete-sucess";
+		mv.addObject("delete", sucess);
+		return mv;
 	}
 
 	@RequestMapping (value = "/atualizar-atleta")
