@@ -17,7 +17,7 @@ public class AtletaModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_ALUNO")
-	private Long idALuno;
+	private Long idAluno;
 	
 	@NotNull
 	@Column(name = "MATRICULA_ALUNO", length = 40)
@@ -30,10 +30,10 @@ public class AtletaModel {
 	private Date nascAluno;
 
 	@Column(name = "RG_ALUNO")
-	private Integer rg;
+	private String rg;
 
-	@Column(name = "CPF_ALUNO", length = 11)
-	private Integer cpf;
+	@Column(name = "CPF_ALUNO", length = 15)
+	private String cpf;
 
 	@Column(name = "ESTADO", length = 2)
 	private String estado;
@@ -62,25 +62,51 @@ public class AtletaModel {
 	@Column(name = "DATA_MATRICULA")
 	private Date dataMatricula;
 
-	// ===== GETTERS AND SETTERS
-
-	public Long getIdALuno() {
-		return idALuno;
+	public Long getIdAluno() {
+		return idAluno;
 	}
 
-	public Integer getRg() {
+	public void setIdAluno(Long idAluno) {
+		this.idAluno = idAluno;
+	}
+
+	public String getMatriculaAluno() {
+		return matriculaAluno;
+	}
+
+	public void setMatriculaAluno(String matriculaAluno) {
+		this.matriculaAluno = matriculaAluno;
+	}
+
+	public String getNomeAluno() {
+		return nomeAluno;
+	}
+
+	public void setNomeAluno(String nomeAluno) {
+		this.nomeAluno = nomeAluno;
+	}
+
+	public Date getNascAluno() {
+		return nascAluno;
+	}
+
+	public void setNascAluno(Date nascAluno) {
+		this.nascAluno = nascAluno;
+	}
+
+	public String getRg() {
 		return rg;
 	}
 
-	public void setRg(Integer rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
@@ -155,33 +181,11 @@ public class AtletaModel {
 	public void setDataMatricula(Date dataMatricula) {
 		this.dataMatricula = dataMatricula;
 	}
+	
 
-	public void setIdALuno(Long idALuno) {
-		this.idALuno = idALuno;
-	}
+	
+	// ===== GETTERS AND SETTERS
 
-	public String getMatriculaAluno() {
-		return matriculaAluno;
-	}
-
-	public void setMatriculaAluno(String matriculaAluno) {
-		this.matriculaAluno = matriculaAluno;
-	}
-
-	public String getNomeAluno() {
-		return nomeAluno;
-	}
-
-	public void setNomeAluno(String nomeAluno) {
-		this.nomeAluno = nomeAluno;
-	}
-
-	public Date getNascAluno() {
-		return nascAluno;
-	}
-
-	public void setNascAluno(Date nascAluno) {
-		this.nascAluno = nascAluno;
-	}
+	
 
 }

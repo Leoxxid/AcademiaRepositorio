@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -60,8 +61,9 @@ public class alunosController {
 		return "perfilAtleta";
 	}
 
-	@RequestMapping(value = "/atleta/deletar-atleta/{idAtleta}", method = RequestMethod.GET)
+	@RequestMapping(value = "deletar-atleta/{idAtleta}")
 	public String deletarAtleta(@PathVariable Long idAtleta) {
+		System.out.println(idAtleta);
 		service.delete(idAtleta);
 		return "redirect:/atleta/todos";
 	}

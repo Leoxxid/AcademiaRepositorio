@@ -47,6 +47,8 @@
 <script th:src="@{/layout/js/html5shiv.js}"></script>
 <script th:src="@{/layout/js/respond.min.js}"></script>
 <script th:src="@{/layout/js/lte-ie7.js}"></script>
+<script th:src="@{/layout/css/style.css}"></script>
+
 
 <title>Cadastro | GymAdmin</title>
 
@@ -94,12 +96,12 @@
 											<b>Dados do Atleta</b>
 										</h4>
 
-
+										<div class="form-group">
 											<div class="col-lg-10">
 												<input type="hidden" class="form-control"
-													th:field="*{idALuno}" />
+													th:field="*{idAluno}" />
 											</div>
-
+										</div>
 
 										<div class="form-group ">
 											<label for="nomeCompleto" class="control-label col-lg-2"><b>Matricula
@@ -123,7 +125,9 @@
 											<label for="nascimento" class="control-label col-lg-2"><b>Data
 													Nascimento *</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control"
+												<input type="text" 	class="form-control p" 
+																	id="dataReversa"
+																	placeholder="Utilize o formato 'yyyy-mm-dd'"
 													th:field="*{nascAluno}" />
 											</div>
 										</div>
@@ -132,7 +136,10 @@
 											<label for="rg" class="control-label col-lg-2"><b>RG
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{rg}" />
+												<input type="text" class="form-control p" 
+																	id="rg" 
+																	th:field="*{rg}" 
+																	placeholder="Caso o Dígito seja uma letra, substitua por 0(zero)!" />
 											</div>
 										</div>
 
@@ -140,7 +147,7 @@
 											<label for="cpf" class="control-label col-lg-2"><b>CPF
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{cpf}" />
+												<input type="text" class="form-control p" id="cpf" th:field="*{cpf}" />
 											</div>
 										</div>
 
@@ -205,18 +212,19 @@
 											<label for="telefone" class="control-label col-lg-2"><b>Telefone
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control"
-													th:field="*{telefoneCasa}" />
+												<input class="form-control p" id="telefone" type="text"
+													th:field="*{telefoneCasa}"/>
 											</div>
 										</div>
 
 										<div class="form-group ">
 											<label for="celular" class="control-label col-lg-2"><b>Celular</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control"
+												<input type="text" class="form-control p" id="celular"
 													th:field="*{telefoneCelular}" />
 											</div>
 										</div>
+										
 
 
 										<div class="form-group ">
@@ -298,6 +306,10 @@
 	<script th:src="@{/layout/js/sparklines.js}"></script>
 	<script th:src="@{/layout/js/charts.js}"></script>
 	<script th:src="@{/layout/js/jquery.slimscroll.min.js}"></script>
+	<script th:src="@{/layout/js/jquery.maskedinput.min.js}"></script>
+	<script th:src="@{/layout/js/jquery.validate.min.js}"></script>
+	<script th:src="@{/layout/js/jquery.zebra-datepicker.js}"></script>
+	
 	<script>
 		//knob
 		$(function() {

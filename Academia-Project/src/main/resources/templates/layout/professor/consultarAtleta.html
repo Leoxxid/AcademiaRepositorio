@@ -138,11 +138,11 @@
 								<td th:text="${atleta.nascAluno}" th:type="text" id="txtColuna3"></td>
 								<td style="width: 300px;">
 									<div class="btn-group">
-                                      <button th:ref="${/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.matriculaAluno})}" type="button" class="btn btn-primary">Ver Dados</button>
-                                      <button type="button" class="btn btn-primary">Avaliar</button>
-                                      <button type="button" class="btn btn-primary">Treino</button>
+                                      <button type="button" class="btn btn-primary" onClick="/dadosAtleta">Ver Dados</button>
+                                      <button type="button" class="btn btn-primary" onClick="/avaliaAtleta">Avaliar</button>
+                                      <a href="/treino/atletas/treino-do-atleta"><button type="button" class="btn btn-primary">Treino</button></a>
                                     </div>
-                                    <button type="button" class="btn btn-primary fa fa-times"></button>
+                                    <a class="delete" th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}" ><button type="submit" class="btn btn-primary fa fa-times"></button></a>
 								</td>
 							</tr>
 							<tr th:if="${atletas.empty}">
@@ -197,6 +197,12 @@
 			});
 		});
 		/*]]>*/
+	</script>
+	
+	<script>
+	$('.delete').click(function () {
+	    return confirm("Are you sure?");
+	});
 	</script>
 
 </body>
