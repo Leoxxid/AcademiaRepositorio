@@ -1,26 +1,16 @@
 package br.com.LeonardoMatheus.professor.controller;
 
-import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
-
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.LeonardoMatheus.professor.model.AtletaModel;
-import br.com.LeonardoMatheus.professor.model.treinoAtleta.DiaExercicioModel;
 import br.com.LeonardoMatheus.professor.repository.Atletas;
-import br.com.LeonardoMatheus.professor.repository.DiaExercicio;
 import br.com.LeonardoMatheus.professor.service.AtletaService;
 
 @Controller
