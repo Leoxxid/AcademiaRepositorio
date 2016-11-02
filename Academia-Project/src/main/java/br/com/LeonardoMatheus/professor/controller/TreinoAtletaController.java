@@ -16,5 +16,10 @@ public class TreinoAtletaController {
 	public String treinoAtleta(){
 		return "/layout/professor/criaTreino";
 	}
+	
+	@RequestMapping("/atletas/cadastraDia")
+	public String diaTreino(){
+		return "/layout/professor/cadastroDia";
+	}
 
 }
