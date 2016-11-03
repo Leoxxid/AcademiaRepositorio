@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.LeonardoMatheus.professor.model.treinoAtleta.ExercicioModel;
 import br.com.LeonardoMatheus.professor.repository.Atletas;
+import br.com.LeonardoMatheus.professor.repository.Dia;
 import br.com.LeonardoMatheus.professor.repository.Exercicio;
 import br.com.LeonardoMatheus.professor.service.AtletaService;
 import br.com.LeonardoMatheus.professor.service.DiaExercicioService;
@@ -32,6 +33,8 @@ public class TreinoAtletaController {
 	@Autowired 
 	public Atletas atleta;
 	
+
+	
 	@RequestMapping("/atletas")
 	public String atleta(){
 		return "";
@@ -42,10 +45,8 @@ public class TreinoAtletaController {
 		ModelAndView mv = new ModelAndView("/layout/professor/criaTreino");
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("atleta", diaExercicioService.findAtletaById(idAtleta));
-		model.put("exercicos", exercicio.findAll());
-		for (ExercicioModel a : exercicio.findAll()) {
-		System.out.println(a.getNomeExercicio());	
-		}
+		model.put("exercicios" , exercicio.findAll());
+		model.put("dias", diaExercicioService.findDiaAtleta(idAtleta));
 		mv.addAllObjects(model);
 		return mv;
 	}

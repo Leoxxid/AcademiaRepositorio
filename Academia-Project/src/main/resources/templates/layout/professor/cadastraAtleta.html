@@ -181,7 +181,7 @@
 										</div>
 
 										<div class="form-group ">
-											<label for="numero" class="control-label col-lg-2"><b>Número
+											<label for="numero" class="control-label col-lg-2"><b>Número *
 													</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
@@ -203,7 +203,7 @@
 										</h4>
 										<div class="form-group ">
 											<label for="telefone" class="control-label col-lg-2"><b>Telefone
-													*</b></label>
+													</b></label>
 											<div class="col-lg-10">
 												<input class="form-control" id="telefoneCasa" type="text"
 													th:field="*{telefoneCasa}"/>
@@ -221,8 +221,6 @@
 
 
 										<div class="form-group ">
-											<label for="email" class="control-label col-lg-2"><b>Data
-													da Matricula *</b></label>
 											<div class="col-lg-10">
 												<input class="form-control" type="hidden"
 													th:attr="value = ${#calendars.format(#calendars.createNow(), 'yyyy-MM-dd')}"

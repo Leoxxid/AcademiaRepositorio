@@ -112,29 +112,23 @@
 					</div>
 				</div>
 
-	<tr th:each="exercicio : ${exercicios}">
-	<h1 th:value="${exercicio.nomeExercicio}"></h1>
-	</tr>
-
+	
 				<!-- inicio linha de inclusão de treino -->
 				<div class="row">
 					<label class="control-label col-md-1"><b>Dia</b></label>
 					<div class="col-lg-2">
 						<select class="form-control col-lg-2">
-							<option value="selecione">Selecione...</option>
-							<option value="Segunda">Segunda-Feira</option>
-							<option value="Segunda">Terça-Feira</option>
-							<option value="Segunda">Quarta-Feira</option>
-							<option value="Segunda">Quinta-Feira</option>
-							<option value="Segunda">Sexta-Feira</option>
-							<option value="Segunda">Sábado</option>
+							<option th:text="Selecione..." value="default" />
+							<option th:each="dia : ${dias}" th:value="$dia.idDia" th:text="$diaSemana"/>	
 						</select>
 					</div>
 					<label class="control-label col-md-1"><b>Exercício</b></label>
 					<div class="col-lg-2">
 						<select class="form-control col-lg-2" >
+						<option th:text="Selecione..." value="default" />
 							<option th:each="exercicio : ${exercicios}"
-								th:text="${exercicio.nomeExercicio}"></option>
+								th:value="${exercicio.idExercicio}"
+								th:text="${exercicio.nomeExercicio}"/>
 						</select>
 					</div>
 					<div class="btn btn-primary btn-sm">Incluir</div>

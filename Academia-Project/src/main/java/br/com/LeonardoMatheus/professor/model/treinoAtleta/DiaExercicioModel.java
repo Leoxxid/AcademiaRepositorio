@@ -23,7 +23,7 @@ public class DiaExercicioModel {
 	private DiaModel dia;
 
 	@ManyToOne
-	@JoinColumn(name = "EXERCICIo")
+	@JoinColumn(name = "EXERCICIO")
 	private ExercicioModel exercicio;
 
 	// ===== GETTERS AND SETTERS
