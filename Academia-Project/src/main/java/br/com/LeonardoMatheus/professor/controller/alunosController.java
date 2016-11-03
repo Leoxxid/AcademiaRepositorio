@@ -31,8 +31,8 @@ public class alunosController {
 		return mv;
 	}
 	
-	//''''''''''''''''''''''''''''''''''''''''''''''''''
-	//													NOVO
+	//''''''''''''''''''''''''''''''''''''''''''''''''''NOVO
+													
 	// Get da tela de cadastro de atleta
 	@RequestMapping("/novo")
 	public String cadastrar(AtletaModel atletaModel) {
@@ -46,8 +46,8 @@ public class alunosController {
 		return "redirect:/atleta/todos";
 	}
 	
-	//''''''''''''''''''''''''''''''''''''''''''''''''''
-
+	//''''''''''''''''''''''''''''''''''''''''''''''''''ALTERAR
+	//													
 	// Visualizar perfil do atleta
 	@RequestMapping(value = "/perfil-do-atleta/{idAtleta}")
 	public ModelAndView perfilAtleta(@PathVariable Long idAtleta) {
@@ -58,6 +58,9 @@ public class alunosController {
 		
 		return mv;
 	}
+	
+	//'''''''''''''''''''''''''''''''''''''''''''''''''DELETAR
+					
 
 	@RequestMapping(value = "deletar-atleta/{idAtleta}")
 	public ModelAndView deletarAtleta(@PathVariable Long idAtleta) {
@@ -67,12 +70,6 @@ public class alunosController {
 		String sucess="delete-sucess";
 		mv.addObject("delete", sucess);
 		return mv;
-	}
-
-	@RequestMapping (value = "/atualizar-atleta")
-	public String atualizar(AtletaModel atletaModel){
-		service.save(atletaModel);
-		return"";
 	}
 
 }

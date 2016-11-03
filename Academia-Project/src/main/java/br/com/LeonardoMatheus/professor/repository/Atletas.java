@@ -8,6 +8,7 @@ import java.util.List;
 
 
 public interface Atletas extends CrudRepository<AtletaModel, Long> {
-	AtletaModel  findByIdAluno(Long idAluno); 
+	AtletaModel  findByIdAluno(Long idAluno);
+	
 
 }
