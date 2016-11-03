@@ -31,6 +31,8 @@ public class DiaModel {
 	@JoinColumn(name="ALUNO")
 	private AtletaModel atleta;
 	
+	
+	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "dia")
 	private List<DiaExercicioModel> dia;
 	
@@ -65,4 +67,12 @@ public class DiaModel {
 		this.dia = dia;
 	}
 
+	public AtletaModel getAtleta() {
+		return atleta;
+	}
+
+	public void setAtleta(AtletaModel atleta) {
+		this.atleta = atleta;
+	}
+	
 }

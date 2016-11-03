@@ -119,7 +119,7 @@
 					<div class="col-lg-2">
 						<select class="form-control col-lg-2">
 							<option th:text="Selecione..." value="default" />
-							<option th:each="dia : ${dias}" th:value="$dia.idDia" th:text="$diaSemana"/>	
+							<option th:each="dia : ${dias}" th:value="${dia.idDia}" th:text="${dia.diaSemana}"/>	
 						</select>
 					</div>
 					<label class="control-label col-md-1"><b>Exercício</b></label>

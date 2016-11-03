@@ -2,6 +2,8 @@ package br.com.LeonardoMatheus.professor.service;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.com.LeonardoMatheus.professor.model.AtletaModel;
@@ -16,6 +18,8 @@ public class DiaExercicioService {
 
 	@Autowired
 	public Dia dia;
+	
+	public List <DiaModel> diaModel; 
 
 	public AtletaModel findAtletaById(Long idAtleta) {
 
@@ -23,8 +27,8 @@ public class DiaExercicioService {
 		return atletaModel;
 	}
 
-	public DiaModel findDiaAtleta(Long idAtleta){
-		DiaModel diaModel = this.dia.findByAtleta(idAtleta);
+	public List<DiaModel> findDiaAtleta(Long idAtleta){
+		diaModel = this.dia.diasdoAtleta(idAtleta);
 		return diaModel;
 		
 	}

@@ -200,6 +200,12 @@ public class AtletaModel {
 	public void setDataMatricula(Date dataMatricula) {
 		this.dataMatricula = dataMatricula;
 	}
+	public List<AtletaModel> getAtleta() {
+		return atleta;
+	}
+	public void setAtleta(List<AtletaModel> atleta) {
+		this.atleta = atleta;
+	}
 	
 
 	
