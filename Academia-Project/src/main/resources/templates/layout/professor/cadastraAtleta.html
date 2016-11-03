@@ -182,7 +182,7 @@
 
 										<div class="form-group ">
 											<label for="numero" class="control-label col-lg-2"><b>Número
-													*</b></label>
+													</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
 													th:field="*{numeroCasa}" />
@@ -224,7 +224,7 @@
 											<label for="email" class="control-label col-lg-2"><b>Data
 													da Matricula *</b></label>
 											<div class="col-lg-10">
-												<input class="form-control" type="text"
+												<input class="form-control" type="hidden"
 													th:attr="value = ${#calendars.format(#calendars.createNow(), 'yyyy-MM-dd')}"
 													id="dataMatricula" name="dataMatricula"
 													

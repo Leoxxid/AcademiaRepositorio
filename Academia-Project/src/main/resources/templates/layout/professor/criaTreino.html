@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description"
-		content="Creative - Bootstrap 3 Responsive Admin Template" />
-	<meta name="author" content="GeeksLabs" />
-	<meta name="keyword"
-		content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<link rel="shortcut icon" th:href="@{/layout/img/favicon.png}" />
-	
-	<title>Index | GymAdmin</title>
-	
-	<!-- Bootstrap CSS -->
-	<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
-	<!-- bootstrap theme -->
-	<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
-	<!--external css-->
-	<!-- font icon -->
-	<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
-	<!-- easy pie chart-->
-	<link
-		th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
-		rel="stylesheet" type="text/css" media="screen" />
-	<!-- owl carousel -->
-	<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
-		type="text/css" />
-	<link th:href="@{/layout/css/jquery-jvectormap-1.2.2.css}"
-		rel="stylesheet" />
-	
-	<!-- Custom styles -->
-	<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
-	<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
-	<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-	
-	<script th:src="@{/layout/js/html5shiv.js}"></script>
-	<script th:src="@{/layout/js/respond.min.js}"></script>
-	<script th:src="@{/layout/js/lte-ie7.js}"></script>
-	
-	<!-- DataTables CSS -->
-	<link
-		th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}"
-		rel="stylesheet" />
-	
-	<!-- DataTables Responsive CSS -->
-	<link
-		th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}"
-		rel="stylesheet" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Creative - Bootstrap 3 Responsive Admin Template" />
+<meta name="author" content="GeeksLabs" />
+<meta name="keyword"
+	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" th:href="@{/layout/img/favicon.png}" />
+
+<title>Index | GymAdmin</title>
+
+<!-- Bootstrap CSS -->
+<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
+<!-- bootstrap theme -->
+<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
+<!--external css-->
+<!-- font icon -->
+<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
+<!-- easy pie chart-->
+<link
+	th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
+	rel="stylesheet" type="text/css" media="screen" />
+<!-- owl carousel -->
+<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
+	type="text/css" />
+<link th:href="@{/layout/css/jquery-jvectormap-1.2.2.css}"
+	rel="stylesheet" />
+
+<!-- Custom styles -->
+<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
+<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
+<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+
+<script th:src="@{/layout/js/html5shiv.js}"></script>
+<script th:src="@{/layout/js/respond.min.js}"></script>
+<script th:src="@{/layout/js/lte-ie7.js}"></script>
+
+<!-- DataTables CSS -->
+<link
+	th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}"
+	rel="stylesheet" />
+
+<!-- DataTables Responsive CSS -->
+<link
+	th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}"
+	rel="stylesheet" />
 
 
 </head>
@@ -64,9 +64,9 @@
 
 
 		<!--fragment header start-->
-		
+
 		<div th:replace="fragments/header::header"></div>
-		
+
 		<!--fragment header end-->
 
 		<!--fragment sidebar start-->
@@ -82,89 +82,99 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h3 class="page-header" align="left">
-							<i class="fa fa-table">Treino </i> 
-								<br/><br/>
+							<i class="fa fa-table">Treino </i> <br /> <br />
 						</h3>
 					</div>
 				</div>
-								<div class="row">
+
+				<div class="row">
 					<div class="col-lg-12">
 						<section class="panel">
+							<div class="col-lg-2">
+								<input class="form-control" th:value="${atleta.idAluno}"
+									disabled="disabled" type="hidden" />
+							</div>
+
 							<div class="panel-body">
-								<label class="control-label col-lg-1" for="peso" ><b>Matrícula</b></label>
+								<label class="control-label col-lg-1" for="peso"><b>Matrícula</b></label>
 								<div class="col-lg-2">
-									<input type="text" class="form-control" th:value="${atleta.matriculaAluno}" readonly="true"/>
+									<input type="text" class="form-control"
+										th:value="${atleta.matriculaAluno}" disabled="disabled" />
 								</div>
-					
-								<label class="control-label col-lg-1" for="peso" ><b>Nome</b></label>
+
+								<label class="control-label col-lg-1" for="peso"><b>Nome</b></label>
 								<div class="col-lg-8">
-									<input type="text" class="form-control" th:value="${atleta.nomeAluno}" readonly="true"/>
+									<input type="text" class="form-control"
+										th:value="${atleta.nomeAluno}" disabled="disabled" />
 								</div>
 							</div>
 						</section>
 					</div>
-				</div>	
-				
-				
+				</div>
+
+	<tr th:each="exercicio : ${exercicios}">
+	<h1 th:value="${exercicio.nomeExercicio}"></h1>
+	</tr>
+
 				<!-- inicio linha de inclusão de treino -->
 				<div class="row">
-					<label class="control-label col-md-1" ><b>Dia</b></label>    
-                    <div class="col-lg-2">
+					<label class="control-label col-md-1"><b>Dia</b></label>
+					<div class="col-lg-2">
 						<select class="form-control col-lg-2">
 							<option value="selecione">Selecione...</option>
-						  	<option value="Segunda">Segunda-Feira</option>
+							<option value="Segunda">Segunda-Feira</option>
 							<option value="Segunda">Terça-Feira</option>
 							<option value="Segunda">Quarta-Feira</option>
 							<option value="Segunda">Quinta-Feira</option>
 							<option value="Segunda">Sexta-Feira</option>
 							<option value="Segunda">Sábado</option>
 						</select>
-                    </div>
+					</div>
 					<label class="control-label col-md-1"><b>Exercício</b></label>
-                    <div class="col-lg-2">
-                    	<select class="form-control col-lg-2">
-							<option value="selecione">Selecione...</option>
-						  	<option th:each="exercicio : ${exercicioM}" th:text="${exercicio.nome_Exercicio}"></option>
+					<div class="col-lg-2">
+						<select class="form-control col-lg-2" >
+							<option th:each="exercicio : ${exercicios}"
+								th:text="${exercicio.nomeExercicio}"></option>
 						</select>
-                  	</div>
-                  	<div class="btn btn-primary btn-sm">Incluir</div>
-                  </div>
-	
-				<br/><br/>
-				<br/><br/>
-				
+					</div>
+					<div class="btn btn-primary btn-sm">Incluir</div>
+				</div>
+
+				<br /> <br /> <br /> <br />
+
 
 				<!-- tabela de treino com bootstrap-->
 				<div align="center">
 					<div class="dataTable_wrapper">
-		                <table class="table table-responsive" id="dataTables-example">
+						<table class="table table-responsive" id="dataTables-example">
 							<thead>
 								<tr>
 									<th>Segunda-Feira</th>
-		                            <th>Terça-Feira</th>
-		                            <th>Quarta-Feira</th>
+									<th>Terça-Feira</th>
+									<th>Quarta-Feira</th>
 									<th>Quinta-Feira</th>
 									<th>Sexta-Feira</th>
 									<th>Sábado</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody>
+								</tr>
+							</thead>
+							<tbody>
 								<tr class="odd gradeX" th:each="exercicio : ${exercicioM}">
 									<td th:text="${atleta.matriculaAluno}" th:type="text"
-											id="txtColuna1"></td>
-									<td th:text="${atleta.nomeAluno}" th:type="text" 
-											id="txtColuna2"></td>
-		                            <td th:text="${atleta.nascAluno}" th:type="text" 
-		                            		id="txtColuna3"></td>
-									<td><a class="btn btn-primary btn-sm" title="Bootstrap 3 themes generator">Ver Dados</a></td>
-		                        </tr>
-		                        
-		                    </tbody>
-		                </table>
+										id="txtColuna1"></td>
+									<td th:text="${atleta.nomeAluno}" th:type="text"
+										id="txtColuna2"></td>
+									<td th:text="${atleta.nascAluno}" th:type="text"
+										id="txtColuna3"></td>
+									<td><a class="btn btn-primary btn-sm"
+										title="Bootstrap 3 themes generator">Ver Dados</a></td>
+								</tr>
+
+							</tbody>
+						</table>
 					</div>
 				</div>
 				<!-- fim da tabela de treino -->
-				
+
 
 			</section>
 		</section>
@@ -218,13 +228,13 @@
 	<script th:src="@{/layout/js/charts.js}"></script>
 	<script th:src="@{/layout/js/jquery.slimscroll.min.js}"></script>
 	<script th:src="@{/layout/js/bootstrap-datepicker.min.js}"></script>
-	
+
 	<!-- DataTables JavaScript -->
 	<script
 		th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
 	<script
 		th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
-		
+
 	<script>
 		//knob
 		$(function() {
@@ -234,7 +244,6 @@
 				}
 			})
 		});
-
 		//carousel
 		$(document).ready(function() {
 			$("#owl-slider").owlCarousel({
@@ -242,16 +251,12 @@
 				slideSpeed : 300,
 				paginationSpeed : 400,
 				singleItem : true
-
 			});
 		});
-
 		//custom select box
-
 		$(function() {
 			$('select.styled').customSelect();
 		});
-
 		/* ---------- Map ---------- */
 		$(function() {
 			$('#map').vectorMap({
@@ -269,16 +274,12 @@
 				}
 			});
 		});
-
 		//calendário
-
 		$(document).ready(function() {
-
 			var date = new Date();
 			var d = date.getDate();
 			var m = date.getMonth();
 			var y = date.getFullYear();
-
 			var calendar = $('#calendar').fullCalendar({
 				header : {
 					left : 'prev,next today',
@@ -307,11 +308,10 @@
 					end : new Date(y, m, d - 2)
 				} ]
 			});
-
 		});
 	</script>
 
-<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
 	<script>
 		/*<![CDATA[*/
 		$(document).ready(function() {
@@ -321,11 +321,11 @@
 		});
 		/*]]>*/
 	</script>
-	
+
 	<script>
-	$('.delete').click(function () {
-	    return confirm("Are you sure?");
-	});
+		$('.delete').click(function() {
+			return confirm("Are you sure?");
+		});
 	</script>
 
 </body>

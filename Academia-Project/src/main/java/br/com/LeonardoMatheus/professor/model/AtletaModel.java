@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "cadastro_aluno")
 public class AtletaModel {
@@ -18,10 +20,11 @@ public class AtletaModel {
 	@Column(name = "ID_ALUNO")
 	private Long idAluno;
 	
-	@NotNull
+	@NotBlank
 	@Column(name = "MATRICULA_ALUNO", length = 40)
 	private String matriculaAluno;
-
+	
+	@NotBlank
 	@Column(name = "NOME_ALUNO", length = 45)
 	private String nomeAluno;
 
@@ -60,6 +63,17 @@ public class AtletaModel {
 
 	@Column(name = "DATA_MATRICULA")
 	private Date dataMatricula;
+	
+	//Construtor
+	public AtletaModel(){
+		
+	}
+	//Construtor
+	public AtletaModel(Long idAluno, String matriculaAluno, String nomeAluno){
+		this.idAluno = idAluno;
+		this.matriculaAluno = matriculaAluno;
+		this.nomeAluno= nomeAluno;
+	};
 
 	public Long getIdAluno() {
 		return idAluno;

@@ -85,17 +85,19 @@
 							<div class="panel-body">
 								<label class="control-label col-lg-1" for="peso"><b>Matrícula</b></label>
 								<div class="col-lg-2">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control"
+										th:value="${atleta.matriculaAluno}" disabled="disabled" />
 								</div>
-					
+
 								<label class="control-label col-lg-1" for="peso"><b>Nome</b></label>
 								<div class="col-lg-8">
-									<input type="text" class="form-control" />
+									<input type="text" class="form-control"
+										th:value="${atleta.nomeAluno}" disabled="disabled" />
 								</div>
 							</div>
 						</section>
 					</div>
-				</div>		
+				</div>
 				
 				<h2>Dias de Treino:</h2>
 				<div>
