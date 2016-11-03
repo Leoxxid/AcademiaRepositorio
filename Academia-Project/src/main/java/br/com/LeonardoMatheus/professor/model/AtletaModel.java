@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
 @Entity
 @Table(name = "cadastro_aluno")
 public class AtletaModel {

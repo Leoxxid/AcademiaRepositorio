@@ -99,7 +99,7 @@
 										<div class="form-group">
 											<div class="col-lg-10">
 												<input type="hidden" class="form-control"
-													th:field="*{idAluno}" />
+													th:value="${atleta.idAluno}" id="idAluno" name="idAluno"/>
 											</div>
 										</div>
 
@@ -108,16 +108,16 @@
 													do Aluno *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{matriculaAluno}" />
+													th:value="${atleta.matriculaAluno}" name="matriculaAluno" id="matriculaAluno"/>
 											</div>
 										</div>
-
+										
 										<div class="form-group ">
 											<label for="nomeCompleto" class="control-label col-lg-2"><b>Nome
 													Completo *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{nomeAluno}" />
+													th:value="${atleta.nomeAluno}" name="nomeAluno" id="nomeAluno"/>
 											</div>
 										</div>
 
@@ -128,7 +128,7 @@
 												<input type="text" 	class="form-control p" 
 																	id="dataReversa"
 																	placeholder="Utilize o formato 'yyyy-mm-dd'"
-													th:field="*{nascAluno}" />
+													th:value="${atleta.nascAluno}" name="nascAluno"/>
 											</div>
 										</div>
 
@@ -137,8 +137,8 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control p" 
-																	id="rg" 
-																	th:field="*{rg}" 
+																	id="rg" name="rg"
+																	th:value="${atleta.rg}"  
 																	placeholder="Caso o Dígito seja uma letra, substitua por 0(zero)!" />
 											</div>
 										</div>
@@ -147,7 +147,7 @@
 											<label for="cpf" class="control-label col-lg-2"><b>CPF
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control p" id="cpf" th:field="*{cpf}" />
+												<input type="text" class="form-control p" id="cpf" name="cpf" th:value="${atleta.cpf}" />
 											</div>
 										</div>
 
@@ -159,7 +159,7 @@
 											<label for="endereco" class="control-label col-lg-2"><b>Estado
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{estado}" />
+												<input type="text" class="form-control" th:value="${atleta.estado}" name="estado" id="estado" />
 											</div>
 										</div>
 
@@ -167,7 +167,7 @@
 											<label for="numero" class="control-label col-lg-2"><b>Cidade
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{cidade}" />
+												<input type="text" class="form-control" th:value="${atleta.cidade}" name="cidade" id="cidade"/>
 											</div>
 										</div>
 
@@ -175,7 +175,7 @@
 											<label for="numero" class="control-label col-lg-2"><b>Bairro
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{bairro}" />
+												<input type="text" class="form-control" th:value="${atleta.bairro}" name="bairro" id="bairro"/>
 											</div>
 										</div>
 
@@ -183,7 +183,7 @@
 											<label for="numero" class="control-label col-lg-2"><b>Rua
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" th:field="*{rua}" />
+												<input type="text" class="form-control" th:value="${atleta.rua}" id="rua" name="rua"/>
 											</div>
 										</div>
 
@@ -192,7 +192,7 @@
 													*</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{numeroCasa}" />
+													th:value="${atleta.numeroCasa}" id="numeroCasa" name="numeroCasa" />
 											</div>
 										</div>
 
@@ -201,27 +201,27 @@
 											<label for="complemento" class="control-label col-lg-2"><b>Complemento</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:field="*{complemento}" />
+													th:value="${atleta.complemento}" id="complemento" name="complemento"/>
 											</div>
 										</div>
 
 										<h4>
 											<b>Contato</b>
 										</h4>
-										<div class="form-group ">
+										<div class="form-group">
 											<label for="telefone" class="control-label col-lg-2"><b>Telefone
 													*</b></label>
 											<div class="col-lg-10">
-												<input class="form-control" id="telefoneCasa" type="text"
-													th:field="*{telefoneCasa}"/>
+												<input th:if="${atleta.telefoneCasa != null}" class="form-control p" id="telefoneCasa" name="telefoneCasa" type="text"
+													th:value="${atleta.telefoneCasa}"/>
 											</div>
 										</div>
 
 										<div class="form-group ">
 											<label for="celular" class="control-label col-lg-2"><b>Celular</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control" id="telefoneCelular" 
-													th:field="*{telefoneCelular}" />
+												<input th:if="${atleta.telefoneCelular != null}" type="text" class="form-control p" id="telefoneCelular" name="telefoneCelular"
+													th:value="${atleta.telefoneCelular}" />
 											</div>
 										</div>
 										
@@ -232,9 +232,9 @@
 													da Matricula *</b></label>
 											<div class="col-lg-10">
 												<input class="form-control" type="text"
-													th:attr="value = ${#calendars.format(#calendars.createNow(), 'yyyy-MM-dd')}"
-													id="dataMatricula" name="dataMatricula"
-													
+													th:value="${atleta.dataMatricula}"
+													id="dataMatricula"
+													name="dataMatricula"
 													 />
 											</div>
 										</div>

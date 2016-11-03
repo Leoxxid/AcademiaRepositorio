@@ -30,7 +30,9 @@ public class alunosController {
 		mv.addObject("atletas", atleta.findAll());
 		return mv;
 	}
-
+	
+	//''''''''''''''''''''''''''''''''''''''''''''''''''
+	//													NOVO
 	// Get da tela de cadastro de atleta
 	@RequestMapping("/novo")
 	public String cadastrar(AtletaModel atletaModel) {
@@ -43,12 +45,18 @@ public class alunosController {
 		service.save(atletaModel);
 		return "redirect:/atleta/todos";
 	}
+	
+	//''''''''''''''''''''''''''''''''''''''''''''''''''
 
 	// Visualizar perfil do atleta
-	@RequestMapping(value = "/perfil-do-atleta")
-	public String perfilAtleta() {
-
-		return "perfilAtleta";
+	@RequestMapping(value = "/perfil-do-atleta/{idAtleta}")
+	public ModelAndView perfilAtleta(@PathVariable Long idAtleta) {
+		AtletaModel atletaModel = new AtletaModel(); 
+		atletaModel = service.findById(idAtleta);
+		ModelAndView mv = new ModelAndView("layout/professor/atualizarAtleta");
+		mv.addObject("atleta", atletaModel);
+		
+		return mv;
 	}
 
 	@RequestMapping(value = "deletar-atleta/{idAtleta}")

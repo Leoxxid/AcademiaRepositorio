@@ -122,7 +122,9 @@
 			</div>
 
 			<div th:if="${param.delete}" class="alert alert-success">
-				<h2 align="center">A exclusão de atleta foi realizada com sucesso!</h2></div>
+				<h2 align="center">A exclusão de atleta foi realizada com
+					sucesso!</h2>
+			</div>
 
 			<div align="center">
 				<div class="dataTable_wrapper">
@@ -144,8 +146,9 @@
 								<td th:text="${atleta.nascAluno}" th:type="text" id="txtColuna3"></td>
 								<td style="width: 300px;">
 									<div class="btn-group">
-										<button type="button" class="btn btn-primary"
-											onClick="/dadosAtleta">Ver Dados</button>
+										<a type="button" class="btn btn-primary"
+											th:href="@{/atleta/perfil-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}">Ver
+											Dados</a>
 										<a href="/avaliacao/atletas/avaliaAtleta"><button
 												type="button" class="btn btn-primary">Avaliar</button></a> <a
 											href="/treino/atletas/treino-do-atleta"><button
@@ -260,9 +263,9 @@
 	</script>
 
 	<script>
-	$('.delete').click(function () {
-	    return confirm("Você tem certeza que deseja deletar este atleta?");
-	});
+		$('.delete').click(function() {
+			return confirm("Você tem certeza que deseja deletar este atleta?");
+		});
 	</script>
 
 </body>
