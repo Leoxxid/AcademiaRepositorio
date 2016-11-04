@@ -146,12 +146,12 @@
 								<td th:text="${atleta.nascAluno}" th:type="text" id="txtColuna3"></td>
 								<td style="width: 300px;">
 									<div class="btn-group">
-										<a type="button" class="btn btn-primary"
+										<a type="submit" class="btn btn-primary"
 											th:href="@{/atleta/perfil-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}">Ver
-											Dados</a>
+											Perfil</a>
 										<a href="/avaliacao/atletas/avaliaAtleta"><button
-												type="button" class="btn btn-primary">Avaliar</button></a> <a
-											th:href="@{/treino/atletas/treino-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
+												type="submit" class="btn btn-primary">Avaliar</button></a> <a
+											th:href="@{/atletas/treino/treino-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
 												type="button" class="btn btn-primary">Treino</button></a>
 									</div> <a class="delete"
 									th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
