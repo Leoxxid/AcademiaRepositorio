@@ -126,11 +126,10 @@
 					sucesso!</h2>
 			</div>
 
-			<div align="center">
-				<div class="dataTable_wrapper">
-					<table class="table table-responsive table-bordered"
-						id="dataTables-example">
-						<thead>
+				<div align="center">
+					<div class="dataTable_wrapper">
+						<table class="table table-responsive table-bordered" id="dataTables-example">
+							<thead>
 							<tr bgcolor="#337ab7" style="border-color: #000000">
 								<th style="color: white">Matrícula</th>
 								<th style="color: white">Nome</th>
@@ -148,15 +147,14 @@
 									<div class="btn-group">
 										<a type="submit" class="btn btn-primary"
 											th:href="@{/atleta/perfil-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}">Ver
-											Perfil</a>
-										<a href="/avaliacao/atletas/avaliaAtleta"><button
-												type="submit" class="btn btn-primary">Avaliar</button></a> <a
+											Perfil</a> <a href="/avaliacao/atletas/avaliaAtleta"><button
+												type="submit" class="btn btn-primary">Avaliar</button></a><a
 											th:href="@{/atletas/treino/treino-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
-												type="button" class="btn btn-primary">Treino</button></a>
-									</div> <a class="delete"
-									th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
-											type="submit" class="btn btn-primary fa fa-times"></button></a>
-
+												type="button" class="btn btn-primary">Treino</button></a> <a
+											class="delete"
+											th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
+												type="submit" class="btn btn-primary fa fa-times"></button></a>
+									</div>
 								</td>
 							</tr>
 							<tr th:if="${atletas.empty}">
@@ -166,14 +164,8 @@
 
 						</tbody>
 					</table>
-
 				</div>
-
-
 			</div>
-
-			<div></div>
-
 		</section>
 	</section>
 	<!-- /#page-wrapper -->
