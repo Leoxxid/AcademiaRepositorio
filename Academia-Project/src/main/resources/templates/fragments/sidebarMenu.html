@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <meta charset="utf-8" />
-    
-    <div  th:fragment="sidebarMenu">
-    <aside>
-			<div id="sidebar" class="nav-collapse ">
-				<!-- sidebar menu start-->
-				<ul class="sidebar-menu">
-					<li><a class="" th:href="@{/inicio}"> <i
-							class="fa fa-home"></i> <span>Início</span>
-					</a></li>
 
-					<li class="sub-menu"><a href="javascript:;" class=""> <i
-							class="fa fa-pencil-square-o"></i> <span>Cadastros</span> <span
-							class="menu-arrow arrow_carrot-right"></span>
-					</a>
-						<ul class="sub">
-							<li class="active"><a class="" th:href="@{/atleta/todos}">Atletas</a></li>
-							<li><a class="" th:href="@{/listaProfessores.html}">Professores</a></li>
-						</ul></li>
+<div th:fragment="sidebarMenu">
+	<aside>
+		<div id="sidebar" class="nav-collapse ">
+			<!-- sidebar menu start-->
+			<ul class="sidebar-menu">
+				<li><a class="" th:href="@{/inicio}"> <i class="fa fa-home"></i>
+						<span>Início</span>
+				</a></li>
 
-					<li class="sub-menu"><a href="javascript:;" class=""> <i
-							class="fa fa-plus-circle"></i> <span>Mais</span> <span
-							class="menu-arrow arrow_carrot-right"></span>
-					</a>
-						<ul class="sub">
-							<li><a class="" th:href="@{/profile.html}">Meus Dados</a></li>
-							<li><a class="" th:href="@{/logout}"><span>Sair</span></a></li>
-						</ul></li>
+				<li class="sub-menu"><a href="javascript:;" class=""> <i
+						class="fa fa-pencil-square-o"></i> <span>Cadastrar</span> <span
+						class="menu-arrow arrow_carrot-right"></span>
+				</a>
+					<ul class="sub">
+						<li class="active"><a class="" th:href="@{/atleta/novo}">Atleta</a></li>
+						<li class="active"><a class="" th:href="@{/exercicio/novo}">Exercício</a></li>
+					</ul></li>
 
-				</ul>
-				<!-- sidebar menu end-->
-			</div>
-		</aside>
-	</div>
+				<li class="sub-menu"><a href="javascript:;" class=""> <i
+						class="fa fa-search"></i> <span>Consultar</span> <span
+						class="menu-arrow arrow_carrot-right"></span>
+				</a>
+					<ul class="sub">
+						<li class="active"><a class="" th:href="@{/atleta/todos}">Atleta</a></li>
+					</ul></li>
+
+				<li class="sub-menu"><a href="javascript:;" class=""> <i
+						class="fa fa-plus-circle"></i> <span>Mais</span> <span
+						class="menu-arrow arrow_carrot-right"></span>
+				</a>
+					<ul class="sub">
+						<li><a class="" th:href="@{/profile.html}">Meus Dados</a></li>
+						<li><a class="" th:href="@{/logout}"><span>Sair</span></a></li>
+					</ul></li>
+
+			</ul>
+			<!-- sidebar menu end-->
+		</div>
+	</aside>
+</div>
 </html>
