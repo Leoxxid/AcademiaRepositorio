@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,8 +36,17 @@ public class ExercicioModel {
 	@Column(name = "DESCRICAO")
 	private String descricao;
 
-	@OneToMany(mappedBy = "exercicio")
+	@OneToMany(fetch=FetchType.LAZY,mappedBy = "exercicio")
 	private List<DiaExercicioModel> exercicio;
+	
+	//Construtor 
+	public ExercicioModel(Long idExercicio, String nomeExercicio){
+		this.idExercicio = idExercicio;
+		this.nomeExercicio = nomeExercicio;
+	}
+	public ExercicioModel(){
+		
+	}
 
 	// ===== GETTERS AND SETTERS
 
@@ -75,5 +85,9 @@ public class ExercicioModel {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	public List<DiaExercicioModel> getExercicio() {
+		return exercicio;
+	}
+	
 
 }

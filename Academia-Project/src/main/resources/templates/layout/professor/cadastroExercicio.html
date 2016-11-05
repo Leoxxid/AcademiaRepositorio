@@ -112,12 +112,9 @@
 											<div class="col-lg-5">
 												<input type="text" class="form-control"
 													th:field="*{nomeExercicio}" />
-
-												<div class="form-group has-error ">
 													<h5 style="color:red" th:if="${#fields.hasErrors('nomeExercicio')}"
 													th:errors="*{nomeExercicio}">Erro no exercicio</h5>
-													
-												</div>
+
 											</div>
 										</div>
 

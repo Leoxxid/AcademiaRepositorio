@@ -11,5 +11,7 @@ public interface Dia extends CrudRepository<DiaModel, Long> {
 	
 	@Query("select new DiaModel(d.idDia,d.diaSemana) from DiaModel d where atleta.idAluno = ?")
 	List <DiaModel> diasdoAtleta(Long idAluno);
+	
+	List <DiaModel> findByAtletaIdAluno(Long idALuno); 
 
 }

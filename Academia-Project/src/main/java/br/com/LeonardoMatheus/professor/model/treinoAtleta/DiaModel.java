@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,22 +27,29 @@ public class DiaModel {
 
 	@Column(name = "DIA_SEMANA")
 	private String diaSemana;
-	
-	@ManyToOne
+
+
+
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="ALUNO")
 	private AtletaModel atleta;
 	
 	
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "dia")
+	@OneToMany(fetch=FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "dia")
 	private List<DiaExercicioModel> dia;
 	
-	//Construtor
+	//Construtores
 	public DiaModel(Long idDia, String diaSemana){
 		this.idDia = idDia; 
 		this.diaSemana = diaSemana;
 		
 	}
+	public DiaModel(){
+		
+	};
+
+	
 	
 	public Long getIdDia() {
 		return idDia;
@@ -73,6 +81,7 @@ public class DiaModel {
 
 	public void setAtleta(AtletaModel atleta) {
 		this.atleta = atleta;
+		
 	}
-	
+
 }

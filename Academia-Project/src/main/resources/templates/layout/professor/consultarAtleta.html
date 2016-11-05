@@ -78,6 +78,7 @@
 <link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
 <!-- owl carousel -->
 
+
 <script th:src="@{/layout/js/html5shiv.js}"></script>
 <script th:src="@{/layout/js/respond.min.js}"></script>
 <script th:src="@{/layout/js/lte-ie7.js}"></script>
@@ -126,10 +127,11 @@
 					sucesso!</h2>
 			</div>
 
-				<div align="center">
-					<div class="dataTable_wrapper">
-						<table class="table table-responsive table-bordered" id="dataTables-example">
-							<thead>
+			<div align="center">
+				<div class="dataTable_wrapper">
+					<table class="table table-responsive table-bordered"
+						id="dataTables-example">
+						<thead>
 							<tr bgcolor="#337ab7" style="border-color: #000000">
 								<th style="color: white">Matrícula</th>
 								<th style="color: white">Nome</th>
@@ -148,7 +150,9 @@
 										<a type="submit" class="btn btn-primary"
 											th:href="@{/atleta/perfil-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}">Ver
 											Perfil</a> <a href="/avaliacao/atletas/avaliaAtleta"><button
-												type="submit" class="btn btn-primary">Avaliar</button></a><a
+												type="submit" class="btn btn-primary">Avaliar</button></a> <a
+											th:href="@{/atletas/frequencia-academia/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
+												type="button" class="btn btn-primary">Frequência</button></a><a
 											th:href="@{/atletas/treino/treino-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
 												type="button" class="btn btn-primary">Treino</button></a> <a
 											class="delete"
@@ -175,8 +179,6 @@
 
 	<!-- Javascripts -->
 
-	<!-- jQuery -->
-	<script th:src="@{/layout/bower_components/jquery/dist/jquery.min.js}"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script

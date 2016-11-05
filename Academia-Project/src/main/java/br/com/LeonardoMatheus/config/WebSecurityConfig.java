@@ -34,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				.authorizeRequests()
 						.antMatchers("/atleta/novo","/atleta/todos","/exercicio/novo","/inicio", 
 											"/atletas/treino/treino-do-atleta/",	"/atleta/deletar-atleta/{idAtleta}", 
-										"/treino/atletas/cadastraDia", "/avaliacao/atletas/avaliaAtleta", 
+											"/atletas/frequencia-academia/", "/avaliacao/atletas/avaliaAtleta", 
 										"/atleta/atleta/estatisticas", "/atleta/atleta/treino", "atleta/perfil-do-atleta","/atletas/treino/treino-do-atleta/").permitAll()
 						.antMatchers().hasRole("ADMIN")
 							.anyRequest().authenticated()
