@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,9 +9,9 @@
 <meta name="keyword"
 	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" th:href="@{/layoutimg/favicon.png}" />
+<link rel="shortcut icon" th:href="@{/layout/img/favicon.png}" />
 
-<title>Cadastro | GymAdmin</title>
+<title>Consulta Atleta | GymAdmin</title>
 
 <!-- Bootstrap CSS -->
 <link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
@@ -21,31 +21,28 @@
 <!-- font icon -->
 <link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
 <link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
-<!-- full calendar css-->
-<link
-	th:href="@{/layout/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css}"
-	rel="stylesheet" />
-<link
-	th:href="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.css}"
-	rel="stylesheet" />
 <!-- easy pie chart-->
 <link
 	th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
 	rel="stylesheet" type="text/css" media="screen" />
 <!-- owl carousel -->
 <link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
-	type="text/css}" />
-<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
-
-<!-- Bootstrap Core CSS -->
-<link
-	th:href="@{/layout/bower_components/bootstrap/dist/css/bootstrap.css}"
+	type="text/css" />
+<link th:href="@{/layout/css/jquery-jvectormap-1.2.2.css}"
 	rel="stylesheet" />
 
-<!-- MetisMenu CSS -->
-<link
-	th:href="@{/layout/bower_components/metisMenu/dist/metisMenu.min.css}"
-	rel="stylesheet" />
+<!-- Custom styles -->
+<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
+<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
+<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+
+<script th:src="@{/layout/js/html5shiv.js}"></script>
+<script th:src="@{/layout/js/respond.min.js}"></script>
+<script th:src="@{/layout/js/lte-ie7.js}"></script>
 
 <!-- DataTables CSS -->
 <link
@@ -57,31 +54,6 @@
 	th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}"
 	rel="stylesheet" />
 
-<!-- Custom CSS -->
-<link th:href="@{/layout/dist/css/sb-admin-2.css}" rel="stylesheet" />
-
-<!-- Custom Fonts -->
-<link
-	th:href="@{/layout/bower_components/font-awesome/css/font-awesome.min.css}"
-	rel="stylesheet" type="text/css" />
-
-<!-- Custom styles -->
-<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
-<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
-<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
-<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
-<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
-<link th:href="@{layout/css/bootstrap.min.css}" rel="stylesheet" />
-<!--external css-->
-<!-- font icon -->
-<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
-<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
-<!-- owl carousel -->
-
-
-<script th:src="@{/layout/js/html5shiv.js}"></script>
-<script th:src="@{/layout/js/respond.min.js}"></script>
-<script th:src="@{/layout/js/lte-ie7.js}"></script>
 
 </head>
 
@@ -145,20 +117,18 @@
 									id="txtColuna1"></td>
 								<td th:text="${atleta.nomeAluno}" th:type="text" id="txtColuna2"></td>
 								<td th:text="${atleta.nascAluno}" th:type="text" id="txtColuna3"></td>
-								<td style="width: 300px;">
-									<div class="btn-group">
-										<a type="submit" class="btn btn-primary"
-											th:href="@{/atleta/perfil-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}">Ver
-											Perfil</a> <a href="/avaliacao/atletas/avaliaAtleta"><button
-												type="submit" class="btn btn-primary">Avaliar</button></a> <a
-											th:href="@{/atletas/frequencia-academia/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
-												type="button" class="btn btn-primary">Frequência</button></a><a
-											th:href="@{/atletas/treino/treino-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
-												type="button" class="btn btn-primary">Treino</button></a> <a
-											class="delete"
+								<td class="">
+									
+										<a title="Perfil" type="submit" class="btn btn-primary fa fa-user"
+											th:href="@{/atleta/perfil-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a>
+										<a title="Ver treino" type="button" class="btn btn-primary fa fa-tasks"
+											th:href="@{/atletas/treino/treino-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a>  
+										<a title="Dias de Treino" type="button" class="btn btn-primary fa fa-calendar" 
+											th:href="@{/atletas/frequencia-academia/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a>
+										<a title="Deletar" class="delete"
 											th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
 												type="submit" class="btn btn-primary fa fa-times"></button></a>
-									</div>
+									
 								</td>
 							</tr>
 							<tr th:if="${atletas.empty}">
@@ -177,26 +147,7 @@
 
 	<!-- /#wrapper -->
 
-	<!-- Javascripts -->
-
-
-	<!-- Bootstrap Core JavaScript -->
-	<script
-		th:src="@{/layout/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
-
-	<!-- Metis Menu Plugin JavaScript -->
-	<script
-		th:src="@{/layout/bower_components/metisMenu/dist/metisMenu.min.js}"></script>
-
-	<!-- DataTables JavaScript -->
-	<script
-		th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
-	<script
-		th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
-
-	<!-- Custom Theme JavaScript -->
-	<script th:src="@{/layout/dist/js/sb-admin-2.js}"></script>
-
+	<!-- javascripts -->
 	<script th:src="@{/layout/js/jquery.js}"></script>
 	<script th:src="@{/layout/js/jquery-ui-1.10.4.min.js}"></script>
 	<script th:src="@{/layout/js/jquery-1.8.3.min.js}"></script>
@@ -242,6 +193,12 @@
 	<script th:src="@{/layout/js/charts.js}"></script>
 	<script th:src="@{/layout/js/jquery.slimscroll.min.js}"></script>
 	<script th:src="@{/layout/js/bootstrap-datepicker.min.js}"></script>
+
+	<!-- DataTables JavaScript -->
+	<script
+		th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
+	<script
+		th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
 
 
 
