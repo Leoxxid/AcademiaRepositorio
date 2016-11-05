@@ -157,16 +157,21 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="odd gradeX" th:each="exercicio : ${exercicioM}">
-									<td th:text="${atleta.matriculaAluno}" th:type="text"
-										id="txtColuna1"></td>
-									<td th:text="${atleta.nomeAluno}" th:type="text"
-										id="txtColuna2"></td>
-									<td th:text="${atleta.nascAluno}" th:type="text"
-										id="txtColuna3"></td>
-									<td><a class="btn btn-primary btn-sm"
-										title="Bootstrap 3 themes generator">Ver Dados</a></td>
+								<tr class="odd gradeX" th:if="${treino} != null">
+									
+									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'SEG'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
+									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'TER'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
+									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'QUA'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
+									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'QUI'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
+									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'SEX'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
+									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'SAB'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
+									
+									
 								</tr>
+								<tr class="odd gradeX" th:if="${treino} == null">
+								<td colspan="6" align="center"> <h2> Nenhum cronograma para o atleta</h2> </td>
+								</tr>
+								
 
 							</tbody>
 						</table>

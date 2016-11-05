@@ -44,13 +44,13 @@ public class DiaExercicioService {
 		
 	}
 	
-	public void diaExercicioDoAtleta(List <DiaModel> diaModel){
+	public List <DiaExercicioModel> diaExercicioDoAtleta(List <DiaModel> diaModel){
 		
 		List<DiaExercicioModel> diaExercicioModel = new ArrayList<>();
 		for (DiaModel diaModelFE : this.diaModel) {
 			diaExercicioModel.addAll(this.diaExercicio.findByDiaIdDia(diaModelFE.getIdDia()));
 		}
-		System.out.println(diaExercicioModel.size());
+		return diaExercicioModel;
 	}
 
 }
