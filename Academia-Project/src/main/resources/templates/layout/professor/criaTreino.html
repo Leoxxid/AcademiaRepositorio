@@ -110,7 +110,7 @@
 
 				<!-- inicio linha de inclusão de treino -->
 				<form name="cadastro-treino" method="post"
-					th:action="@{/atletas/treino/treino-do-atleta}"
+					th:action="@{/atletas/treino/treino-do-atleta/{idAtleta} (idAtleta =${atleta.idAluno})}"
 					th:object="${diaExercicioModel}">
 
 					<div class="row">
