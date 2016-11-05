@@ -1,9 +1,7 @@
 package br.com.LeonardoMatheus.professor.controller;
 
-
-
-
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,42 +25,48 @@ public class TreinoAtletaController {
 
 	@Autowired
 	public DiaExercicioService diaExercicioService;
-	
+
 	@Autowired
 	DiaService diaService;
-	
+
 	@Autowired
 	public Exercicio exercicio;
 
 	@Autowired
 	public Atletas atleta;
 
-	@RequestMapping(value="/treino/treino-do-atleta/{idAtleta}", method=RequestMethod.GET)
+	@RequestMapping(value = "/treino/treino-do-atleta/{idAtleta}", method = RequestMethod.GET)
 	public ModelAndView treinoAtleta(@PathVariable Long idAtleta) {
 		ModelAndView mv = new ModelAndView("/layout/professor/criaTreino");
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("atleta", diaExercicioService.selectAtletaAndId(idAtleta));
+
 		model.put("exercicios", exercicio.findAll());
-		model.put("dias", diaExercicioService.findDiaAtleta(idAtleta));
+
+		List<DiaModel> diasDoTreino = diaExercicioService.findDiaAtleta(idAtleta);
+		model.put("dias", diasDoTreino);
+		
+		diaExercicioService.diaExercicioDoAtleta(diasDoTreino);
+
 		mv.addAllObjects(model);
 		return mv;
 	}
-	
-	// Get da tela de cadastro de atleta
-		@RequestMapping(value="/treino/treino-do-atleta", method=RequestMethod.POST)
-		public String cadastrar(DiaExercicioModel diaExercicioModel) {
-			diaExercicioService.saveDiaExercicio(diaExercicioModel);
-			return "/acesso";
-		}
+
+	// Post da tela de cadastro de atleta
+	@RequestMapping(value = "/treino/treino-do-atleta/{idAtleta}", method = RequestMethod.POST)
+	public String cadastrar(@PathVariable Long idAtleta ,DiaExercicioModel diaExercicioModel) {
+		diaExercicioService.saveDiaExercicio(diaExercicioModel);
+		return "redirect:/atletas/treino/treino-do-atleta/{idAtleta}";
+	}
 
 	@RequestMapping("/frequencia-academia/{idAtleta}")
 	public ModelAndView diaTreino(@PathVariable Long idAtleta) {
 		ModelAndView mv = new ModelAndView("/layout/professor/cadastroDia");
-		Map<String, Object> model = new HashMap<String , Object>();
+		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("atleta", diaExercicioService.selectAtletaAndId(idAtleta));
 		model.put("dias", diaService.findDia(idAtleta));
 		mv.addAllObjects(model);
- 		return mv;
+		return mv;
 	}
 
 }

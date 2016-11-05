@@ -2,6 +2,7 @@ package br.com.LeonardoMatheus.professor.service;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,15 @@ public class DiaExercicioService {
 		diaModel = this.dia.diasdoAtleta(idAtleta);
 		return diaModel;
 		
+	}
+	
+	public void diaExercicioDoAtleta(List <DiaModel> diaModel){
+		
+		List<DiaExercicioModel> diaExercicioModel = new ArrayList<>();
+		for (DiaModel diaModelFE : this.diaModel) {
+			diaExercicioModel.addAll(this.diaExercicio.findByDiaIdDia(diaModelFE.getIdDia()));
+		}
+		System.out.println(diaExercicioModel.size());
 	}
 
 }
