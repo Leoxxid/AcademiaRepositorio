@@ -68,8 +68,8 @@ public class AtletaModel {
 	@Column(name = "DATA_MATRICULA")
 	private Date dataMatricula;
 	
-	@OneToMany(fetch=FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "atleta")
-	List<AtletaModel> atleta;
+	@OneToMany(fetch=FetchType.LAZY,cascade = CascadeType.ALL, mappedBy ="atleta")
+	private List <AtletaModel> atleta;
 	
 	//Construtor
 	public AtletaModel(){
@@ -207,6 +207,7 @@ public class AtletaModel {
 	public void setAtleta(List<AtletaModel> atleta) {
 		this.atleta = atleta;
 	}
+	
 	
 
 	

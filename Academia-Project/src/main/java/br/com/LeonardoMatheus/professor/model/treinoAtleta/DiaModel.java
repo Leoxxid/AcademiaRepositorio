@@ -67,13 +67,6 @@ public class DiaModel {
 		this.diaSemana = diaSemana;
 	}
 
-	public List<DiaExercicioModel> getDia() {
-		return dia;
-	}
-
-	public void setDia(List<DiaExercicioModel> dia) {
-		this.dia = dia;
-	}
 
 	public AtletaModel getAtleta() {
 		return atleta;
@@ -83,5 +76,13 @@ public class DiaModel {
 		this.atleta = atleta;
 		
 	}
+	public List<DiaExercicioModel> getDia() {
+		return dia;
+	}
+	public void setDia(List<DiaExercicioModel> dia) {
+		this.dia = dia;
+	}
+	
+	
 
 }
