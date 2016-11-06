@@ -17,7 +17,7 @@ import br.com.LeonardoMatheus.professor.model.AtletaModel;
 
 @Entity
 @Table(name = "cadastro_aluno")
-public class perfilModel {
+public class PerfilModel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

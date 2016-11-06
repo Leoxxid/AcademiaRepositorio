@@ -7,7 +7,7 @@ import br.com.LeonardoMatheus.professor.repository.Atletas;
 import br.com.LeonardoMatheus.professor.service.AtletaService;
 
 @Controller
-@RequestMapping("/atleta")
+@RequestMapping("/visualizar")
 public class atletaController {
 
 	@Autowired
@@ -21,7 +21,7 @@ public class atletaController {
 		return "/layout/atleta/estatisticas";
 	}
 	
-	@RequestMapping("/atleta/treino")
+	@RequestMapping("/treino")
 	public String treinoAtleta(){
 		return "/layout/atleta/verTreino";
 	}
