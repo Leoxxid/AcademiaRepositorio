@@ -10,7 +10,7 @@ import br.com.LeonardoMatheus.professor.model.AtletaModel;
 
 public interface Atletas extends CrudRepository<AtletaModel, Long> {
 	
-	
+//======================================= PROFESSOR	
 	//Atleta completo
 	AtletaModel findByIdAluno(Long idAluno);
 	
@@ -19,5 +19,9 @@ public interface Atletas extends CrudRepository<AtletaModel, Long> {
 	//Matricula e Nome
 	@Query("select new AtletaModel(a.idAluno, a.matriculaAluno , a.nomeAluno) from AtletaModel a where a.idAluno = ?")
 	AtletaModel selectNomeAndMatricula(Long idAluno);
+	
+	
+	
+	
 
 }

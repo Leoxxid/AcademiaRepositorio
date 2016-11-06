@@ -1,4 +1,4 @@
-package br.com.LeonardoMatheus.professor.model;
+package br.com.LeonardoMatheus.atleta.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +14,7 @@ public class AcessoWebModel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_ACESSO")
-	private int idAcesso;
+	private Long idAcesso;
 
 	@Column(name = "NOME_ACESSO")
 	private String nome;
@@ -25,18 +25,28 @@ public class AcessoWebModel {
 	@Column(name = "ATIVACAO_ACESSO")
 	private String ativacao;
 	
-	// ===== GETTERS AND SETTERS
+	// Construtor
+	public AcessoWebModel() {
 	
-	public int getIdAcesso() {
+	}
+	
+	AcessoWebModel(String nome){
+		this.nome = nome;
+		
+	}
+	
+	
+	// ===== GETTERS AND SETTERS
+	public String getNome() {
+		return nome;
+	}
+
+	public Long getIdAcesso() {
 		return idAcesso;
 	}
 
-	public void setIdAcesso(int idAcesso) {
+	public void setIdAcesso(Long idAcesso) {
 		this.idAcesso = idAcesso;
-	}
-
-	public String getNome() {
-		return nome;
 	}
 
 	public void setNome(String nome) {
