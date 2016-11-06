@@ -25,4 +25,9 @@ public class atletaController {
 	public String treinoAtleta(){
 		return "/layout/atleta/verTreino";
 	}
+	
+	@RequestMapping("/atleta/index")
+	public String indexAtleta(){
+		return "/layout/atleta/index";
+	}
 }
