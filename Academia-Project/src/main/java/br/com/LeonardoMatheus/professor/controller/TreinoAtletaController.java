@@ -15,6 +15,7 @@ import br.com.LeonardoMatheus.professor.model.treinoAtleta.DiaModel;
 import br.com.LeonardoMatheus.professor.model.treinoAtleta.ExercicioModel;
 import br.com.LeonardoMatheus.professor.repository.Atletas;
 import br.com.LeonardoMatheus.professor.repository.Dia;
+import br.com.LeonardoMatheus.professor.repository.DiaExercicio;
 import br.com.LeonardoMatheus.professor.repository.Exercicio;
 import br.com.LeonardoMatheus.professor.service.DiaExercicioService;
 import br.com.LeonardoMatheus.professor.service.DiaService;
@@ -40,21 +41,19 @@ public class TreinoAtletaController {
 		ModelAndView mv = new ModelAndView("/layout/professor/criaTreino");
 		Map<String, Object> model = new HashMap<String, Object>();
 		model.put("atleta", diaExercicioService.selectAtletaAndId(idAtleta));
-
 		model.put("exercicios", exercicio.findAll());
-
 		List<DiaModel> diasDoTreino = diaExercicioService.findDiaAtleta(idAtleta);
 		model.put("dias", diasDoTreino);
-		
-		diaExercicioService.diaExercicioDoAtleta(diasDoTreino);
-
+		List<DiaExercicioModel> treino = diaExercicioService.diaExercicioDoAtleta(diasDoTreino);
+		model.put("treino", treino);
 		mv.addAllObjects(model);
+
 		return mv;
 	}
 
 	// Post da tela de cadastro de atleta
 	@RequestMapping(value = "/treino/treino-do-atleta/{idAtleta}", method = RequestMethod.POST)
-	public String cadastrar(@PathVariable Long idAtleta ,DiaExercicioModel diaExercicioModel) {
+	public String cadastrar(@PathVariable Long idAtleta, DiaExercicioModel diaExercicioModel) {
 		diaExercicioService.saveDiaExercicio(diaExercicioModel);
 		return "redirect:/atletas/treino/treino-do-atleta/{idAtleta}";
 	}
