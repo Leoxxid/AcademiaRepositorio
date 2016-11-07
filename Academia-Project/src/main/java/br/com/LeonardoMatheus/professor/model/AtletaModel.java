@@ -13,8 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
 import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 @Table(name = "cadastro_aluno")
 public class AtletaModel {
@@ -23,11 +23,11 @@ public class AtletaModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_ALUNO")
 	private Long idAluno;
-	
+
 	@NotBlank
 	@Column(name = "MATRICULA_ALUNO", length = 40)
 	private String matriculaAluno;
-	
+
 	@NotBlank
 	@Column(name = "NOME_ALUNO", length = 45)
 	private String nomeAluno;
@@ -67,19 +67,23 @@ public class AtletaModel {
 
 	@Column(name = "DATA_MATRICULA")
 	private Date dataMatricula;
-	
-	@OneToMany(fetch=FetchType.LAZY,cascade = CascadeType.ALL, mappedBy ="atleta")
-	private List <AtletaModel> atleta;
-	
-	//Construtor
-	public AtletaModel(){
-		
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "atleta")
+	private List<AtletaModel> atleta;
+
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "atletaWeb")
+	private List<AtletaModel> atletaWeb;
+
+	// Construtor
+	public AtletaModel() {
+
 	}
-	//Construtor
-	public AtletaModel(Long idAluno, String matriculaAluno, String nomeAluno){
+
+	// Construtor
+	public AtletaModel(Long idAluno, String matriculaAluno, String nomeAluno) {
 		this.idAluno = idAluno;
 		this.matriculaAluno = matriculaAluno;
-		this.nomeAluno= nomeAluno;
+		this.nomeAluno = nomeAluno;
 	};
 
 	public Long getIdAluno() {
@@ -201,18 +205,20 @@ public class AtletaModel {
 	public void setDataMatricula(Date dataMatricula) {
 		this.dataMatricula = dataMatricula;
 	}
+
 	public List<AtletaModel> getAtleta() {
 		return atleta;
 	}
+
 	public void setAtleta(List<AtletaModel> atleta) {
 		this.atleta = atleta;
 	}
-	
-	
 
-	
-	// ===== GETTERS AND SETTERS
+	public List<AtletaModel> getAtletaWeb() {
+		return atletaWeb;
+	}
 
-	
-
+	public void setAtletaWeb(List<AtletaModel> atletaWeb) {
+		this.atletaWeb = atletaWeb;
+	}
 }

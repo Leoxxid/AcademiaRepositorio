@@ -2,13 +2,18 @@ package br.com.LeonardoMatheus.atleta.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import br.com.LeonardoMatheus.professor.model.AtletaModel;
+
 @Entity
-@Table(name="acesso_web")
+@Table(name = "acesso_web")
 public class AcessoWebModel {
 
 	@Id
@@ -24,18 +29,21 @@ public class AcessoWebModel {
 
 	@Column(name = "ATIVACAO_ACESSO")
 	private String ativacao;
-	
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "ID_ALUNO")
+	private AtletaModel atletaWeb = new AtletaModel();
+
 	// Construtor
 	public AcessoWebModel() {
-	
+
 	}
-	
-	AcessoWebModel(String nome){
+
+	public AcessoWebModel(String nome, AtletaModel atletaWeb) {
 		this.nome = nome;
-		
+		this.atletaWeb = atletaWeb;
 	}
-	
-	
+
 	// ===== GETTERS AND SETTERS
 	public String getNome() {
 		return nome;
@@ -68,5 +76,14 @@ public class AcessoWebModel {
 	public void setAtivacao(String ativacao) {
 		this.ativacao = ativacao;
 	}
+
+	public AtletaModel getAtletaWeb() {
+		return atletaWeb;
+	}
+
+	public void setAtletaWeb(AtletaModel atletaWeb) {
+		this.atletaWeb = atletaWeb;
+	}
+	
 
 }

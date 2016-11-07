@@ -39,11 +39,11 @@ public class AtletaController {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		if (principal instanceof UserDetails) {
 			String username = ((UserDetails) principal).getUsername();
-			AcessoWebModel usuario = acessoWeb.findByNome(username);
-			System.out.println(usuario.getSenha());
+			AcessoWebModel usuario = acessoWeb.procurarPerfil(username);
 			return "/layout/atleta/verTreino";
 		} else {
 			String username = principal.toString();
+			AcessoWebModel usuario = acessoWeb.procurarPerfil(username);
 			return "/layout/atleta/verTreino";
 		}
 
