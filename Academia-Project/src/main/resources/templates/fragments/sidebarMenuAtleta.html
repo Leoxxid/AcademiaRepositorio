@@ -13,21 +13,21 @@
 
 				
 
-				<li class="menu"><a th:href="@{/atleta/atleta/treino}" class=""> <i
-						class="fa fa-search"></i> <span>Ver Treino</span> <span
+				<li class="sub-menu"><a href="javascript:;" class=""> <i
+						class="fa fa-search"></i> <span>Visualizar</span> <span
+						class="menu-arrow arrow_carrot-right"></span>
+				</a>
+				<ul class="sub">
+						<li><a class="" th:href="@{/visualizar/perfil}">Meus Dados</a></li>
+						<li><a class="" th:href="@{/visualizar/treino}"><span>Meu Treino</span></a></li>
+					</ul>
+				</li>
+
+				<li class=""><a th:href="@{/logout}" class=""> <i
+						class="fa fa-plus-circle"></i> <span>Sair</span> <span
 						class="menu-arrow arrow_carrot-right"></span>
 				</a>
 				</li>
-
-				<li class="sub-menu"><a href="javascript:;" class=""> <i
-						class="fa fa-plus-circle"></i> <span>Mais</span> <span
-						class="menu-arrow arrow_carrot-right"></span>
-				</a>
-					<ul class="sub">
-						<li><a class="" th:href="@{/profile.html}">Meus Dados</a></li>
-						<li><a class="" th:href="@{/logout}"><span>Sair</span></a></li>
-					</ul></li>
-
 			</ul>
 			<!-- sidebar menu end-->
 		</div>

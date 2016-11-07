@@ -10,7 +10,7 @@ import br.com.LeonardoMatheus.professor.model.AtletaModel;
 
 public interface Atletas extends CrudRepository<AtletaModel, Long> {
 	
-//======================================= PROFESSOR	
+//======================================= PROFESSOR
 	//Atleta completo
 	AtletaModel findByIdAluno(Long idAluno);
 	

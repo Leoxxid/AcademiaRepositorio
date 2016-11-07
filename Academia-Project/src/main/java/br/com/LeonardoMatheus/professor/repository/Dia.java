@@ -9,7 +9,7 @@ import br.com.LeonardoMatheus.professor.model.treinoAtleta.DiaModel;
 
 public interface Dia extends CrudRepository<DiaModel, Long> {
 	
-	@Query("select new DiaModel(d.idDia,d.diaSemana) from DiaModel d where atleta.idAluno = ?")
+	@Query("select new DiaModel(d.idDia,d.diaSemana) from DiaModel d where atleta.idAluno = ? order By d.diaSemana")
 	List <DiaModel> diasdoAtleta(Long idAluno);
 	
 	List <DiaModel> findByAtletaIdAluno(Long idALuno); 

@@ -15,9 +15,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
-			.withUser("joao").password("joao").roles("CADASTRAR_ATLETA")
+			.withUser("joao").password("joao").roles("ATLETA")
 			.and()
-			.withUser("maria").password("maria").roles("C");
+			.withUser("maria").password("maria").roles("PROFESSOR");
 	}
 	
 	@Override
@@ -32,14 +32,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http
 				.authorizeRequests()
-						.antMatchers("/atleta/novo","/atleta/todos","/exercicio/novo","/inicio", 
-											"/atletas/treino/treino-do-atleta/",	"/atleta/deletar-atleta/{idAtleta}", 
+						.antMatchers("/atleta/novo","/exercicio/novo","/inicio", 
+											"/atletas/treino/treino-do-atleta/", "/atleta/deletar-atleta/{idAtleta}", 
 											"/atletas/frequencia-academia/", "/avaliacao/atletas/avaliaAtleta", 
-											"/atleta/atleta/estatisticas", "/atleta/atleta/treino", "atleta/perfil-do-atleta",
-											"/atletas/treino/treino-do-atleta/", "/atleta/index").permitAll()
-						.antMatchers().hasRole("ADMIN")
+											"/atleta/atleta/estatisticas", "atleta/perfil-do-atleta",
+											"/atletas/treino/treino-do-atleta/", "/visualizar/treino", "/404", "403", "/500").permitAll()
+						.antMatchers("/atleta/todos").hasRole("PROFESSOR")
 							.anyRequest().authenticated()
 						
+						.antMatchers("/atleta/index").hasRole("ATLETA")
+							.anyRequest().authenticated()
 						.and()
 				.formLogin()
 						.loginPage("/login").permitAll()
