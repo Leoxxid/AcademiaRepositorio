@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description"
-		content="Creative - Bootstrap 3 Responsive Admin Template" />
-	<meta name="author" content="GeeksLabs" />
-	<meta name="keyword"
-		content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<link rel="shortcut icon" th:href="@{/layout/img/favicon.png}" />
-	
-	<title>Treino | GymAdmin</title>
-	
-	<!-- Bootstrap CSS -->
-	<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
-	<!-- bootstrap theme -->
-	<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
-	<!--external css-->
-	<!-- font icon -->
-	<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
-	<!-- easy pie chart-->
-	<link
-		th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
-		rel="stylesheet" type="text/css" media="screen" />
-	<!-- owl carousel -->
-	<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
-		type="text/css" />
-	<link th:href="@{/layout/css/jquery-jvectormap-1.2.2.css}"
-		rel="stylesheet" />
-	
-	<!-- Custom styles -->
-	<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
-	<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
-	<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
-	<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-	
-	<script th:src="@{/layout/js/html5shiv.js}"></script>
-	<script th:src="@{/layout/js/respond.min.js}"></script>
-	<script th:src="@{/layout/js/lte-ie7.js}"></script>
-	
-	<!-- DataTables CSS -->
-	<link
-		th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}"
-		rel="stylesheet" />
-	
-	<!-- DataTables Responsive CSS -->
-	<link
-		th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}"
-		rel="stylesheet" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Creative - Bootstrap 3 Responsive Admin Template" />
+<meta name="author" content="GeeksLabs" />
+<meta name="keyword"
+	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" th:href="@{/layout/img/favicon.png}" />
+
+<title>Treino | GymAdmin</title>
+
+<!-- Bootstrap CSS -->
+<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
+<!-- bootstrap theme -->
+<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
+<!--external css-->
+<!-- font icon -->
+<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
+<!-- easy pie chart-->
+<link
+	th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
+	rel="stylesheet" type="text/css" media="screen" />
+<!-- owl carousel -->
+<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
+	type="text/css" />
+<link th:href="@{/layout/css/jquery-jvectormap-1.2.2.css}"
+	rel="stylesheet" />
+
+<!-- Custom styles -->
+<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
+<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
+<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+
+<script th:src="@{/layout/js/html5shiv.js}"></script>
+<script th:src="@{/layout/js/respond.min.js}"></script>
+<script th:src="@{/layout/js/lte-ie7.js}"></script>
+
+<!-- DataTables CSS -->
+<link
+	th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}"
+	rel="stylesheet" />
+
+<!-- DataTables Responsive CSS -->
+<link
+	th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}"
+	rel="stylesheet" />
 
 
 </head>
@@ -64,9 +64,9 @@
 
 
 		<!--fragment header start-->
-		
+
 		<div th:replace="fragments/header::header"></div>
-		
+
 		<!--fragment header end-->
 
 		<!--fragment sidebar start-->
@@ -83,39 +83,71 @@
 					<div class="col-lg-12">
 						<h3 class="page-header" align="left">
 							<i class="fa fa-eye"> Veja seu treino, </i> <i
-								th:text="${#authentication.name}"></i>
-								<br/><br/>
+								th:text="${#authentication.name}"></i> <br />
+							<br />
 						</h3>
 					</div>
 				</div>
-				
+
 				<!-- tabela de treino com bootstrap-->
 				<div align="center">
 					<div class="dataTable_wrapper">
-		                <table class="table table-responsive" id="dataTables-example">
+						<table class="table table-responsive" id="dataTables-example">
 							<thead>
-								<tr>
+								<tr align="center">
 									<th>Segunda-Feira</th>
-		                            <th>Terça-Feira</th>
-		                            <th>Quarta-Feira</th>
+									<th>Terça-Feira</th>
+									<th>Quarta-Feira</th>
 									<th>Quinta-Feira</th>
 									<th>Sexta-Feira</th>
 									<th>Sábado</th>
-		                        </tr>
-		                    </thead>
-		                    <tbody>
-								<tr class="odd gradeX" th:each="exercicio : ${exercicioM}">
-									<td th:text="${atleta.matriculaAluno}" th:type="text"
-											id="txtColuna1"></td>
-									<td th:text="${atleta.nomeAluno}" th:type="text" 
-											id="txtColuna2"></td>
-		                            <td th:text="${atleta.nascAluno}" th:type="text" 
-		                            		id="txtColuna3"></td>
-									<td><a class="btn btn-primary btn-sm" title="Bootstrap 3 themes generator">Ver Dados</a></td>
-		                        </tr>
-		                        
-		                    </tbody>
-		                </table>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="odd gradeX" th:if="${treino} != null" align="left">
+
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'SEG'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'TER'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'QUA'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'QUI'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'SEX'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'SAB'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+
+
+								</tr>
+
+							</tbody>
+						</table>
 					</div>
 				</div>
 				<!-- fim da tabela de treino -->
@@ -130,21 +162,26 @@
 	<script th:src="@{/layout/js/jquery.js}"></script>
 	<script th:src="@{/layout/js/jquery-ui-1.10.4.min.js}"></script>
 	<script th:src="@{/layout/js/jquery-1.8.3.min.js}"></script>
-	<script type="text/javascript" th:src="@{/layout/js/jquery-ui-1.9.2.custom.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/layout/js/jquery-ui-1.9.2.custom.min.js}"></script>
 	<!-- bootstrap -->
 	<script th:src="@{/layout/js/bootstrap.min.js}"></script>
 	<!-- nice scroll -->
 	<script th:src="@{/layout/js/jquery.scrollTo.min.js}"></script>
-	<script th:src="@{/layout/js/jquery.nicescroll.js}"	type="text/javascript"></script>
+	<script th:src="@{/layout/js/jquery.nicescroll.js}"
+		type="text/javascript"></script>
 	<!-- charts scripts -->
 	<script th:src="@{/layout/assets/jquery-knob/js/jquery.knob.js}"></script>
-	<script th:src="@{/layout/js/jquery.sparkline.js}" type="text/javascript"></script>
-	<script th:src="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js}"></script>
+	<script th:src="@{/layout/js/jquery.sparkline.js}"
+		type="text/javascript"></script>
+	<script
+		th:src="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js}"></script>
 	<script th:src="@{/layout/js/owl.carousel.js}"></script>
 	<!-- jQuery full calendar -->
 	<script th:src="@{/layout/js/fullcalendar.min.js}"></script>
 	<!-- Full Google Calendar - Calendar -->
-	<script th:src="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.js}"></script>
+	<script
+		th:src="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.js}"></script>
 	<!--script for this page only-->
 	<script th:src="@{/layout/js/jquery.rateit.min.js}"></script>
 	<!-- custom select -->
@@ -166,13 +203,13 @@
 	<script th:src="@{/layout/js/charts.js}"></script>
 	<script th:src="@{/layout/js/jquery.slimscroll.min.js}"></script>
 	<script th:src="@{/layout/js/bootstrap-datepicker.min.js}"></script>
-	
+
 	<!-- DataTables JavaScript -->
 	<script
 		th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
 	<script
 		th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
-		
+
 	<script>
 		//knob
 		$(function() {
@@ -258,7 +295,7 @@
 
 		});
 	</script>
-	
+
 	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
 	<script>
 		/*<![CDATA[*/
@@ -269,11 +306,11 @@
 		});
 		/*]]>*/
 	</script>
-	
+
 	<script>
-	$('.delete').click(function () {
-	    return confirm("Are you sure?");
-	});
+		$('.delete').click(function() {
+			return confirm("Are you sure?");
+		});
 	</script>
 
 

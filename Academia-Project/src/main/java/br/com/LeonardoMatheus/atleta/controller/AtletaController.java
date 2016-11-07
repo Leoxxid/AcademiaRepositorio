@@ -37,10 +37,9 @@ public class AtletaController {
 
 	@RequestMapping("/treino")
 	public ModelAndView treinoAtleta() {
-		String username = perfilAtletaService.usuarioLogado();
 		List<DiaExercicioModel> DiaExercicioList = TreinoAtletaService.buscarTreino();
 		ModelAndView mv = new ModelAndView("/layout/atleta/verTreino");
-		mv.addObject(DiaExercicioList);
+		mv.addObject("treino", DiaExercicioList);
 		return mv;
 	}
 
