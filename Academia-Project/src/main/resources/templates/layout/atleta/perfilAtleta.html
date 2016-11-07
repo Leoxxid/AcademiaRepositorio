@@ -61,10 +61,10 @@
 
 
 		<!--fragment header start-->
-		
+
 		<div th:replace="fragments/header::header"></div>
-		
-		<!--fragment header end-->     
+
+		<!--fragment header end-->
 
 		<!--fragment sidebar start-->
 
@@ -89,9 +89,7 @@
 						<section class="panel">
 							<div class="panel-body">
 								<div class="form">
-									<form class="form-validate form-horizontal"
-										th:action="@{/atleta/novo}" th:object="${atletaModel}"
-										method="POST">
+									<form class="form-validate form-horizontal">
 										<h4>
 											<b>Dados do Atleta</b>
 										</h4>
@@ -99,7 +97,8 @@
 										<div class="form-group">
 											<div class="col-lg-10">
 												<input type="hidden" class="form-control"
-													th:value="${atleta.idAluno}" id="idAluno" name="idAluno"/>
+													th:value="${perfil.atletaWeb.idAluno}" id="idAluno"
+													name="idAluno" />
 											</div>
 										</div>
 
@@ -108,19 +107,18 @@
 													do Aluno *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:value="${atleta.matriculaAluno}" name="matriculaAluno" 
-																						id="matriculaAluno"
-																						disabled="disabled"/>
+													th:value="${perfil.atletaWeb.matriculaAluno}" name="matriculaAluno"
+													id="matriculaAluno" disabled="disabled" />
 											</div>
 										</div>
-										
+
 										<div class="form-group ">
 											<label for="nomeCompleto" class="control-label col-lg-2"><b>Nome
 													Completo *</b></label>
 											<div class="col-lg-10">
 												<input type="text" class="form-control"
-													th:value="${atleta.nomeAluno}" name="nomeAluno" id="nomeAluno"
-																									disabled="disabled"/>
+													th:value="${perfil.atletaWeb.nomeAluno}" name="nomeAluno"
+													id="nomeAluno" disabled="disabled" />
 											</div>
 										</div>
 
@@ -128,9 +126,9 @@
 											<label for="nascimento" class="control-label col-lg-2"><b>Data
 													Nascimento *</b></label>
 											<div class="col-lg-10">
-												<input type="text" 	class="form-control p"
-																	disabled="disabled"
-													th:value="${atleta.nascAluno}" name="nascAluno"/>
+												<input type="text" class="form-control p"
+													disabled="disabled" th:value="${perfil.atletaWeb.nascAluno}"
+													name="nascAluno" />
 											</div>
 										</div>
 
@@ -138,10 +136,8 @@
 											<label for="rg" class="control-label col-lg-2"><b>RG
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control p" 
-																	id="rg" name="rg"
-																	th:value="${atleta.rg}"  
-																	disabled="disabled"/>
+												<input type="text" class="form-control p" id="rg" name="rg"
+													th:value="${perfil.atletaWeb.rg}" disabled="disabled" />
 											</div>
 										</div>
 
@@ -149,18 +145,18 @@
 											<label for="cpf" class="control-label col-lg-2"><b>CPF
 													*</b></label>
 											<div class="col-lg-10">
-												<input type="text" class="form-control p" 	id="cpf" 
-																							name="cpf" 
-																							th:value="${atleta.cpf}"
-																							disabled="disabled" />
+												<input type="text" class="form-control p" id="cpf"
+													name="cpf" th:value="${perfil.atletaWeb.cpf}"
+													disabled="disabled" />
 											</div>
 										</div>
 
-										
+
 
 										<div class="form-group">
 											<div class="col-lg-offset-2 col-lg-10">
-												<a type="button" class="btn btn-default" th:href="@{/atleta/todos}"> Voltar </a>
+												<a type="button" class="btn btn-default"
+													th:href="@{/colocar rota}"> Voltar </a>
 											</div>
 										</div>
 									</form>
@@ -227,7 +223,7 @@
 	<script th:src="@{/layout/js/jquery.maskedinput.min.js}"></script>
 	<script th:src="@{/layout/js/jquery.validate.min.js}"></script>
 	<script th:src="@{/layout/js/jquery.zebra-datepicker.js}"></script>
-	
+
 	<script>
 		//knob
 		$(function() {
