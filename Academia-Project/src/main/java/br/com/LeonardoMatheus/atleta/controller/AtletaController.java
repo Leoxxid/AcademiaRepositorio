@@ -28,13 +28,10 @@ public class AtletaController {
 	@Autowired
 	public AtletaService service;
 
-	@RequestMapping("/atleta/index")
-	public String indexAtleta() {
-		return "/layout/atleta/index";
-	}
-
 	@RequestMapping("/treino")
 	public String treinoAtleta() {
+		String username = perfilAtletaService.usuarioLogado();
+		
 		return "/layout/atleta/verTreino";
 	}
 

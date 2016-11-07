@@ -10,6 +10,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
 	public void addViewControllers(ViewControllerRegistry registry){
 		registry.addRedirectViewController("/", "/inicio");
 		registry.addViewController("/inicio").setViewName("/layout/professor/index");
+		registry.addViewController("/atleta/index").setViewName("/layout/atleta/index");
 	}
 
 }
