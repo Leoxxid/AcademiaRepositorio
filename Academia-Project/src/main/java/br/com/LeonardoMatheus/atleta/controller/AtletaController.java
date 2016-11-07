@@ -1,5 +1,7 @@
 package br.com.LeonardoMatheus.atleta.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -12,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.LeonardoMatheus.atleta.model.AcessoWebModel;
 import br.com.LeonardoMatheus.atleta.repository.AcessoWeb;
 import br.com.LeonardoMatheus.atleta.service.PerfilAtletaService;
+import br.com.LeonardoMatheus.atleta.service.TreinoAtletaService;
+import br.com.LeonardoMatheus.professor.model.treinoAtleta.DiaExercicioModel;
 import br.com.LeonardoMatheus.professor.repository.Atletas;
 import br.com.LeonardoMatheus.professor.service.AtletaService;
 
@@ -27,12 +31,17 @@ public class AtletaController {
 
 	@Autowired
 	public AtletaService service;
+	
+	@Autowired
+	public TreinoAtletaService TreinoAtletaService;
 
 	@RequestMapping("/treino")
-	public String treinoAtleta() {
+	public ModelAndView treinoAtleta() {
 		String username = perfilAtletaService.usuarioLogado();
-		
-		return "/layout/atleta/verTreino";
+		List<DiaExercicioModel> DiaExercicioList = TreinoAtletaService.buscarTreino();
+		ModelAndView mv = new ModelAndView("/layout/atleta/verTreino");
+		mv.addObject(DiaExercicioList);
+		return mv;
 	}
 
 	@RequestMapping(value = "/perfil")
