@@ -75,8 +75,9 @@ public class ExercicioController {
 			return editarExercicioGET(idExercicio, exercicioModel);
 		}
 		service.save(exercicioModel);
-		attributes.addFlashAttribute("sucesso", "O exercicio foi salvo com sucesso");
-		return new ModelAndView("redirect:/exercicio/editar-exercicio/" + idExercicio);
+		ModelAndView mv= new ModelAndView ("redirect:/exercicio/editar-exercicio/" + idExercicio);
+		mv.addObject("sucesso", "O exercicio foi salvo com sucesso");
+		return mv;
 	}
 	
 
