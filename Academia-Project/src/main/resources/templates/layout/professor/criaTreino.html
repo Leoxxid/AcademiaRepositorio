@@ -116,7 +116,7 @@
 					<div class="row">
 						<label class="control-label col-md-1"><b>Dia</b></label>
 						<div class="col-lg-2">
-							<select  class="form-control col-lg-2" id="dia" name="dia">
+							<select class="form-control col-lg-2" id="dia" name="dia">
 								<option th:text="Selecione..." value="default" />
 								<option th:each="dia : ${dias}" th:value="${dia.idDia}"
 									th:text="${dia.diaSemana}" />
@@ -125,21 +125,22 @@
 						</div>
 
 						<div class="col-lg-2">
-							<select class="form-control col-lg-2" id="exercicio" name="exercicio">
+							<select class="form-control col-lg-2" id="exercicio"
+								name="exercicio">
 								<option th:text="Selecione..." value="default" />
 								<option th:each="exercicio : ${exercicios}"
 									th:value="${exercicio.idExercicio}"
 									th:text="${exercicio.nomeExercicio}" />
 							</select>
 						</div>
-						<div >
+						<div>
 							<button title="Incluir" class="btn btn-primary" type="submit">Incluir</button>
 						</div>
 					</div>
 				</form>
 
 
-				<br/> 
+				<br />
 
 
 				<!-- tabela de treino com bootstrap-->
@@ -148,30 +149,65 @@
 						<table class="table table-responsive">
 							<thead>
 								<tr>
-									<th style="text-align:center">Segunda-Feira</th>
-									<th style="text-align:center">Terça-Feira</th>
-									<th style="text-align:center">Quarta-Feira</th>
-									<th style="text-align:center">Quinta-Feira</th>
-									<th style="text-align:center">Sexta-Feira</th>
-									<th style="text-align:center">Sábado</th>
+									<th style="text-align: center">Segunda-Feira</th>
+									<th style="text-align: center">Terça-Feira</th>
+									<th style="text-align: center">Quarta-Feira</th>
+									<th style="text-align: center">Quinta-Feira</th>
+									<th style="text-align: center">Sexta-Feira</th>
+									<th style="text-align: center">Sábado</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr class="odd gradeX" th:if="${treino} != null">
-									
-									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'SEG'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
-									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'TER'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
-									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'QUA'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
-									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'QUI'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
-									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'SEX'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
-									<td> <ul th:each="diaExercicio : ${treino}"> <li th:if="${diaExercicio.dia.diaSemana == 'SAB'}" th:text="${diaExercicio.exercicio.nomeExercicio}"> </li></ul></td>
-									
-									
+
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'SEG'}"><h3
+													th:text="${diaExercicio.exercicio.nomeExercicio}"></h3>
+												<a title="Deletar"
+												class="delete btn btn-primary fa fa-times"
+												th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'TER'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'QUA'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'QUI'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'SEX'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+									<td>
+										<ul th:each="diaExercicio : ${treino}">
+											<li th:if="${diaExercicio.dia.diaSemana == 'SAB'}"
+												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+										</ul>
+									</td>
+
+
 								</tr>
 								<tr class="odd gradeX" th:if="${treino} == null">
-								<td colspan="6" align="center"> <h2> Nenhum cronograma para o atleta</h2> </td>
+									<td colspan="6" align="center">
+										<h2>Nenhum cronograma para o atleta</h2>
+									</td>
 								</tr>
-								
+
 
 							</tbody>
 						</table>
