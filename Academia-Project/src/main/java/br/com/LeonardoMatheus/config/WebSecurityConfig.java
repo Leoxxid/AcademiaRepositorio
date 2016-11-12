@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-@Order(1)
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
@@ -33,12 +33,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http
 				.authorizeRequests()
-						.antMatchers("/exercicio/editar-exercicio/","/404", "403", "/500").permitAll()
-						.antMatchers(/*ATLETA*/"/atleta/todos", "atleta/novo", "atleta/perfil-do-atleta"
-								,
+						.antMatchers("/404", "403", "/500").permitAll()
+						.antMatchers(/*ATLETA*/"/atleta/todos", "atleta/novo", "atleta/perfil-do-atleta",
 								"/atleta/deletar-atleta",
-								/*EXERCICIO*/ "/exercicio/novo", "/exercicio/deletar-exercicio", 
-								  
+								/*EXERCICIO*/ "/exercicio/novo", "exercicio/deletar-exercicio", 
+								"exercicio/editar-exercicio",  "exercicio/teste", "editar-exercicio/erro",
 								/*TREINO*/ "atletas/treino/treino-do-atleta", "atletas/frequencia-academia",
 								"atletas/delete-dia-treino",
 								/*INDEX*/ "/inicio"
@@ -49,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 							.anyRequest().authenticated()
 						.and()
 				.formLogin()
-						.loginPage("/login-admin").permitAll()
+						.loginPage("/login").permitAll()
 						.and()
 				.logout()
 				.permitAll()

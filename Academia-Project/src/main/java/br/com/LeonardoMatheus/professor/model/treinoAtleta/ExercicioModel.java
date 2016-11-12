@@ -2,6 +2,7 @@ package br.com.LeonardoMatheus.professor.model.treinoAtleta;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -36,7 +37,7 @@ public class ExercicioModel {
 	@Column(name = "DESCRICAO")
 	private String descricao;
 
-	@OneToMany(fetch=FetchType.LAZY,mappedBy = "exercicio")
+	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "exercicio")
 	private List<DiaExercicioModel> exercicio;
 	
 	//Construtor 

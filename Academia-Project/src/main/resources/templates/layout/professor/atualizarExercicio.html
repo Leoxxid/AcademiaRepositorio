@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Creative - Bootstrap 3 Responsive Admin Template" />
+<meta name="author" content="GeeksLabs" />
+<meta name="keyword"
+	content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" th:href="@{/layoutimg/favicon.png}" />
+
+<title>Cadastra Exercício | GymAdmin</title>
+
+<!-- Bootstrap CSS -->
+<link th:href="@{/layout/css/bootstrap.min.css}" rel="stylesheet" />
+<!-- bootstrap theme -->
+<link th:href="@{/layout/css/bootstrap-theme.css}" rel="stylesheet" />
+<!--external css-->
+<!-- font icon -->
+<link th:href="@{/layout/css/elegant-icons-style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/font-awesome.min.css}" rel="stylesheet" />
+<!-- full calendar css-->
+<link
+	th:href="@{/layout/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css}"
+	rel="stylesheet" />
+<link
+	th:href="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.css}"
+	rel="stylesheet" />
+<!-- easy pie chart-->
+<link
+	th:href="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css}"
+	rel="stylesheet" type="text/css" media="screen" />
+<!-- owl carousel -->
+<link rel="stylesheet" th:href="@{/layout/css/owl.carousel.css}"
+	type="text/css}" />
+<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet" />
+<!-- Custom styles -->
+<link rel="stylesheet" th:href="@{/layout/css/fullcalendar.css}" />
+<link th:href="@{/layout/css/widgets.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/style-responsive.css}" rel="stylesheet" />
+<link th:href="@{/layout/css/xcharts.min.css}" rel=" stylesheet" />
+<link th:href="@{/layout/css/jquery-ui-1.10.4.min.css}" rel="stylesheet" />
+
+<script th:src="@{/layout/js/html5shiv.js}"></script>
+<script th:src="@{/layout/js/respond.min.js}"></script>
+<script th:src="@{/layout/js/lte-ie7.js}"></script>
+
+<!-- DataTables CSS -->
+<link
+	th:href="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css}"
+	rel="stylesheet" />
+
+<!-- DataTables Responsive CSS -->
+<link
+	th:href="@{/layout/bower_components/datatables-responsive/css/dataTables.responsive.css}"
+	rel="stylesheet" />
+
+
+
+<title>Cadastro | GymAdmin</title>
+
+</head>
+
+
+<body>
+
+
+	<form class="form-validate form-horizontal"
+		th:action="@{/exercicio/editar-exercicio/{idExercicio} (idExercicio = ${exercicio.idExercicio} )}"
+		th:object="${exercicioModel}" method="POST">
+		<div class="form-group">
+			<div class="col-lg-5">
+				<input type="hidden" class="form-control"
+					th:value="${exercicio.idExercicio}" id="idExercicio" name="idExercicio" />
+
+			</div>
+		</div>
+
+
+		<div class="form-group">
+			<label class="control-label col-lg-2"><b>Nome do
+					Exercício *</b></label>
+
+			<div class="col-lg-5">
+				<input type="text" class="form-control"
+					th:value="${exercicio.nomeExercicio}" id="nomeExercicio"
+					name="nomeExercicio" />
+				<h5 style="color: red" th:if="${#fields.hasErrors('nomeExercicio')}"
+					th:errors="*{nomeExercicio}">Erro no exercicio</h5>
+
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-lg-2"><b>Categoria *</b></label>
+			<div class="col-lg-5">
+				<input type="text" class="form-control"
+					th:value="${exercicio.categoria}" id="categoria" name="categoria" />
+				<h5 style="color: red" th:if="${#fields.hasErrors('categoria')}"
+					th:errors="*{categoria}">Erro na catergoria</h5>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-lg-2"><b>Descrição</b></label>
+			<div class="col-lg-8">
+				<textarea th:text="${exercicio.descricao}" id="descricao"
+					name="descricao" class="form-control" rows="5"
+					placeholder="Digite a descrição do exercício. Explique-o!"></textarea>
+			</div>
+			<h3 th:if="${#fields.hasErrors('descricao')}"
+				th:errors="*{descricao}">Erro no nome</h3>
+		</div>
+
+		<div class="form-group" align="right">
+			<div class="col-lg-offset-2 col-lg-10">
+				<button class="btn btn-primary" type="submit">Alterar</button>
+				<button class="btn btn-default" type="button">Voltar</button>
+			</div>
+		</div>
+
+
+	</form>
+
+
+	<script th:src="@{/layout/js/jquery.js}"></script>
+	<script th:src="@{/layout/js/jquery-ui-1.10.4.min.js}"></script>
+	<script th:src="@{/layout/js/jquery-1.8.3.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/layout/js/jquery-ui-1.9.2.custom.min.js}"></script>
+	<!-- bootstrap -->
+	<script th:src="@{/layout/js/bootstrap.min.js}"></script>
+	<!-- nice scroll -->
+	<script th:src="@{/layout/js/jquery.scrollTo.min.js}"></script>
+	<script th:src="@{/layout/js/jquery.nicescroll.js}"
+		type="text/javascript"></script>
+	<!-- charts scripts -->
+	<script th:src="@{/layout/assets/jquery-knob/js/jquery.knob.js}"></script>
+	<script th:src="@{/layout/js/jquery.sparkline.js}"
+		type="text/javascript"></script>
+	<script
+		th:src="@{/layout/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js}"></script>
+	<script th:src="@{/layout/js/owl.carousel.js}"></script>
+	<!-- jQuery full calendar -->
+	<script th:src="@{/layout/js/fullcalendar.min.js}"></script>
+	<!-- Full Google Calendar - Calendar -->
+	<script
+		th:src="@{/layout/assets/fullcalendar/fullcalendar/fullcalendar.js}"></script>
+	<!--script for this page only-->
+	<script th:src="@{/layout/js/calendar-custom.js}"></script>
+	<script th:src="@{/layout/js/jquery.rateit.min.js}"></script>
+	<!-- custom select -->
+	<script th:src="@{/layout/js/jquery.customSelect.min.js}"></script>
+	<script th:src="@{/layout/assets/chart-master/Chart.js}"></script>
+
+	<!--custome script for all page-->
+	<script th:src="@{/layout/js/scripts.js}"></script>
+	<!-- custom script for this page-->
+	<script th:src="@{/layout/js/sparkline-chart.js}"></script>
+	<script th:src="@{/layout/js/easy-pie-chart.js}"></script>
+	<script th:src="@{/layout/js/jquery-jvectormap-1.2.2.min.js}"></script>
+	<script th:src="@{/layout/js/jquery-jvectormap-world-mill-en.js}"></script>
+	<script th:src="@{/layout/js/xcharts.min.js}"></script>
+	<script th:src="@{/layout/js/jquery.autosize.min.js}"></script>
+	<script th:src="@{/layout/js/jquery.placeholder.min.js}"></script>
+	<script th:src="@{/layout/js/gdp-data.js}"></script>
+	<script th:src="@{/layout/js/morris.min.js}"></script>
+	<script th:src="@{/layout/js/sparklines.js}"></script>
+	<script th:src="@{/layout/js/charts.js}"></script>
+	<script th:src="@{/layout/js/jquery.slimscroll.min.js}"></script>
+	<!-- DataTables JavaScript -->
+	<script
+		th:src="@{/layout/bower_components/datatables/media/js/jquery.dataTables.js}"></script>
+	<script
+		th:src="@{/layout/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.js}"></script>
+
+	<script>
+		//knob
+		$(function() {
+			$(".knob").knob({
+				'draw' : function() {
+					$(this.i).val(this.cv + '%')
+				}
+			})
+		});
+
+		//carousel
+		$(document).ready(function() {
+			$("#owl-slider").owlCarousel({
+				navigation : true,
+				slideSpeed : 300,
+				paginationSpeed : 400,
+				singleItem : true
+
+			});
+		});
+
+		//custom select box
+
+		$(function() {
+			$('select.styled').customSelect();
+		});
+
+		/* ---------- Map ---------- */
+		$(function() {
+			$('#map').vectorMap({
+				map : 'world_mill_en',
+				series : {
+					regions : [ {
+						values : gdpData,
+						scale : [ '#000', '#000' ],
+						normalizeFunction : 'polynomial'
+					} ]
+				},
+				backgroundColor : '#eef3f7',
+				onLabelShow : function(e, el, code) {
+					el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+				}
+			});
+		});
+	</script>
+
+
+	<script>
+		/*<![CDATA[*/
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive : true
+			});
+		});
+		/*]]>*/
+	</script>
+
+
+</body>
+
+
+</html>

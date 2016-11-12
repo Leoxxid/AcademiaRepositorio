@@ -30,9 +30,9 @@ public class alunosController {
 		mv.addObject("atletas", atleta.findAll());
 		return mv;
 	}
-	
-	//''''''''''''''''''''''''''''''''''''''''''''''''''NOVO
-													
+
+	// ''''''''''''''''''''''''''''''''''''''''''''''''''NOVO
+
 	// Get da tela de cadastro de atleta
 	@RequestMapping("/novo")
 	public String cadastrar(AtletaModel atletaModel) {
@@ -45,31 +45,32 @@ public class alunosController {
 		service.save(atletaModel);
 		return "redirect:/atleta/todos";
 	}
-	
-	//''''''''''''''''''''''''''''''''''''''''''''''''''ALTERAR
-	//													
+
+	// ''''''''''''''''''''''''''''''''''''''''''''''''''ALTERAR
+	//
 	// Visualizar perfil do atleta
 	@RequestMapping(value = "/perfil-do-atleta/{idAtleta}")
 	public ModelAndView perfilAtleta(@PathVariable Long idAtleta) {
-		AtletaModel atletaModel = new AtletaModel(); 
+		AtletaModel atletaModel = new AtletaModel();
 		atletaModel = service.findById(idAtleta);
 		ModelAndView mv = new ModelAndView("layout/professor/atualizarAtleta");
 		mv.addObject("atleta", atletaModel);
-		
+
 		return mv;
 	}
-	
-	//'''''''''''''''''''''''''''''''''''''''''''''''''DELETAR
-					
+
+
+	// '''''''''''''''''''''''''''''''''''''''''''''''''DELETAR
 
 	@RequestMapping(value = "deletar-atleta/{idAtleta}")
 	public ModelAndView deletarAtleta(@PathVariable Long idAtleta) {
 		System.out.println(idAtleta);
 		service.delete(idAtleta);
 		ModelAndView mv = new ModelAndView("redirect:/atleta/todos");
-		String sucess="delete-sucess";
+		String sucess = "delete-sucess";
 		mv.addObject("delete", sucess);
 		return mv;
 	}
+
 
 }

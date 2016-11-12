@@ -20,16 +20,16 @@ public class ExercicioController {
 
 	@Autowired
 	public ExercicioService service;
-	
-	@Autowired 
-	public Exercicio exercicio; 
-	
+
+	@Autowired
+	public Exercicio exercicio;
+
 	private ExercicioModel exercicioModel = new ExercicioModel();
 
 	@RequestMapping(value = "/novo", method = RequestMethod.GET)
 	private ModelAndView novoExercicioG(ExercicioModel exercicioM) {
 		ModelAndView mv = new ModelAndView("/layout/professor/cadastroExercicio");
-		mv.addObject("exercicios" , exercicio.findAll());
+		mv.addObject("exercicios", exercicio.findAll());
 		return mv;
 	}
 
@@ -43,21 +43,41 @@ public class ExercicioController {
 		attributes.addFlashAttribute("sucesso", "O exercicio foi salvo com sucesso");
 		return new ModelAndView("redirect:/exercicio/novo");
 	}
-	
-	@RequestMapping(value="deletar-exercicio/{idExercicio}")
-	private ModelAndView deletarExercicio(@PathVariable Long idExercicio){
+
+	@RequestMapping(value = "teste")
+	public String teste() {
+		return "/layout/professor/atualizarExercicio";
+	}
+
+	@RequestMapping(value = "deletar-exercicio/{idExercicio}")
+	private ModelAndView deletarExercicio(@PathVariable Long idExercicio) {
 		ModelAndView mv = new ModelAndView("redirect:/exercicio/novo");
 		exercicio.delete(idExercicio);
 		String sucess = "Exercicio deletdo com sucesso";
 		mv.addObject("exercicio", sucess);
 		return mv;
 	}
-	
-	@RequestMapping(value="/editar-exercicio/{idExercicio}")
-	public void editarExercicio(@PathVariable Long idExercicio){
+
+	// ========================================================== EDITAR EXERCICIO
+	@RequestMapping(value = "/editar-exercicio/{idExercicio}")
+	public ModelAndView editarExercicioGET(@PathVariable Long idExercicio, ExercicioModel exercicioModel) {
+		ModelAndView mv = new ModelAndView("/layout/professor/atualizarExercicio");
 		exercicioModel = exercicio.findByIdExercicio(idExercicio);
-		ModelAndView mv = new ModelAndView("redirect:/exercicio/novo");
-		mv.addObject("exercicioModel",exercicioModel);
-		
+		mv.addObject("exercicio", exercicioModel);
+		return mv;
 	}
+	
+	@RequestMapping(value = "/editar-exercicio/{idExercicio}", method = RequestMethod.POST)
+	public ModelAndView editarExercicioPOST(@PathVariable Long idExercicio, @Valid ExercicioModel exercicioModel,
+			BindingResult bindingResult, RedirectAttributes attributes){
+		
+		if (bindingResult.hasErrors()) {
+			return editarExercicioGET(idExercicio, exercicioModel);
+		}
+		service.save(exercicioModel);
+		attributes.addFlashAttribute("sucesso", "O exercicio foi salvo com sucesso");
+		return new ModelAndView("redirect:/exercicio/editar-exercicio/" + idExercicio);
+	}
+	
+
 }
