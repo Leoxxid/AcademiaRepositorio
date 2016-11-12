@@ -125,9 +125,8 @@
 											th:href="@{/atletas/treino/treino-do-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a>  
 										<a title="Dias de Treino" type="button" class="btn btn-primary fa fa-calendar" 
 											th:href="@{/atletas/frequencia-academia/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a>
-										<a title="Deletar" class="delete"
-											th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"><button
-												type="submit" class="btn btn-primary fa fa-times"></button></a>
+										<a title="Deletar" class="delete btn btn-primary fa fa-times"
+											th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a>
 									
 								</td>
 							</tr>

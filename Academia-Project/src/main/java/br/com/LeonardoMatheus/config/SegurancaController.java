@@ -17,5 +17,16 @@ public class SegurancaController {
 		
 		return "acesso";
 	}
+	
+	//redirect
+	@RequestMapping("/login-admin")
+	public String loginAmdin (@AuthenticationPrincipal User user){
+		if (user != null) {
+			return "redirect:/inicio-administrador";
+		}
+		
+		return "acessoadmin";
+	}
+
 
 }

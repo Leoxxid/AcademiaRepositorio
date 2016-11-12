@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.repository.support.DomainClassConverter;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.http.HttpStatus;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -17,8 +18,8 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry){
 		registry.addRedirectViewController("/", "/inicio");
-		registry.addViewController("/inicio").setViewName("/layout/professor/index");
-		registry.addViewController("/atleta/index").setViewName("/layout/atleta/index");
+		registry.addViewController("/inicio").setViewName("/layout/professor/index");	
+		registry.addViewController("/inicio-administrador").setViewName("/layout/atleta/index");
 	}
 
 

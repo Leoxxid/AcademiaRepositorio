@@ -4,6 +4,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,6 +23,8 @@ public class ExercicioController {
 	
 	@Autowired 
 	public Exercicio exercicio; 
+	
+	private ExercicioModel exercicioModel = new ExercicioModel();
 
 	@RequestMapping(value = "/novo", method = RequestMethod.GET)
 	private ModelAndView novoExercicioG(ExercicioModel exercicioM) {
@@ -39,5 +42,22 @@ public class ExercicioController {
 		service.save(exercicioModel);
 		attributes.addFlashAttribute("sucesso", "O exercicio foi salvo com sucesso");
 		return new ModelAndView("redirect:/exercicio/novo");
+	}
+	
+	@RequestMapping(value="deletar-exercicio/{idExercicio}")
+	private ModelAndView deletarExercicio(@PathVariable Long idExercicio){
+		ModelAndView mv = new ModelAndView("redirect:/exercicio/novo");
+		exercicio.delete(idExercicio);
+		String sucess = "Exercicio deletdo com sucesso";
+		mv.addObject("exercicio", sucess);
+		return mv;
+	}
+	
+	@RequestMapping(value="/editar-exercicio/{idExercicio}")
+	public void editarExercicio(@PathVariable Long idExercicio){
+		exercicioModel = exercicio.findByIdExercicio(idExercicio);
+		ModelAndView mv = new ModelAndView("redirect:/exercicio/novo");
+		mv.addObject("exercicioModel",exercicioModel);
+		
 	}
 }

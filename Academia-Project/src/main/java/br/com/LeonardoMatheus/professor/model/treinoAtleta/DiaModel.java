@@ -36,7 +36,7 @@ public class DiaModel {
 	
 	
 	
-	@OneToMany(fetch=FetchType.LAZY,cascade = CascadeType.ALL, mappedBy = "dia")
+	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.REMOVE, mappedBy = "dia")
 	private List<DiaExercicioModel> dia;
 	
 	//Construtores

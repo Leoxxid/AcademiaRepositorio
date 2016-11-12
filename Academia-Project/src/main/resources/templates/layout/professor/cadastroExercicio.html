@@ -105,14 +105,23 @@
 										th:action="@{/exercicio/novo}" th:object="${exercicioModel}"
 										method="POST">
 
+										<div class="col-lg-5">
+											<input type="hidden" class="form-control"
+												th:field="*{idExercicio}" />
+											
+										</div>
+
+
+
 										<div class="form-group">
 											<label class="control-label col-lg-2"><b>Nome do
 													Exercício *</b></label>
-											
+
 											<div class="col-lg-5">
 												<input type="text" class="form-control"
 													th:field="*{nomeExercicio}" />
-													<h5 style="color:red" th:if="${#fields.hasErrors('nomeExercicio')}"
+												<h5 style="color: red"
+													th:if="${#fields.hasErrors('nomeExercicio')}"
 													th:errors="*{nomeExercicio}">Erro no exercicio</h5>
 
 											</div>
@@ -123,8 +132,9 @@
 													*</b></label>
 											<div class="col-lg-5">
 												<input type="text" class="form-control"
-													th:field="*{categoria}"/>
-												<h5 style="color:red" th:if="${#fields.hasErrors('categoria')}"
+													th:field="*{categoria}" />
+												<h5 style="color: red"
+													th:if="${#fields.hasErrors('categoria')}"
 													th:errors="*{categoria}">Erro na catergoria</h5>
 											</div>
 										</div>
@@ -168,12 +178,13 @@
 
 				<div align="center">
 					<div class="dataTable_wrapper">
-						<table class="table table-responsive table-bordered" id="dataTables-example">
+						<table class="table table-responsive table-bordered"
+							id="dataTables-example">
 							<thead>
-								<tr bgcolor="#337ab7" style="border-color:#000000">
-									<th style="color:white">Nome do Exercício</th>
-									<th style="color:white">Categoria</th>
-									<th style="color:white">Descrição</th>
+								<tr bgcolor="#337ab7" style="border-color: #000000">
+									<th style="color: white">Nome do Exercício</th>
+									<th style="color: white">Categoria</th>
+									<th style="color: white">Descrição</th>
 									<th class="hidden"></th>
 								</tr>
 							</thead>
@@ -185,12 +196,12 @@
 										id="txtColuna2"></td>
 									<td th:text="${exercicio.descricao}" th:type="text"
 										id="txtColuna3"></td>
-									<td><a class="btn btn-info btn-sm fa fa-pencil" href=""></a>
+									<td><a class="btn btn-info btn-sm fa fa-pencil" th:href="@{/exercicio/editar-exercicio/{idExercicio} (idExercicio = ${exercicio.idExercicio} ) }"></a>
 										<a class="btn btn-info btn-sm fa fa-times" href=""></a></td>
-									
-									
+
+
 								</tr>
-								
+
 								<tr th:if="${exercicios.empty}">
 									<td colspan="3">Nenhum exercício está cadastrado</td>
 								</tr>
@@ -201,8 +212,10 @@
 				</div>
 			</section>
 		</section>
-		
-		<br/><br/><br/>
+
+		<br />
+		<br />
+		<br />
 
 
 

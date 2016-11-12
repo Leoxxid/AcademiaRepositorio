@@ -67,5 +67,12 @@ public class TreinoAtletaController {
 		mv.addAllObjects(model);
 		return mv;
 	}
+	
+	@RequestMapping(value="delete-dia-treino{idDiaExercicio}")
+	public ModelAndView deletarDoDiaTreino(){
+		
+		ModelAndView mv = new ModelAndView();
+		return mv;
+	}
 
 }

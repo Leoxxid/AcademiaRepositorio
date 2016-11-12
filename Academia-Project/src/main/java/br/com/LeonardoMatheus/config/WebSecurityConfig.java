@@ -1,18 +1,19 @@
 package br.com.LeonardoMatheus.config;
 
-
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+@Order(1)
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
-
-	@Override
+	
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
 			.withUser("joao").password("joao").roles("ATLETA")
@@ -32,23 +33,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		http
 				.authorizeRequests()
-						.antMatchers("/atleta/novo","/exercicio/novo","/inicio", 
-											"/atletas/treino/treino-do-atleta/", "/atleta/deletar-atleta/{idAtleta}", 
-											"/atletas/frequencia-academia/", "/avaliacao/atletas/avaliaAtleta", 
-											"/atleta/atleta/estatisticas", "atleta/perfil-do-atleta",
-											"/atletas/treino/treino-do-atleta/", "/visualizar/treino", "/404", "403", "/500").permitAll()
-						.antMatchers("/atleta/todos").hasRole("PROFESSOR")
-							.anyRequest().authenticated()
-						
-						.antMatchers("/atleta/index").hasRole("ATLETA")
+						.antMatchers("/exercicio/editar-exercicio/","/404", "403", "/500").permitAll()
+						.antMatchers(/*ATLETA*/"/atleta/todos", "atleta/novo", "atleta/perfil-do-atleta"
+								,
+								"/atleta/deletar-atleta",
+								/*EXERCICIO*/ "/exercicio/novo", "/exercicio/deletar-exercicio", 
+								  
+								/*TREINO*/ "atletas/treino/treino-do-atleta", "atletas/frequencia-academia",
+								"atletas/delete-dia-treino",
+								/*INDEX*/ "/inicio"
+								)
+						.hasRole("PROFESSOR")						
+						.antMatchers("/atleta/index")
+						.hasRole("ATLETA")
 							.anyRequest().authenticated()
 						.and()
 				.formLogin()
-						.loginPage("/login").permitAll()
+						.loginPage("/login-admin").permitAll()
 						.and()
 				.logout()
 				.permitAll()
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")
+						
+						);
 						
 		
 	}
