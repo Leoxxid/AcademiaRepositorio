@@ -37,7 +37,7 @@ public class ExercicioModel {
 	@Column(name = "DESCRICAO")
 	private String descricao;
 
-	@OneToMany(fetch=FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "exercicio")
+	@OneToMany(fetch=FetchType.LAZY, mappedBy = "exercicio")
 	private List<DiaExercicioModel> exercicio;
 	
 	//Construtor 

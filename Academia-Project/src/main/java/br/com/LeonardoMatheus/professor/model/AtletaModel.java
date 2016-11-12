@@ -68,10 +68,10 @@ public class AtletaModel {
 	@Column(name = "DATA_MATRICULA")
 	private Date dataMatricula;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "atleta")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "atleta")
 	private List<AtletaModel> atleta;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "atletaWeb")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "atletaWeb")
 	private List<AtletaModel> atletaWeb;
 
 	// Construtor
