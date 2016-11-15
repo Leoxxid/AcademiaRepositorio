@@ -53,8 +53,8 @@ public class ExercicioController {
 	private ModelAndView deletarExercicio(@PathVariable Long idExercicio) {
 		ModelAndView mv = new ModelAndView("redirect:/exercicio/novo");
 		exercicio.delete(idExercicio);
-		String sucess = "Exercicio deletdo com sucesso";
-		mv.addObject("exercicio", sucess);
+		String sucess = "Exercicio deletado com sucesso";
+		mv.addObject("delete", sucess);
 		return mv;
 	}
 

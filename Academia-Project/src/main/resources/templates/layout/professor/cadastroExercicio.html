@@ -182,6 +182,7 @@
 							id="dataTables-example">
 							<thead>
 								<tr bgcolor="#337ab7" style="border-color: #000000">
+									<th class="hidden"></th>
 									<th style="color: white">Nome do Exercício</th>
 									<th style="color: white">Categoria</th>
 									<th style="color: white">Descrição</th>
@@ -190,14 +191,20 @@
 							</thead>
 							<tbody>
 								<tr class="odd gradeX" th:each="exercicio : ${exercicios}">
+									<td class="hidden" th:value="${exercicio.idExercicio}"></td>
 									<td th:text="${exercicio.nomeExercicio}" th:type="text"
 										id="txtColuna1"></td>
 									<td th:text="${exercicio.categoria}" th:type="text"
 										id="txtColuna2"></td>
 									<td th:text="${exercicio.descricao}" th:type="text"
 										id="txtColuna3"></td>
-									<td style="width:10%"><a class="btn btn-info btn-sm fa fa-pencil" th:href="@{/exercicio/editar-exercicio/{idExercicio} (idExercicio = ${exercicio.idExercicio} ) }"></a>
-										<a class="btn btn-info btn-sm fa fa-times" href=""></a></td>
+									<td style="width:10%">
+										<a 	class="btn btn-info btn-sm fa fa-pencil" 
+											th:href="@{/exercicio/editar-exercicio/{idExercicio} (idExercicio = ${exercicio.idExercicio} ) }"></a>
+										<a 	title="Deletar" 
+											class="btn btn-info btn-sm fa fa-times" 
+											th:href="@{/exercicio/deletar-exercicio/{idExercicio} (idExercicio = ${exercicio.idExercicio})}"></a>
+									</td>
 
 
 								</tr>
