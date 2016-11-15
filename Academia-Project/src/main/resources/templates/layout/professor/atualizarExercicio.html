@@ -66,6 +66,36 @@
 
 
 <body>
+	<section id="container">
+
+		<!--fragment header start-->
+
+		<div th:replace="fragments/header::header"></div>
+
+		<!--fragment header end-->
+
+		<!--fragment sidebar start-->
+
+		<div th:replace="fragments/sidebarMenu::sidebarMenu"></div>
+
+		<!--fragment sidebar end-->
+		
+		<!--main content start-->
+		<!--main content start-->
+		<section id="main-content">
+			<section class="wrapper">
+				<!--overview start-->
+				<div class="row">
+					<div class="col-lg-12">
+						<h3 class="page-header">
+							<i class="fa fa-pencil"></i> Editar Exercício
+						</h3>
+					</div>
+				</div>
+				
+				
+				
+		
 		<div th:if="${param.sucesso}" class="alert alert-success">
 		<h2 align="center">A alteração nos dados do exercício foi realizada com
 			sucesso!</h2>
@@ -122,12 +152,18 @@
 		<div class="form-group" align="right">
 			<div class="col-lg-offset-2 col-lg-10">
 				<button class="btn btn-primary" type="submit">Alterar</button>
-				<button class="btn btn-default" type="button">Voltar</button>
+				<a th:href="@{/exercicio/novo}"><button class="btn btn-primary" type="button">Voltar</button></a> 
+
 			</div>
 		</div>
 
 
 	</form>
+	
+	</section>
+	</section>
+	</section>
+	
 
 
 	<script th:src="@{/layout/js/jquery.js}"></script>

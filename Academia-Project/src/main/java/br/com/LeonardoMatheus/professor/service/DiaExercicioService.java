@@ -53,4 +53,9 @@ public class DiaExercicioService {
 		return diaExercicioModel;
 	}
 
+	public void delete(long idDiaExercicio) {
+		this.diaExercicio.delete(idDiaExercicio);
+		
+	}
+
 }

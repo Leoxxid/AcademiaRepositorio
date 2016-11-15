@@ -104,18 +104,18 @@
 									<form class="form-validate form-horizontal"
 										th:action="@{/exercicio/novo}" th:object="${exercicioModel}"
 										method="POST">
-
-										<div class="col-lg-5">
-											<input type="hidden" class="form-control"
-												th:field="*{idExercicio}" />
-											
+										
+										<div class="form-group">
+											<div class="col-lg-5">
+												<input type="hidden" class="form-control"
+													th:field="*{idExercicio}" />
+												
+											</div>
 										</div>
 
 
-
 										<div class="form-group">
-											<label class="control-label col-lg-2"><b>Nome do
-													Exercício *</b></label>
+											<label class="control-label col-lg-2"><b>Nome do Exercício*</b></label>
 
 											<div class="col-lg-5">
 												<input type="text" class="form-control"
@@ -196,7 +196,7 @@
 										id="txtColuna2"></td>
 									<td th:text="${exercicio.descricao}" th:type="text"
 										id="txtColuna3"></td>
-									<td><a class="btn btn-info btn-sm fa fa-pencil" th:href="@{/exercicio/editar-exercicio/{idExercicio} (idExercicio = ${exercicio.idExercicio} ) }"></a>
+									<td style="width:10%"><a class="btn btn-info btn-sm fa fa-pencil" th:href="@{/exercicio/editar-exercicio/{idExercicio} (idExercicio = ${exercicio.idExercicio} ) }"></a>
 										<a class="btn btn-info btn-sm fa fa-times" href=""></a></td>
 
 

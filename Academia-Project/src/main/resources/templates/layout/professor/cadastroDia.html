@@ -100,31 +100,29 @@
 				</div>
 				
 				<h2>Dias de Treino:</h2>
-				<div>
-					<form style="margin-left:150px">
-						<div class="checkbox">
-					    	<label><input type="checkbox" value="seg"/>Segunda-Feira</label>
-					    </div>
-					    <div class="checkbox">
-					    	<label><input type="checkbox" value="ter"/>Terça-Feira</label>
-					    </div>
-					    <div class="checkbox">
-					    	<label><input type="checkbox" value="qua" />Quarta-Feira</label>
-					    </div>
-					    <div class="checkbox">
-					    	<label><input type="checkbox" value="qui" />Quinta-Feira</label>
-					    </div>
-					    <div class="checkbox">
-					    	<label><input type="checkbox" value="sex" />Sexta-Feira</label>
-					    </div>
-					    <div class="checkbox">
-					    	<label><input type="checkbox" value="sab" />Sábado</label>
-					    </div>
-					</form>
+				<div class="col-lg-2">
+					<select class="form-control" id="exercicio"
+								name="exercicio">
+								<option th:text="Selecione..." 	th:value="default" />
+								<option th:each="dia : ${dias}" th:value="${dia.idDia}"
+									th:text="${dia.diaSemana}" />
+					</select>
 				</div>
 				
-				<button class="button btn btn-primary" value="Enviar" style="margin-left:200px">Enviar</button>
+				<button class="button btn btn-primary" value="Enviar">Adicionar</button>
 				
+				<table class="table table-responsive">
+					<thead>
+						<tr>
+							<th>Dia da Semana</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>teste</td>
+						</tr>
+					</tbody>
+				</table>
 
 			</section>
 		</section>

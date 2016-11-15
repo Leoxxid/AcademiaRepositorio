@@ -68,10 +68,12 @@ public class TreinoAtletaController {
 		return mv;
 	}
 	
-	@RequestMapping(value="delete-dia-treino{idDiaExercicio}")
-	public ModelAndView deletarDoDiaTreino(){
-		
-		ModelAndView mv = new ModelAndView();
+	@RequestMapping(value="delete-dia-treino/{idDiaExercicio}")
+	public ModelAndView deletarDoDiaTreino(@PathVariable long idDiaExercicio){
+		diaExercicioService.delete(idDiaExercicio);
+		ModelAndView mv = new ModelAndView("redirect:/atletas/treino/treino-do-atleta/{idAtleta}");
+		String sucess = "delete-sucess";
+		mv.addObject("delete", sucess);
 		return mv;
 	}
 

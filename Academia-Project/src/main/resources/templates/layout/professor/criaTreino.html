@@ -144,9 +144,8 @@
 
 
 				<!-- tabela de treino com bootstrap-->
-				<div align="center">
-					<div class="dataTable_wrapper">
-						<table class="table table-responsive">
+				<div class="responsive" align="center">
+						<table class="table table-responsive table-bordered">
 							<thead>
 								<tr>
 									<th style="text-align: center">Segunda-Feira</th>
@@ -162,41 +161,56 @@
 
 									<td>
 										<ul th:each="diaExercicio : ${treino}">
-											<li th:if="${diaExercicio.dia.diaSemana == 'SEG'}"><h3
-													th:text="${diaExercicio.exercicio.nomeExercicio}"></h3>
+											<li th:if="${diaExercicio.dia.diaSemana == 'SEG'}"><h5 class="col-lg-10"
+													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
 												<a title="Deletar"
-												class="delete btn btn-primary fa fa-times"
-												th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a></li>
+												class="delete btn btn-primary fa fa-times col-lg-2"
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
 										<ul th:each="diaExercicio : ${treino}">
-											<li th:if="${diaExercicio.dia.diaSemana == 'TER'}"
-												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+											<li th:if="${diaExercicio.dia.diaSemana == 'TER'}"><h5 class="col-lg-10"
+													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
+												<a title="Deletar"
+												class="delete btn btn-primary fa fa-times col-lg-2"
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
 										<ul th:each="diaExercicio : ${treino}">
-											<li th:if="${diaExercicio.dia.diaSemana == 'QUA'}"
-												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+											<li th:if="${diaExercicio.dia.diaSemana == 'QUA'}"><h5 class="col-lg-10"
+													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
+												<a title="Deletar"
+												class="delete btn btn-primary fa fa-times col-lg-2"
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
 										<ul th:each="diaExercicio : ${treino}">
-											<li th:if="${diaExercicio.dia.diaSemana == 'QUI'}"
-												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+											<li th:if="${diaExercicio.dia.diaSemana == 'QUI'}"><h5 class="col-lg-10"
+													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
+												<a title="Deletar"
+												class="delete btn btn-primary fa fa-times col-lg-2"
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
 										<ul th:each="diaExercicio : ${treino}">
-											<li th:if="${diaExercicio.dia.diaSemana == 'SEX'}"
-												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+											<li th:if="${diaExercicio.dia.diaSemana == 'SEX'}"><h5 class="col-lg-10"
+													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
+												<a title="Deletar"
+												class="delete btn btn-primary fa fa-times col-lg-2"
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
 										<ul th:each="diaExercicio : ${treino}">
-											<li th:if="${diaExercicio.dia.diaSemana == 'SAB'}"
-												th:text="${diaExercicio.exercicio.nomeExercicio}"></li>
+											<li th:if="${diaExercicio.dia.diaSemana == 'SAB'}"><h5 class="col-lg-10"
+													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
+												<a title="Deletar"
+												class="delete btn btn-primary btn-sm fa fa-times col-lg-2"
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 
@@ -212,7 +226,6 @@
 							</tbody>
 						</table>
 					</div>
-				</div>
 				<!-- fim da tabela de treino -->
 			</section>
 		</section>
@@ -362,7 +375,7 @@
 
 	<script>
 		$('.delete').click(function() {
-			return confirm("Are you sure?");
+			return confirm("Tem certeza?");
 		});
 	</script>
 
