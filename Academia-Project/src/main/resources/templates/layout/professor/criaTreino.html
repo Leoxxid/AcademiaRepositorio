@@ -144,8 +144,7 @@
 
 
 				<!-- tabela de treino com bootstrap-->
-				<div align="center">
-					<div class="dataTable_wrapper">
+				<div class="responsive" align="center">
 						<table class="table table-responsive table-bordered">
 							<thead>
 								<tr>
@@ -166,7 +165,7 @@
 													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
 												<a title="Deletar"
 												class="delete btn btn-primary fa fa-times col-lg-2"
-												th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a></li>
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
@@ -175,7 +174,7 @@
 													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
 												<a title="Deletar"
 												class="delete btn btn-primary fa fa-times col-lg-2"
-												th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a></li>
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
@@ -184,7 +183,7 @@
 													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
 												<a title="Deletar"
 												class="delete btn btn-primary fa fa-times col-lg-2"
-												th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a></li>
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
@@ -193,7 +192,7 @@
 													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
 												<a title="Deletar"
 												class="delete btn btn-primary fa fa-times col-lg-2"
-												th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a></li>
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
@@ -202,7 +201,7 @@
 													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
 												<a title="Deletar"
 												class="delete btn btn-primary fa fa-times col-lg-2"
-												th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a></li>
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 									<td>
@@ -210,8 +209,8 @@
 											<li th:if="${diaExercicio.dia.diaSemana == 'SAB'}"><h5 class="col-lg-10"
 													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
 												<a title="Deletar"
-												class="delete btn btn-primary fa fa-times col-lg-2"
-												th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a></li>
+												class="delete btn btn-primary btn-sm fa fa-times col-lg-2"
+												th:href="@{/atletas/delete-dia-treino/{idDiaExercicio} (idDiaExercicio = ${diaExercicio.idDiaExercicio})}"></a></li>
 										</ul>
 									</td>
 
@@ -227,7 +226,6 @@
 							</tbody>
 						</table>
 					</div>
-				</div>
 				<!-- fim da tabela de treino -->
 			</section>
 		</section>
@@ -377,7 +375,7 @@
 
 	<script>
 		$('.delete').click(function() {
-			return confirm("Are you sure?");
+			return confirm("Tem certeza?");
 		});
 	</script>
 
