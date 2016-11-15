@@ -162,8 +162,8 @@
 
 									<td>
 										<ul th:each="diaExercicio : ${treino}">
-											<li th:if="${diaExercicio.dia.diaSemana == 'SEG'}"><h3
-													th:text="${diaExercicio.exercicio.nomeExercicio}"></h3>
+											<li th:if="${diaExercicio.dia.diaSemana == 'SEG'}"><h5
+													th:text="${diaExercicio.exercicio.nomeExercicio}"></h5>
 												<a title="Deletar"
 												class="delete btn btn-primary fa fa-times"
 												th:href="@{/atleta/deletar-atleta/{idAtleta} (idAtleta = ${atleta.idAluno})}"></a></li>

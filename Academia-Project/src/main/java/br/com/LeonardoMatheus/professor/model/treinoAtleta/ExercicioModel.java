@@ -24,7 +24,7 @@ public class ExercicioModel {
 	private Long idExercicio;
 
 	@NotBlank(message="O nome não pode estar vazio")
-	@Size(min = 5, max = 25, message = "Deve conter de 5 a 25 caracteres!")
+	@Size(min = 5, max = 50, message = "Deve conter de 5 a 50 caracteres!")
 	@Column(name = "NOME_EXERCICIO")
 	private String nomeExercicio;
 
@@ -33,7 +33,7 @@ public class ExercicioModel {
 	@Column(name = "CATEGORIA")
 	private String categoria;
 
-	@Size(max = 500, message = "A descrição do exercício não pode exceder 500 caracteres!")
+	@Size(max = 1000, message = "A descrição do exercício não pode exceder 1000 caracteres!")
 	@Column(name = "DESCRICAO")
 	private String descricao;
 
