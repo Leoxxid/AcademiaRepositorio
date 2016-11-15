@@ -20,7 +20,7 @@ import br.com.LeonardoMatheus.professor.repository.Atletas;
 import br.com.LeonardoMatheus.professor.service.AtletaService;
 
 @Controller
-@RequestMapping("/visualizar")
+@RequestMapping("academia/visualizar")
 public class AtletaController {
 
 	@Autowired

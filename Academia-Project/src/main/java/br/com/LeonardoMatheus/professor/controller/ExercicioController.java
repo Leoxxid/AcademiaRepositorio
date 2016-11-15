@@ -59,6 +59,8 @@ public class ExercicioController {
 	}
 
 	// ========================================================== EDITAR EXERCICIO
+	
+	
 	@RequestMapping(value = "/editar-exercicio/{idExercicio}")
 	public ModelAndView editarExercicioGET(@PathVariable Long idExercicio, ExercicioModel exercicioModel) {
 		ModelAndView mv = new ModelAndView("/layout/professor/atualizarExercicio");
@@ -72,12 +74,19 @@ public class ExercicioController {
 			BindingResult bindingResult, RedirectAttributes attributes){
 		
 		if (bindingResult.hasErrors()) {
-			return editarExercicioGET(idExercicio, exercicioModel);
+			return erroAoEditarExercicio(idExercicio, exercicioModel);
 		}
 		service.save(exercicioModel);
 		ModelAndView mv= new ModelAndView ("redirect:/exercicio/editar-exercicio/" + idExercicio);
 		mv.addObject("sucesso", "O exercicio foi salvo com sucesso");
 		return mv;
+	}
+	
+	@RequestMapping(value = "/editar-exercicio/{idExercicio}/erro")
+	public ModelAndView erroAoEditarExercicio(@PathVariable Long idExercicio, ExercicioModel exercicioModel){
+		ModelAndView mv = new ModelAndView("/layout/professor/atualizarExercicio");
+		mv.addObject("exercicio", exercicioModel);
+		return mv; 
 	}
 	
 

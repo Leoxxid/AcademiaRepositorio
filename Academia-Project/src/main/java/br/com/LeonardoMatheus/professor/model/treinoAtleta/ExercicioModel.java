@@ -29,7 +29,7 @@ public class ExercicioModel {
 	private String nomeExercicio;
 
 	@NotBlank(message="A categoria não pode estar vazia")
-	@Size(min=3, max = 30, message = "Deve conter de 5 e 30 caracteres!")
+	@Size(min=3, max = 30, message = "Deve conter de 3 e 30 caracteres!")
 	@Column(name = "CATEGORIA")
 	private String categoria;
 

@@ -52,7 +52,8 @@ public static class WebSecurotyConfigAdmin extends WebSecurityConfigurerAdapter{
 							
 					.and()
 					.formLogin()
-							.loginPage("/login-admin").permitAll()							
+							.loginPage("/login-admin").permitAll()
+							.defaultSuccessUrl("/inicio-administrador")
 							.and()
 					.logout()
 					.permitAll()
@@ -71,7 +72,7 @@ public static class WebSecurityConfigUser extends WebSecurityConfigurerAdapter{
 	
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()
-			.withUser("joao").password("joao").roles("ATLETA");
+			.withUser("maria123").password("maria123").roles("ATLETA");
 			}
 	
 	@Override

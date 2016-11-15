@@ -10,5 +10,6 @@ import br.com.LeonardoMatheus.professor.model.treinoAtleta.DiaExercicioModel;
 public interface DiaExercicio extends CrudRepository<DiaExercicioModel, Long>{
 	
 	List<DiaExercicioModel> findByDiaIdDia(Long idDIa);
+	DiaExercicioModel findByIdDiaExercicio(Long idDiaExercicio);
 
 }

@@ -26,6 +26,9 @@ public class TreinoAtletaController {
 
 	@Autowired
 	public DiaExercicioService diaExercicioService;
+	
+	@Autowired
+	public DiaExercicio diaExercicio;
 
 	@Autowired
 	DiaService diaService;
@@ -70,8 +73,10 @@ public class TreinoAtletaController {
 	
 	@RequestMapping(value="delete-dia-treino/{idDiaExercicio}")
 	public ModelAndView deletarDoDiaTreino(@PathVariable long idDiaExercicio){
+		DiaExercicioModel diaExercicioModel = diaExercicio.findByIdDiaExercicio(idDiaExercicio);
+		Long idAluno = diaExercicioModel.getDia().getAtleta().getIdAluno();
 		diaExercicioService.delete(idDiaExercicio);
-		ModelAndView mv = new ModelAndView("redirect:/atletas/treino/treino-do-atleta/{idAtleta}");
+		ModelAndView mv = new ModelAndView("redirect:/atletas/treino/treino-do-atleta/"+ idAluno);
 		String sucess = "delete-sucess";
 		mv.addObject("delete", sucess);
 		return mv;
