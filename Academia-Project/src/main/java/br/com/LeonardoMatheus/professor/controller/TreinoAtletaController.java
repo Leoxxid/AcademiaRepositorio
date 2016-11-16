@@ -1,5 +1,6 @@
 package br.com.LeonardoMatheus.professor.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +33,10 @@ public class TreinoAtletaController {
 
 	@Autowired
 	DiaService diaService;
-
+	
+	@Autowired
+	Dia dia;
+	
 	@Autowired
 	public Exercicio exercicio;
 
@@ -61,16 +65,6 @@ public class TreinoAtletaController {
 		return "redirect:/atletas/treino/treino-do-atleta/{idAtleta}";
 	}
 
-	@RequestMapping("/frequencia-academia/{idAtleta}")
-	public ModelAndView diaTreino(@PathVariable Long idAtleta) {
-		ModelAndView mv = new ModelAndView("/layout/professor/cadastroDia");
-		Map<String, Object> model = new HashMap<String, Object>();
-		model.put("atleta", diaExercicioService.selectAtletaAndId(idAtleta));
-		model.put("dias", diaService.findDia(idAtleta));
-		mv.addAllObjects(model);
-		return mv;
-	}
-	
 	@RequestMapping(value="delete-dia-treino/{idDiaExercicio}")
 	public ModelAndView deletarDoDiaTreino(@PathVariable long idDiaExercicio){
 		DiaExercicioModel diaExercicioModel = diaExercicio.findByIdDiaExercicio(idDiaExercicio);
@@ -81,5 +75,29 @@ public class TreinoAtletaController {
 		mv.addObject("delete", sucess);
 		return mv;
 	}
+	
 
+	// Dias que o aluno frequent a academia 
+	@RequestMapping("/frequencia-academia/{idAtleta}")
+	public ModelAndView diaTreino(@PathVariable Long idAtleta) {
+		ModelAndView mv = new ModelAndView("/layout/professor/cadastroDia");
+		Map<String, Object> model = new HashMap<String, Object>();
+		model.put("atleta", diaExercicioService.selectAtletaAndId(idAtleta));
+		List <DiaModel> diasModel = diaService.findDia(idAtleta);
+		List<String> diasQueNaoVai = new ArrayList<>();
+		System.out.println(diasQueNaoVai.size());
+		diasQueNaoVai = diaService.diasQueNaoVai(diasModel);
+		model.put("diasQueNaoVai", diasQueNaoVai);
+		model.put("diasQueVai", diasModel);
+		mv.addAllObjects(model);
+		return mv;
+	}
+	@RequestMapping(value="/frequencia-academia/{idAtleta}", method = RequestMethod.POST)
+	public ModelAndView adicionarDiaTreino(@PathVariable Long idAtleta, DiaModel diaModel){
+		dia.save(diaModel);
+		ModelAndView mv = new ModelAndView("redirect:/atletas/frequencia-academia/{idAtleta}");
+		String sucesso="Dia adicionado com sucesso";
+		mv.addObject("sucesso", sucesso);
+		return mv;
+	}
 }

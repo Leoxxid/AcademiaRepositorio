@@ -17,7 +17,7 @@ public interface Atletas extends CrudRepository<AtletaModel, Long> {
 	
 	
 	//Matricula e Nome
-	@Query("select new AtletaModel(a.idAluno, a.matriculaAluno , a.nomeAluno) from AtletaModel a where a.idAluno = ?")
+	@Query("select new AtletaModel(a.idAluno, a.matriculaAluno , a.nomeAluno) from AtletaModel a where a.idAluno = ? ORDER BY a.nomeAluno")
 	AtletaModel selectNomeAndMatricula(Long idAluno);
 	
 	
