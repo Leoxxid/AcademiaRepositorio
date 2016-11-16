@@ -1,6 +1,8 @@
 package br.com.LeonardoMatheus.professor.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -88,7 +90,7 @@ public class TreinoAtletaController {
 		System.out.println(diasQueNaoVai.size());
 		diasQueNaoVai = diaService.diasQueNaoVai(diasModel);
 		model.put("diasQueNaoVai", diasQueNaoVai);
-		model.put("diasQueVai", diasModel);
+        model.put("diasQueVai", diasModel);
 		mv.addAllObjects(model);
 		return mv;
 	}

@@ -30,7 +30,7 @@ public class DiaModel {
 
 
 
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="ALUNO")
 	private AtletaModel atleta;
 	
